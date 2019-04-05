@@ -1,0 +1,23 @@
+5 abril
+- Mapa donde puedas caminar ambientado rodeado de agua
+- Personaje que camine y apunte con mouse
+- Abrir interfaz de minimapa
+- Interfaz minima del juego
+	- Boton de Configuracion
+	- Minimapa
+
+10 abril 
+- Cofre con 1 Modulo(Minimo)
+- Finalizar Mapa
+
+12 Abril
+- Rellenar resto de modulos
+- Modulos aleatorios
+
+17 Abril
+- Full Testeado
+- Correccion de Errores
+
+19 Abril 
+- Agregar API de LoL
+- Agregar nuestro Server 
