@@ -266,6 +266,7 @@ RectTransform:
   m_Children:
   - {fileID: 54129542119552195}
   - {fileID: 54129543328194413}
+  - {fileID: 54129543597992091}
   m_Father: {fileID: 54129543439429254}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -289,9 +290,11 @@ MonoBehaviour:
   player: {fileID: 0}
   miniMapCam: {fileID: 0}
   offset: 7
-  isStatic: 0
+  isStatic: 1
   cardinal: {fileID: 54129542119552192}
   cardinalColor: {r: 1, g: 1, b: 1, a: 1}
+  mapPrefab: {fileID: 7258304976523652107, guid: da73d90c2c9cf134a920f4c39d35ccaf,
+    type: 3}
 --- !u!1 &54129542353360989
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1019,7 @@ GameObject:
   - component: {fileID: 54129543439429252}
   - component: {fileID: 54129543439429253}
   m_Layer: 5
-  m_Name: MiniMap
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,7 +1037,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 54129542252605296}
-  - {fileID: 54129543597992091}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1134,12 +1136,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 54129542631159649}
-  m_Father: {fileID: 54129543439429254}
-  m_RootOrder: 1
+  m_Father: {fileID: 54129542252605296}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362.5, y: -234.7}
+  m_AnchoredPosition: {x: 68.5, y: -76.5}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &54129543597992092
@@ -1218,6 +1220,28 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 54129543597992093}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4386711869108025165}
+        m_MethodName: SpawnMap
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 54129542252605297}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null

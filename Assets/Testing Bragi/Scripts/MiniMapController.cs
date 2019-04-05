@@ -16,12 +16,21 @@ public class MiniMapController : MonoBehaviour
     public Color cardinalColor = Color.white;
     private TextMeshProUGUI[] cardinals;
 
+    [Header("OpenMap")]
+    public GameObject mapPrefab;
+    [HideInInspector] public static GameObject map;
+    
     private void Start()
     {
         cardinals = cardinal.GetComponentsInChildren<TextMeshProUGUI>();
         for (int i = 0; i < cardinals.Length; i++)
         {
             cardinals[i].color = cardinalColor;
+        }
+
+        if (isStatic)
+        {
+            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 
@@ -36,5 +45,13 @@ public class MiniMapController : MonoBehaviour
     private void LateUpdate()
     {
         miniMapCam.transform.position = new Vector3(player.position.x, player.position.y + offset, player.position.z);
+    }
+
+    public void SpawnMap()
+    {
+        if (map == null)
+        {
+            map = Instantiate(mapPrefab, transform.parent);
+        }
     }
 }

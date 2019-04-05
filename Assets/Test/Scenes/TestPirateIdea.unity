@@ -6693,6 +6693,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 54129543439429250, guid: b343916ddfbc50747bee82c61ad1634a,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 4386711869108025165, guid: b343916ddfbc50747bee82c61ad1634a,
         type: 3}
       propertyPath: player
@@ -6703,10 +6708,20 @@ PrefabInstance:
       propertyPath: miniMapCam
       value: 
       objectReference: {fileID: 1683697196821751358}
-    - target: {fileID: 54129543439429250, guid: b343916ddfbc50747bee82c61ad1634a,
+    - target: {fileID: 4386711869108025165, guid: b343916ddfbc50747bee82c61ad1634a,
         type: 3}
-      propertyPath: m_Name
-      value: Canvas
+      propertyPath: cardinalColor.r
+      value: 0.3018868
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386711869108025165, guid: b343916ddfbc50747bee82c61ad1634a,
+        type: 3}
+      propertyPath: cardinalColor.g
+      value: 0.2976148
+      objectReference: {fileID: 0}
+    - target: {fileID: 4386711869108025165, guid: b343916ddfbc50747bee82c61ad1634a,
+        type: 3}
+      propertyPath: cardinalColor.b
+      value: 0.2976148
       objectReference: {fileID: 0}
     - target: {fileID: 54129543439429254, guid: b343916ddfbc50747bee82c61ad1634a,
         type: 3}
@@ -6858,5 +6873,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 403137143}
+    - target: {fileID: 54129543597992088, guid: b343916ddfbc50747bee82c61ad1634a,
+        type: 3}
+      propertyPath: m_Name
+      value: ViewMapBotton
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b343916ddfbc50747bee82c61ad1634a, type: 3}
