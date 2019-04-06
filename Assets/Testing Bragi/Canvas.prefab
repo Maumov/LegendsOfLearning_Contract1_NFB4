@@ -292,7 +292,7 @@ MonoBehaviour:
   offset: 7
   isStatic: 1
   cardinal: {fileID: 54129542119552192}
-  cardinalColor: {r: 1, g: 1, b: 1, a: 1}
+  cardinalColor: {r: 0.3018868, g: 0.2976148, b: 0.2976148, a: 1}
   mapPrefab: {fileID: 7258304976523652107, guid: da73d90c2c9cf134a920f4c39d35ccaf,
     type: 3}
 --- !u!1 &54129542353360989
