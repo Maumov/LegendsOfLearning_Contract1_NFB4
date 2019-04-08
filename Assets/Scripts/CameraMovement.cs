@@ -8,7 +8,7 @@ public class CameraMovement : MonoBehaviour
     public Transform target;
     public Transform YRotationtransform;
 
-    public float minX, maxX;
+    public float minX = -60f, maxX = 60f;
 
     float vertical;
     float horizontal;
