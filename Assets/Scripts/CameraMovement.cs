@@ -8,6 +8,8 @@ public class CameraMovement : MonoBehaviour
     public Transform target;
     public Transform YRotationtransform;
 
+    public float minX, maxX;
+
     float vertical;
     float horizontal;
 
@@ -25,11 +27,20 @@ public class CameraMovement : MonoBehaviour
     {
         GetInputs();
 
-        transform.RotateAround(transform.position, Vector3.up, horizontal);
+        target.RotateAround(target.position, Vector3.up, horizontal);
         YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
     }
     void GetInputs() {
-        vertical = Input.GetAxis("Mouse Y");
+        vertical = -Input.GetAxis("Mouse Y");
         horizontal = Input.GetAxis("Mouse X");
+        float angle = -Vector3.SignedAngle(transform.forward, YRotationtransform.forward, target.right);
+        
+        if(vertical < 0f && angle > maxX) {
+            vertical = 0f;
+        }
+        if(vertical > 0f && angle < minX) {
+            vertical = 0f;
+        }
+
     }
 }
