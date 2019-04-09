@@ -128,6 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   YRotationtransform: {fileID: 7588367555748024880}
+  minX: -60
+  maxX: 60
 --- !u!1 &7588367555748024881
 GameObject:
   m_ObjectHideFlags: 0

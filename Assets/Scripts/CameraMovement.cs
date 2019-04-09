@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-
+    public GameManager gameManager;
     public Transform target;
     public Transform YRotationtransform;
 
@@ -31,16 +31,20 @@ public class CameraMovement : MonoBehaviour
         YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
     }
     void GetInputs() {
-        vertical = -Input.GetAxis("Mouse Y");
-        horizontal = Input.GetAxis("Mouse X");
-        float angle = -Vector3.SignedAngle(transform.forward, YRotationtransform.forward, target.right);
-        
-        if(vertical < 0f && angle > maxX) {
-            vertical = 0f;
-        }
-        if(vertical > 0f && angle < minX) {
-            vertical = 0f;
-        }
+        if (gameManager.GetInputStatus())
+        {
+            vertical = -Input.GetAxis("Mouse Y");
+            horizontal = Input.GetAxis("Mouse X");
+            float angle = -Vector3.SignedAngle(transform.forward, YRotationtransform.forward, target.right);
 
+            if (vertical < 0f && angle > maxX)
+            {
+                vertical = 0f;
+            }
+            if (vertical > 0f && angle < minX)
+            {
+                vertical = 0f;
+            }
+        }
     }
 }
