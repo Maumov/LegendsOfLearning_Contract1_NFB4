@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public r
+    public RawImage map;
     public enum Fraction { Medio, Tercio, Cuarto, Octavo }
     public Fraction horizontal = Fraction.Medio;
     public Fraction vertical = Fraction.Medio;
@@ -19,7 +19,7 @@ public class GridManager : MonoBehaviour
         {
             for (int j = 0; j < column; j++)
             {
-
+                
             }
         }   
     }
