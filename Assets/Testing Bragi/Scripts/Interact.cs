@@ -28,7 +28,7 @@ public class Interact : MonoBehaviour
                         }
                         else
                         {
-                            Debug.Log("Not closed enough");
+                            Debug.Log("Not close enough");
                             // Insertar codigo para mover al personaje hasta el punto de interaccion del cofre, si se desea.
                         }
                     }

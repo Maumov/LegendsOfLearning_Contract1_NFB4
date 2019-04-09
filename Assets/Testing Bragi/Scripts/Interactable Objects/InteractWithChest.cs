@@ -6,15 +6,16 @@ public class InteractWithChest : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
+    LTTesting test;
 
     Animator objectAnimator;
     [Range(0.5f, 2)]
-    public float delayToClose;
     public string OpenStringTrigger;
 
     private void Start()
     {
         objectAnimator = GetComponent<Animator>();
+        test = GetComponent<LTTesting>();
     }
 
     public override void Interaction()
@@ -23,8 +24,8 @@ public class InteractWithChest : InteractableObject
         {
             interacted = true;
             isModuleOpen = true;
-            CompletedModule();
             // Instantiate module;
+            test.SetCinematic();
         }
     }
 
