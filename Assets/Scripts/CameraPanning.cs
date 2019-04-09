@@ -3,37 +3,67 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+[RequireComponent(typeof(InteractableObject))]
 public class CameraPanning : MonoBehaviour
 {
     [Header("Camera Settings")]
     public GameObject objectCamera;
     public GameObject mainCamera;
+    private Vector3 cameraInitPosition;
 
     [Header("Waypoints & References")]
     [Range(0f, 10f)]
     public float duration;
     public Transform waypoint;
-    private InteractableObject interactableScript;
+    [HideInInspector] public InteractableObject interactableScript;
     public enum TypeOfTween { Smooth, Waypoints };
     public TypeOfTween tween = TypeOfTween.Waypoints;
 
     [HideInInspector] public bool isActive;
     private Vector3[] wayPoints;
     private LTSpline spline;
+    public LTDescr tweenID;
 
     private void Start()
     {
         interactableScript = GetComponent<InteractableObject>();
 
-        if (tween == TypeOfTween.Waypoints)
+        if (waypoint == null)
         {
-            wayPoints = new Vector3[waypoint.childCount];
-            for (int i = 0; i < waypoint.childCount; i++)
+            waypoint = interactableScript.InteractionPosition;
+        }
+
+        if (waypoint.childCount <= 0)
+        {
+
+        }
+        cameraInitPosition = objectCamera.transform.position;
+
+        if(waypoint.childCount > 0)
+        {
+            if (tween == TypeOfTween.Waypoints)
             {
-                wayPoints[i] = waypoint.GetChild(i).transform.position;
+                wayPoints = new Vector3[waypoint.childCount];
+                for (int i = 0; i < waypoint.childCount; i++)
+                {
+                    wayPoints[i] = waypoint.GetChild(i).transform.position;
+                }
+
+                spline = new LTSpline(wayPoints);
             }
 
-            spline = new LTSpline(wayPoints);
+            if (tween == TypeOfTween.Smooth)
+            {
+                waypoint.position = waypoint.GetChild(waypoint.childCount - 1).position;
+            }
+        }
+        else
+        {
+            if (tween == TypeOfTween.Waypoints)
+            {
+                tween = TypeOfTween.Smooth;
+                return;
+            }
         }
     }
 
@@ -45,7 +75,8 @@ public class CameraPanning : MonoBehaviour
 
             if (tween == TypeOfTween.Smooth)
             {
-                LeanTween.move(objectCamera, waypoint.GetChild(waypoint.childCount - 1).position, duration).setOnComplete(interactableScript.ModuleCompleted);
+                int id = LeanTween.move(objectCamera, waypoint.position, duration).setEase(LeanTweenType.easeOutQuad).id;
+                tweenID = LeanTween.descr(id);
             }
         }
     }
@@ -58,7 +89,8 @@ public class CameraPanning : MonoBehaviour
 
         if (tween == TypeOfTween.Waypoints)
         {
-            LeanTween.moveSpline(objectCamera, spline, duration).setOnComplete(interactableScript.ModuleCompleted);
+            int id = LeanTween.moveSpline(objectCamera, spline, duration).setEase(LeanTweenType.animationCurve).id;
+            tweenID = LeanTween.descr(id);
         }
     }
 
@@ -67,7 +99,8 @@ public class CameraPanning : MonoBehaviour
         isActive = false;
         mainCamera.SetActive(true);
         objectCamera.SetActive(false);
-        objectCamera.transform.position = wayPoints[0];
+
+        objectCamera.transform.position = cameraInitPosition;
     }
 
     private void OnDrawGizmos()
@@ -75,10 +108,13 @@ public class CameraPanning : MonoBehaviour
         Gizmos.color = Color.blue;
         if (waypoint != null)
         {
-            for (int i = 0; i < waypoint.childCount - 1; i++)
+            
+            if(waypoint.childCount > 0)
             {
-                
-                Gizmos.DrawLine(waypoint.GetChild(i).transform.position, waypoint.GetChild(i + 1).transform.position);
+                for (int i = 0; i < waypoint.childCount - 1; i++)
+                {
+                    Gizmos.DrawLine(waypoint.GetChild(i).transform.position, waypoint.GetChild(i + 1).transform.position);
+                }
             }
         }
     }

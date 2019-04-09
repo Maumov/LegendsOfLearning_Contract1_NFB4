@@ -5,9 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-
+    public GameManager gameManager;
     public float movementSpeed = 3f;
-
     float vertical;
     float horizontal;
 
@@ -26,8 +25,12 @@ public class PlayerMovement : MonoBehaviour
         characterController.Move(transform.rotation * direction * movementSpeed * Time.deltaTime);
     }
 
-    void GetInputs() {
-        vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal");
+    void GetInputs()
+    {
+        if (gameManager.GetInputStatus())
+        {
+            vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxis("Horizontal");
+        }
     }
 }
