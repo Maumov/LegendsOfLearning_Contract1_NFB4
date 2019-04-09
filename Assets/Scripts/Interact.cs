@@ -12,9 +12,7 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetAxisRaw("Fire1") == 1)
         {
-            Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, 50f, interactMask))
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 50f, interactMask))
             {
                 InteractableObject interactable = hit.collider.GetComponent<InteractableObject>();
                 if (interactable != null)

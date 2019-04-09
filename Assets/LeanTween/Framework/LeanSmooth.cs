@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -360,5 +361,10 @@ public class LeanSmooth {
         float a = bounceOut(current.a, target.a, ref currentVelocity.a, smoothTime, maxSpeed, deltaTime, friction, accelRate, hitDamping);
 
         return new Color(r, g, b, a);
+    }
+
+    internal static void damp(Vector3 position1, Vector3 position2, Vector3 forward, float v1, float v2, float deltaTime)
+    {
+        throw new NotImplementedException();
     }
 }

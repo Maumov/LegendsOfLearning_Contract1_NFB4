@@ -293,6 +293,8 @@ MonoBehaviour:
   isStatic: 0
   cardinal: {fileID: 54129542119552192}
   cardinalColor: {r: 0, g: 0, b: 0, a: 1}
+  miniMapRender: {fileID: 54129542874409769}
+  mapPrefab: {fileID: 0}
 --- !u!1 &54129542353360989
 GameObject:
   m_ObjectHideFlags: 0

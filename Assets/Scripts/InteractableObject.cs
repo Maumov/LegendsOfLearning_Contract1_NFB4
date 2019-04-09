@@ -7,7 +7,7 @@ public class InteractableObject : MonoBehaviour
     Transform playerPosition;
     [Header("Interaction")]
     public Transform InteractionPosition;
-    [Range(0f, 20f)]
+    [Range(0.1f, 10f)]
     public float radius = 1.5f;
 
     [Header("Indicators")]
@@ -24,6 +24,17 @@ public class InteractableObject : MonoBehaviour
     public virtual void Interaction()
     {
         // Place here the interaction behaviour
+    }
+
+    // For Chest and etc
+    public virtual void StartModule()
+    {
+        // Instantiate module
+    }
+
+    public virtual void ModuleCompleted()
+    {
+        // Complete module
     }
 
     private void OnDrawGizmosSelected()

@@ -14,6 +14,7 @@ public class MiniMapController : MonoBehaviour
     [Header("Cardinal Settings")]
     public GameObject cardinal;
     public Color cardinalColor = Color.white;
+    public Transform miniMapRender;
     private TextMeshProUGUI[] cardinals;
 
     [Header("OpenMap")]
@@ -30,7 +31,7 @@ public class MiniMapController : MonoBehaviour
 
         if (isStatic)
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            miniMapRender.rotation = Quaternion.Euler(0f, 0f, 0f);
         }
     }
 
@@ -38,7 +39,7 @@ public class MiniMapController : MonoBehaviour
     {
         if (!isStatic)
         {
-            transform.rotation = Quaternion.Euler(0f, 0f, -player.localEulerAngles.y);
+            miniMapRender.rotation = Quaternion.Euler(0f, 0f, -player.localEulerAngles.y);
         }
     }
 

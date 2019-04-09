@@ -293,6 +293,7 @@ MonoBehaviour:
   isStatic: 1
   cardinal: {fileID: 54129542119552192}
   cardinalColor: {r: 0, g: 0, b: 0, a: 1}
+  miniMapRender: {fileID: 54129542874409769}
   mapPrefab: {fileID: 7258304976523652107, guid: da73d90c2c9cf134a920f4c39d35ccaf,
     type: 3}
 --- !u!1 &54129542353360989
