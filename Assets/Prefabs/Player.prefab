@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 7538942609653580702}
   - component: {fileID: 7538942609653580696}
   - component: {fileID: 8828586409101585798}
-  m_Layer: 11
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45744709f8b2f6d438d5e581ec5858a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 3
+  gameManager: {fileID: 0}
+  movementSpeed: 6
 --- !u!143 &7538942609653580696
 CharacterController:
   m_ObjectHideFlags: 0
