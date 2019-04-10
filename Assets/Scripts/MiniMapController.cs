@@ -19,7 +19,7 @@ public class MiniMapController : MonoBehaviour
 
     [Header("OpenMap")]
     public GameObject mapPrefab;
-    [HideInInspector] public static GameObject map;
+    [HideInInspector] public static bool isMapOpen = false;
     
     private void Start()
     {
@@ -50,9 +50,9 @@ public class MiniMapController : MonoBehaviour
 
     public void SpawnMap()
     {
-        if (map == null)
+        if (isMapOpen == false)
         {
-            map = Instantiate(mapPrefab, transform.parent);
+            Instantiate(mapPrefab);
         }
     }
 }
