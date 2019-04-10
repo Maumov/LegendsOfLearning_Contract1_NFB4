@@ -12,17 +12,24 @@ public class GridManager : MonoBehaviour
     private int row;
     private int column;
 
-    private void Start()
+    struct GUILine
     {
-        
+        public Vector2 start;
+        public Vector2 end;
+    }
+
+    private void Start()
+    {  
         for (int i = 0; i < row; i++)
         {
             for (int j = 0; j < column; j++)
             {
                 
             }
-        }   
+        }
     }
+
+
 
     private void SetFractions()
     {

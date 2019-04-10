@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639583638010043494}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -485.1, y: -232.04001, z: 56.2}
+  m_LocalPosition: {x: 2.14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5275316636556186639}
@@ -61,7 +61,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 6160
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: 7f8396c064662f04694dd01bc83e2e7a, type: 2}
   m_TargetDisplay: 0
@@ -1032,11 +1032,11 @@ MonoBehaviour:
   player: {fileID: 0}
   miniMapCam: {fileID: 7252270485841924043}
   offset: 7
-  isStatic: 0
+  isStatic: 1
   cardinal: {fileID: 1681408521333618421}
   cardinalColor: {r: 0, g: 0, b: 0, a: 1}
   miniMapRender: {fileID: 1681408520914102556}
-  mapPrefab: {fileID: 806969865706099446, guid: da73d90c2c9cf134a920f4c39d35ccaf,
+  mapPrefab: {fileID: 4907590949762913257, guid: da73d90c2c9cf134a920f4c39d35ccaf,
     type: 3}
 --- !u!1 &1681408521541117151
 GameObject:
@@ -1211,7 +1211,7 @@ GameObject:
   - component: {fileID: 2740426250850390161}
   - component: {fileID: 2279802326978634653}
   m_Layer: 5
-  m_Name: MiniMap
+  m_Name: MiniMapCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
