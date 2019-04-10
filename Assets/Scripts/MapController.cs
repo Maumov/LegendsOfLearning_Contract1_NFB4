@@ -7,10 +7,7 @@ public class MapController : MonoBehaviour
 
     public void DestroyMap()
     {
-        if (MiniMapController.map != null)
-        {
-            MiniMapController.map = null;
-            Destroy(gameObject);
-        }
+        MiniMapController.isMapOpen = false;
+        Destroy(transform.parent.gameObject);
     }
 }
