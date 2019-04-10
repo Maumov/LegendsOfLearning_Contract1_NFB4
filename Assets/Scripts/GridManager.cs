@@ -5,63 +5,83 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    public RawImage map;
-    public enum Fraction { Medio, Tercio, Cuarto, Octavo }
-    public Fraction horizontal = Fraction.Medio;
-    public Fraction vertical = Fraction.Medio;
-    private int row;
-    private int column;
-
-    struct GUILine
-    {
-        public Vector2 start;
-        public Vector2 end;
-    }
+    public Material Grid;
+    //public enum Fraction { Medio, Tercio, Cuarto, Octavo }
+    //public Fraction horizontal = Fraction.Medio;
+    //public Fraction vertical = Fraction.Medio;
+    public List<int> fractions = new List<int>();
+    private int xIndex = 1;
+    private int yIndex = 1;
+    private int indexMaxValue;
 
     private void Start()
-    {  
-        for (int i = 0; i < row; i++)
+    {
+        for(int i=0; i < fractions.Count; i++)
         {
-            for (int j = 0; j < column; j++)
+            if(fractions[i] == 0)
             {
-                
+                fractions[i] = 1;
             }
         }
+        indexMaxValue = fractions.Count - 1;
+
+        Grid.SetFloat("_GridXSize", fractions[xIndex]);
+        Grid.SetFloat("_GridYSize", fractions[yIndex]);
     }
 
-
-
-    private void SetFractions()
+    public void SetHorizontal(string result)
     {
-        switch (horizontal)
+        if (result == "+")
         {
-            case Fraction.Medio:
-                row = 2;
-                break;
-            case Fraction.Tercio:
-                row = 3;
-                break;
-            case Fraction.Cuarto:
-                row = 4;
-                break;
-            case Fraction.Octavo:
-                row = 8;
-                break;
+            if (xIndex >= indexMaxValue)
+            {
+                return;
+            }
+            else
+            {
+                xIndex++;
+            }
         }
-        switch (vertical)
+        else if(result == "-")
         {
-            case Fraction.Medio:
-                column = 2;
-                break;
-            case Fraction.Tercio:
-                column = 3;
-                break;
-            case Fraction.Cuarto:
-                column = 4;
-                break;
-            case Fraction.Octavo:
-                column = 8;
-                break;
+            if (xIndex <= 0)
+            {
+                return;
+            }
+            else
+            {
+                xIndex--;
+            }
         }
+
+        Grid.SetFloat("_GridXSize", fractions[xIndex]);
+    }
+
+    public void SetVertical(string result)
+    {
+        if (result == "+")
+        {
+            if (yIndex >= indexMaxValue)
+            {
+                return;
+            }
+            else
+            {
+                yIndex++;
+            }
+        }
+        else if (result == "-")
+        {
+            if (yIndex <= 0)
+            {
+                return;
+            }
+            else
+            {
+                yIndex--;
+            }
+        }
+
+        Grid.SetFloat("_GridYSize", fractions[yIndex]);
     }
 }

@@ -6,9 +6,8 @@ Shader "PDT Shaders/TestGrid" {
 		_CellColor ("Cell Color", Color) = (0,0,0,0)
 		_SelectedColor ("Selected Color", Color) = (1,0,0,1)
 		[PerRendererData] _MainTex ("Albedo (RGB)", 2D) = "white" {}
-		[IntRange] _GridSize("Grid Size", Range(1,100)) = 10
-		[IntRange] _XSize("Horizontal Size", Range(1,8)) = 2
-		[IntRange] _YSize("Vertical Size", Range(1,8)) = 2
+		[IntRange] _GridXSize("Horizontal Size", Range(1,8)) = 2
+		[IntRange] _GridYSize("Vertical Size", Range(1,8)) = 2
 		_LineSize("Line Size", Range(0,1)) = 0.15
 		[IntRange] _SelectCell("Select Cell Toggle ( 0 = False , 1 = True )", Range(0,1)) = 0.0
 		[IntRange] _SelectedCellX("Selected Cell X", Range(0,100)) = 0.0
@@ -38,7 +37,8 @@ Shader "PDT Shaders/TestGrid" {
 		float4 _CellColor;
 		float4 _SelectedColor;
 
-		float _GridSize;
+		float _GridXSize;
+		float _GridYSize;
 		float _LineSize;
 
 		float _SelectCell;
@@ -64,16 +64,16 @@ Shader "PDT Shaders/TestGrid" {
 
 			float brightness = 1.;
 
-			float gsize = floor(_GridSize);
+			float gxsize = floor(_GridXSize);
+			float gysize = floor(_GridYSize);
 
-
-
-			gsize += _LineSize;
+			gxsize += _LineSize;
+			gysize += _LineSize;
 
 			float2 id;
 
-			id.x = floor(uv.x/(1.0/gsize));
-			id.y = floor(uv.y/(1.0/gsize));
+			id.x = floor(uv.x/(1.0/gxsize));
+			id.y = floor(uv.y/(1.0/gysize));
 
 			float4 color = _CellColor;
 			brightness = _CellColor.w;
@@ -85,7 +85,7 @@ Shader "PDT Shaders/TestGrid" {
 				color = _SelectedColor;
 			}
 
-			if (frac(uv.x*gsize) <= _LineSize || frac(uv.y*gsize) <= _LineSize)
+			if (frac(uv.x*gxsize) <= _LineSize || frac(uv.y*gysize) <= _LineSize)
 			{
 				brightness = _LineColor.w;
 				color = _LineColor;
