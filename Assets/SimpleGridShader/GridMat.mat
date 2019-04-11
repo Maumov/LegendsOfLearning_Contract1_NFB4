@@ -64,8 +64,8 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _GridSize: 3
-    - _GridXSize: 1
-    - _GridYSize: 3
+    - _GridXSize: 2
+    - _GridYSize: 2
     - _LineSize: 0.02
     - _Metallic: 0
     - _Mode: 0
