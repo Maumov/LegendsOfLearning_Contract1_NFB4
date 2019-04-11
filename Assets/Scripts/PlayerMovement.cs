@@ -20,18 +20,18 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInputs();
-        Vector3 direction = new Vector3(horizontal,0f,vertical);
-        characterController.Move(transform.rotation * direction * movementSpeed * Time.deltaTime);
+        if (inputStatus)
+        {
+            GetInputs();
+            Vector3 direction = new Vector3(horizontal, 0f, vertical);
+            characterController.Move(transform.rotation * direction * movementSpeed * Time.deltaTime);
+        }
     }
 
     void GetInputs()
     {
-        if (inputStatus)
-        {
-            vertical = Input.GetAxis("Vertical");
-            horizontal = Input.GetAxis("Horizontal");
-        }
+        vertical = Input.GetAxis("Vertical");
+        horizontal = Input.GetAxis("Horizontal");
     }
 
     public void SetInputStatus(bool status)

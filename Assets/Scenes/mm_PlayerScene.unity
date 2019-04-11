@@ -298,42 +298,42 @@ PrefabInstance:
     - target: {fileID: 1681408520449965709, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408520449965709, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408521287233407, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408521287233407, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408521433242218, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408521433242218, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408521541117145, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1681408521541117145, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3131520821154559352, guid: 9c9368d74e4a077499f9316dcaafcb17,
         type: 3}
@@ -365,6 +365,11 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 0.6886792
       objectReference: {fileID: 0}
+    - target: {fileID: 1681408520714939055, guid: 9c9368d74e4a077499f9316dcaafcb17,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1140912758}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c9368d74e4a077499f9316dcaafcb17, type: 3}
 --- !u!1 &801706519

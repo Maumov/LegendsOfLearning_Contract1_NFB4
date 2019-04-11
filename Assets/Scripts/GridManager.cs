@@ -5,28 +5,60 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
+    RectTransform rectT;
+    [Header("Prefabs & objects")]
     public Material Grid;
-    //public enum Fraction { Medio, Tercio, Cuarto, Octavo }
-    //public Fraction horizontal = Fraction.Medio;
-    //public Fraction vertical = Fraction.Medio;
+    public GameObject FractionPrefab;
+    public GameObject horizontalParent;
+    public GameObject verticalParent;
+
+    private List<GameObject> prefabsX = new List<GameObject>();
+    private List<GameObject> prefabsY = new List<GameObject>();
+
     public List<int> fractions = new List<int>();
-    private int xIndex = 1;
-    private int yIndex = 1;
+    [Range(0f, 0.1f)]
+    public List<float> linesXSize = new List<float>();
+    [Range(0f, 0.1f)]
+    public List<float> linesYSize = new List<float>();
+    private int xIndex = 3;
+    private int yIndex = 2;
     private int indexMaxValue;
+    private float xOffset;
+    private float yOffset;
 
     private void Start()
     {
-        for(int i=0; i < fractions.Count; i++)
+        rectT = GetComponent<RectTransform>();
+        SetFraction offset = FractionPrefab.GetComponent<SetFraction>();
+
+        xOffset = offset.numerator.rectTransform.rect.width;
+        yOffset = (offset.numerator.rectTransform.position.y - offset.demoninator.rectTransform.position.y);
+
+        /*
+        linesXSize.Capacity = fractions.Capacity;
+        linesYSize.Capacity = fractions.Capacity;
+
+        for (int i=0; i < fractions.Count; i++)
         {
             if(fractions[i] == 0)
             {
                 fractions[i] = 1;
             }
+            if(i >0 && linesXSize[i] == 0)
+            {
+                linesXSize[i] = 0.01f;
+            }
+            if (i > 0 && linesYSize[i] == 0)
+            {
+                linesYSize[i] = 0.01f;
+            }
         }
+        */
+
         indexMaxValue = fractions.Count - 1;
 
-        Grid.SetFloat("_GridXSize", fractions[xIndex]);
-        Grid.SetFloat("_GridYSize", fractions[yIndex]);
+        SetHorizontal("Start");
+        SetVertical("Start");
     }
 
     public void SetHorizontal(string result)
@@ -54,6 +86,21 @@ public class GridManager : MonoBehaviour
             }
         }
 
+        prefabsX.ForEach((t) => { Destroy(t); });
+        prefabsX.Clear();
+
+        for(int i = 1; i < fractions[xIndex]; i++)
+        {
+            prefabsX.Add(Instantiate(FractionPrefab, horizontalParent.transform));
+            SetFraction fraction = prefabsX[i-1].GetComponent<SetFraction>();
+            fraction.SetNumerator(i);
+            fraction.SetDenominator(fractions[xIndex]);
+            fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, -rectT.rect.height);
+        }
+
+        FinalFraction();
+
+        Grid.SetFloat("_LineXSize", linesXSize[xIndex]);
         Grid.SetFloat("_GridXSize", fractions[xIndex]);
     }
 
@@ -82,6 +129,38 @@ public class GridManager : MonoBehaviour
             }
         }
 
+        prefabsY.ForEach((t) => { Destroy(t); });
+        prefabsY.Clear();
+
+        for (int i = 1; i < fractions[yIndex]; i++)
+        {
+            prefabsY.Add(Instantiate(FractionPrefab, verticalParent.transform));
+            SetFraction fraction = prefabsY[i-1].GetComponent<SetFraction>();
+            fraction.SetNumerator(i);
+            fraction.SetDenominator(fractions[yIndex]);
+            fraction.SetPosition(rectT.rect.width + xOffset, -(rectT.rect.height / fractions[yIndex]) * i + yOffset);
+        }
+
+        Grid.SetFloat("_LineYSize", linesYSize[yIndex]);
         Grid.SetFloat("_GridYSize", fractions[yIndex]);
     }
+
+    // Optional
+    private void FinalFraction()
+    {
+        prefabsX.Add(Instantiate(FractionPrefab, verticalParent.transform));
+        SetFraction fraction = prefabsX[prefabsX.Count-1].GetComponent<SetFraction>();
+        fraction.SetNumerator(1);
+        fraction.SetDenominator(1);
+        fraction.SetPosition(rectT.rect.width + xOffset/2, -rectT.rect.height);
+    }
+
+    public void SetModuleFractions(int x, int y)
+    {
+        xIndex = fractions.IndexOf(x);
+        yIndex = fractions.IndexOf(y);
+
+        SetHorizontal("Start");
+        SetVertical("Start");
+    } 
 }

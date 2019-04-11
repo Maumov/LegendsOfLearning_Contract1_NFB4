@@ -6,7 +6,8 @@ public class CameraMovement : MonoBehaviour
 {
     public Transform target;
     public Transform YRotationtransform;
-    private bool inputStatus = true;
+    private static bool inputStatus = true;
+    private static PlayerMovement movement;
 
     public float minX = -60f, maxX = 60f;
 
@@ -17,6 +18,8 @@ public class CameraMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        movement = target.GetComponent<PlayerMovement>();
+
         transform.SetParent(target);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
@@ -25,36 +28,46 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetInputs();
-
-        target.RotateAround(target.position, Vector3.up, horizontal);
-        YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
-    }
-    void GetInputs() {
         if (inputStatus)
         {
-            vertical = -Input.GetAxis("Mouse Y");
-            horizontal = Input.GetAxis("Mouse X");
-            float angle = -Vector3.SignedAngle(transform.forward, YRotationtransform.forward, target.right);
+            GetInputs();
 
-            if (vertical < 0f && angle > maxX)
-            {
-                vertical = 0f;
-            }
-            if (vertical > 0f && angle < minX)
-            {
-                vertical = 0f;
-            }
+            target.RotateAround(target.position, Vector3.up, horizontal);
+            YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
+        }
+    }
+    void GetInputs() {
+        vertical = -Input.GetAxis("Mouse Y");
+        horizontal = Input.GetAxis("Mouse X");
+        float angle = -Vector3.SignedAngle(transform.forward, YRotationtransform.forward, target.right);
+
+        if (vertical < 0f && angle > maxX)
+        {
+            vertical = 0f;
+        }
+        if (vertical > 0f && angle < minX)
+        {
+            vertical = 0f;
         }
     }
 
     public void SetInputStatus(bool status)
     {
         inputStatus = status;
-        PlayerMovement movement = target.GetComponent<PlayerMovement>();
+        movement = target.GetComponent<PlayerMovement>();
         if(movement != null)
         {
             movement.SetInputStatus(status);
+        }
+    }
+
+    public static void RestoreInputs()
+    {
+        inputStatus = true;
+        
+        if (movement != null)
+        {
+            movement.SetInputStatus(inputStatus);
         }
     }
 }

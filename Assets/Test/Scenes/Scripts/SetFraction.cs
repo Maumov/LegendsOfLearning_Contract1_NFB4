@@ -1,70 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 using UnityEngine;
 
 public class SetFraction : MonoBehaviour
 {
-    public GameObject sandUp;
-    public GameObject sandDown;
+    public TextMeshProUGUI numerator;
+    public TextMeshProUGUI demoninator;
+    RectTransform rectT;
 
-    public InputField inputNum;
-    public InputField inputDem;
-
-    GameObject target;
-
-    private void Start()
+    public void SetPosition(float PosX, float PosY)
     {
-        target = sandUp;
+        Debug.Log(new Vector2(PosX, PosY));
+        RectTransform rectT = GetComponent<RectTransform>();
+        rectT.anchoredPosition = new Vector2(PosX, PosY);
     }
 
-    private void Update()
+    public void SetNumerator(int number)
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hitInfo))
-        {
-            if (hitInfo.transform.parent.name.Contains("Cone"))
-            {
-                target = hitInfo.transform.parent.gameObject;
-                Debug.Log(target.name);
-            }
-        }
+      numerator.text = number.ToString();
     }
 
-    void SetScale(float numerator, float denominator)
+    public void SetDenominator(int number)
     {
-        float result = numerator / denominator;
-
-        if (result >= 0 && result <= 1)
-        {
-            if (target == sandUp)
-            {
-                sandUp.transform.localScale = new Vector3(1f, 1f, result);
-            }
-            else if (target == sandDown)
-            {
-                sandDown.transform.localScale = new Vector3(1f, 1f, result);
-            }
-            Debug.Log(target.name + " scale set to: " + numerator + "/" + denominator);
-        }
-        else
-        {
-            return;
-        }
-    }
-
-    public void ResetScale()
-    {
-        sandUp.transform.localScale = new Vector3(1f, 1f, 1f);
-        sandDown.transform.localScale = new Vector3(1f, 1f, 1f);
-    }
-
-    public void TriggerScale()
-    {
-        if (inputNum.text.Length == 0 || inputDem.text.Length == 0)
-        {
-            return;
-        }
-        SetScale(float.Parse(inputNum.text), float.Parse(inputDem.text));
+        demoninator.text = number.ToString();
     }
 }

@@ -8,10 +8,11 @@ Shader "PDT Shaders/TestGrid" {
 		[PerRendererData] _MainTex ("Albedo (RGB)", 2D) = "white" {}
 		[IntRange] _GridXSize("Horizontal Size", Range(1,8)) = 2
 		[IntRange] _GridYSize("Vertical Size", Range(1,8)) = 2
-		_LineSize("Line Size", Range(0,1)) = 0.15
+		_LineXSize("LineX Size", Range(0,1)) = 0.15
+		_LineYSize("LineY Size", Range(0,1)) = 0.15
 		[IntRange] _SelectCell("Select Cell Toggle ( 0 = False , 1 = True )", Range(0,1)) = 0.0
-		[IntRange] _SelectedCellX("Selected Cell X", Range(0,100)) = 0.0
-		[IntRange] _SelectedCellY("Selected Cell Y", Range(0,100)) = 0.0
+		[IntRange] _SelectedCellX("Selected Cell X", Range(0,8)) = 0.0
+		[IntRange] _SelectedCellY("Selected Cell Y", Range(0,8)) = 0.0
 	}
 	SubShader {
 		Tags { "Queue"="AlphaTest" "RenderType"="TransparentCutout" }
@@ -39,7 +40,9 @@ Shader "PDT Shaders/TestGrid" {
 
 		float _GridXSize;
 		float _GridYSize;
-		float _LineSize;
+		
+		float _LineXSize;
+		float _LineYSize;
 
 		float _SelectCell;
 		float _SelectedCellX;
@@ -67,8 +70,8 @@ Shader "PDT Shaders/TestGrid" {
 			float gxsize = floor(_GridXSize);
 			float gysize = floor(_GridYSize);
 
-			gxsize += _LineSize;
-			gysize += _LineSize;
+			gxsize += _LineXSize;
+			gysize += _LineYSize;
 
 			float2 id;
 
@@ -78,14 +81,14 @@ Shader "PDT Shaders/TestGrid" {
 			float4 color = _CellColor;
 			brightness = _CellColor.w;
 
-			//This checks that the cell is currently selected if the Select Cell slider is set to 1 ( True )
+			//This checks that the cell is currently	selected if the Select Cell slider is set to 1 ( True )
 			if (round(_SelectCell) == 1.0 && id.x == _SelectedCellX && id.y == _SelectedCellY)
 			{
 				brightness = _SelectedColor.w;
 				color = _SelectedColor;
 			}
 
-			if (frac(uv.x*gxsize) <= _LineSize || frac(uv.y*gysize) <= _LineSize)
+			if (frac(uv.x*gxsize) <= _LineXSize || frac(uv.y*gysize) <= _LineYSize)
 			{
 				brightness = _LineColor.w;
 				color = _LineColor;
