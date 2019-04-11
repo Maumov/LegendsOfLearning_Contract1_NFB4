@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
-
     public void DestroyMap()
     {
         MiniMapController.isMapOpen = false;
