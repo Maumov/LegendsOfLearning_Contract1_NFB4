@@ -12,6 +12,7 @@ public class CameraPanning : MonoBehaviour
     private Vector3 cameraInitPosition;
 
     [Header("Waypoints & References")]
+    public bool ShowGizmos;
     [Range(0f, 10f)]
     public float duration;
     public Transform waypoint;
@@ -105,17 +106,19 @@ public class CameraPanning : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.blue;
-        if (waypoint != null)
+        if (ShowGizmos)
         {
-            
-            if(waypoint.childCount > 0)
+            wayPoints = new Vector3[waypoint.childCount];
+            for (int i = 0; i < waypoint.childCount; i++)
             {
-                for (int i = 0; i < waypoint.childCount - 1; i++)
-                {
-                    Gizmos.DrawLine(waypoint.GetChild(i).transform.position, waypoint.GetChild(i + 1).transform.position);
-                }
+                wayPoints[i] = waypoint.GetChild(i).transform.position;
             }
+
+            spline = new LTSpline(wayPoints);
+
+            Gizmos.color = Color.blue;
+            if (spline != null)
+                spline.gizmoDraw();
         }
     }
 }

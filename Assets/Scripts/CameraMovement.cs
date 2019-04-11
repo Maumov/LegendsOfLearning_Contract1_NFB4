@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public GameManager gameManager;
     public Transform target;
     public Transform YRotationtransform;
+    private bool inputStatus = true;
 
     public float minX = -60f, maxX = 60f;
 
@@ -31,7 +31,7 @@ public class CameraMovement : MonoBehaviour
         YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
     }
     void GetInputs() {
-        if (gameManager.GetInputStatus())
+        if (inputStatus)
         {
             vertical = -Input.GetAxis("Mouse Y");
             horizontal = Input.GetAxis("Mouse X");
@@ -45,6 +45,16 @@ public class CameraMovement : MonoBehaviour
             {
                 vertical = 0f;
             }
+        }
+    }
+
+    public void SetInputStatus(bool status)
+    {
+        inputStatus = status;
+        PlayerMovement movement = target.GetComponent<PlayerMovement>();
+        if(movement != null)
+        {
+            movement.SetInputStatus(status);
         }
     }
 }

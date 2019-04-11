@@ -6,7 +6,7 @@ public class Interact : MonoBehaviour
 {
     public Camera playerCamera;
     public LayerMask interactMask;
-    public InteractableObject currentTarget;
+    public InteractableObject PreviousTarget;
 
     void Update()
     {
@@ -22,7 +22,7 @@ public class Interact : MonoBehaviour
                         RemoveFocus();
                         if(Vector3.Distance(transform.position, interactable.InteractionPosition.position) < interactable.radius)
                         {
-                            FocusTarget(interactable);
+                            InteractWithTarget(interactable);
                         }
                         else
                         {
@@ -35,14 +35,14 @@ public class Interact : MonoBehaviour
         }
     }
 
-    void FocusTarget(InteractableObject target)
+    void InteractWithTarget(InteractableObject target)
     {
-        currentTarget = target;
-        currentTarget.Interaction();
+        PreviousTarget = target;
+        PreviousTarget.Interaction();
     }
 
     void RemoveFocus()
     {
-        currentTarget = null;
+        PreviousTarget = null;
     }
 }

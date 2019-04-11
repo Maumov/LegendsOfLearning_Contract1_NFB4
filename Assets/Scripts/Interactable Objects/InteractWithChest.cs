@@ -41,7 +41,7 @@ public class InteractWithChest : InteractableObject
 
     public override void ModuleCompleted()
     {
-        isModuleOpen = false;
+        ExitModule();
         completed = true;
         // Acciones pendientes por el modulo
         // Destroy(module);

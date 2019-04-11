@@ -5,10 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerMovement : MonoBehaviour
 {
-    public GameManager gameManager;
     public float movementSpeed = 3f;
     float vertical;
     float horizontal;
+    private bool inputStatus = true;
 
     CharacterController characterController;
     // Start is called before the first frame update
@@ -27,10 +27,15 @@ public class PlayerMovement : MonoBehaviour
 
     void GetInputs()
     {
-        if (gameManager.GetInputStatus())
+        if (inputStatus)
         {
             vertical = Input.GetAxis("Vertical");
             horizontal = Input.GetAxis("Horizontal");
         }
+    }
+
+    public void SetInputStatus(bool status)
+    {
+        inputStatus = status;
     }
 }
