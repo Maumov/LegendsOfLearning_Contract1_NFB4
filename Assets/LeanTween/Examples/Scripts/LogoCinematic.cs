@@ -21,8 +21,10 @@ public class LogoCinematic : MonoBehaviour {
 		tween.transform.localPosition += -Vector3.right * 15f;
 		LeanTween.moveLocalX(tween, tween.transform.localPosition.x+15f, 0.4f).setEase(LeanTweenType.linear).setDelay(0f).setOnComplete( playBoom );
 
-		// Drop Down tween down
+        // Drop Down tween down
+        Debug.Log("LEl");
 		tween.transform.RotateAround(tween.transform.position, Vector3.forward, -30f);
+        Debug.Log("inprogress");
 		LeanTween.rotateAround(tween, Vector3.forward, 30f, 0.4f).setEase(LeanTweenType.easeInQuad).setDelay(0.4f).setOnComplete( playBoom );
 
 		// Drop Lean In

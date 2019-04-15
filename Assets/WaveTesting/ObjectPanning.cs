@@ -10,7 +10,7 @@ public class ObjectPanning : MonoBehaviour
 
     [Header("Waypoints & References")]
     public bool ShowGizmos;
-    [Range(0f, 10f)]
+    [Range(0f, 300f)]
     public float duration;
     public Transform waypoint;
     [HideInInspector] public InteractableObject interactableScript;
