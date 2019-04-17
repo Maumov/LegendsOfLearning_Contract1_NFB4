@@ -53,7 +53,7 @@ public class MiniMapController : MonoBehaviour
         if (isMapOpen == false)
         {
             isMapOpen = true;
-            Instantiate(mapPrefab);
+            Instantiate(mapPrefab, transform.root);
         }
     }
 }

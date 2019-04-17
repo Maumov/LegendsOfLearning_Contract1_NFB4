@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class CameraPanning : MonoBehaviour
+public class ObjectPanning : MonoBehaviour
 {
-    [Header("Camera Settings")]
-    public GameObject objectCamera;
-    public GameObject mainCamera;
-    private Vector3 cameraInitPosition;
+    [Header("Object Settings")]
+    public GameObject target;
 
     [Header("Waypoints & References")]
     public bool ShowGizmos;
@@ -26,20 +24,7 @@ public class CameraPanning : MonoBehaviour
 
     private void Start()
     {
-        interactableScript = GetComponent<InteractableObject>();
-
-        if (waypoint == null)
-        {
-            waypoint = interactableScript.InteractionPosition;
-        }
-
-        if (waypoint.childCount <= 0)
-        {
-
-        }
-        cameraInitPosition = objectCamera.transform.position;
-
-        if(waypoint.childCount > 0)
+        if (waypoint.childCount > 0)
         {
             if (tween == TypeOfTween.Waypoints)
             {
@@ -50,6 +35,8 @@ public class CameraPanning : MonoBehaviour
                 }
 
                 spline = new LTSpline(wayPoints);
+
+                ActivateCinematic();
             }
 
             if (tween == TypeOfTween.Smooth)
@@ -71,11 +58,9 @@ public class CameraPanning : MonoBehaviour
     {
         if (isActive)
         {
-            objectCamera.transform.LookAt(transform);
-
             if (tween == TypeOfTween.Smooth)
             {
-                int id = LeanTween.move(objectCamera, waypoint.position, duration).setEase(LeanTweenType.easeOutQuad).id;
+                int id = LeanTween.move(target, waypoint.position, duration).setOrientToPath(true).setEase(LeanTweenType.easeOutQuad).id;
                 tweenID = LeanTween.descr(id);
             }
         }
@@ -83,24 +68,16 @@ public class CameraPanning : MonoBehaviour
 
     public void ActivateCinematic()
     {
-        isActive = true;
-        objectCamera.SetActive(true);
-        mainCamera.SetActive(false);
-
         if (tween == TypeOfTween.Waypoints)
         {
-            int id = LeanTween.moveSpline(objectCamera, spline, duration).setEase(LeanTweenType.animationCurve).id;
+            int id = LeanTween.moveSpline(target, spline, duration).setOrientToPath(true).setEase(LeanTweenType.animationCurve).id;
             tweenID = LeanTween.descr(id);
         }
     }
 
     public void AnimationCompleted()
     {
-        isActive = false;
-        mainCamera.SetActive(true);
-        objectCamera.SetActive(false);
 
-        objectCamera.transform.position = cameraInitPosition;
     }
 
     private void OnDrawGizmos()
