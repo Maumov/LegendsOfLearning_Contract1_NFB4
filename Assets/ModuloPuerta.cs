@@ -7,7 +7,6 @@ public class ModuloPuerta : MonoBehaviour
     public float numerador, denominador;
     public float currentRespuesta;
     
-  
-
+    
 
 }
