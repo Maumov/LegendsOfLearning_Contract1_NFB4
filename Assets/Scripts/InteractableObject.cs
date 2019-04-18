@@ -6,19 +6,23 @@ public class InteractableObject : MonoBehaviour
 {
     Transform playerPosition;
     [Header("Interaction")]
-    public Transform InteractionPosition;
-    [Range(0.1f, 10f)]
-    public float radius = 1.5f;
+    public Vector3 interactionOffset;
+    public Vector3 colliderSize = new Vector3(1.5f, 1.5f, 1.5f);
 
     [Header("Indicators")]
-    public bool canBeFocus = true;
+    public GameObject indicatorPrefab;
+    //public string prefabText;
+    protected GameObject prefabContainer;
+    public bool canBeFocus = false;
     public bool isFocus;
     public bool interacted;
 
     private void Awake()
     {
-        if (InteractionPosition == null)
-            InteractionPosition = gameObject.transform;
+        BoxCollider collider = gameObject.AddComponent<BoxCollider>();
+        collider.center = interactionOffset;
+        collider.size = colliderSize;
+        collider.isTrigger = true;
     }
 
     public virtual void Interaction()
@@ -37,16 +41,35 @@ public class InteractableObject : MonoBehaviour
         // Complete module
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name.Contains("Player"))
+        {
+            canBeFocus = true;
+            // Instanciar indicador
+            if (prefabContainer != null)
+            {
+                prefabContainer = Instantiate(indicatorPrefab);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.name.Contains("Player"))
+        {
+            canBeFocus = false;
+            // Eliminar indicador
+            if (prefabContainer != null)
+            {
+                Destroy(prefabContainer);
+            }
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.magenta;
-        if (InteractionPosition != null)
-        {
-            Gizmos.DrawWireSphere(InteractionPosition.position, radius);
-        }
-        else
-        {
-            Gizmos.DrawWireSphere(transform.position, radius);
-        }
+        Gizmos.DrawWireCube(transform.position + interactionOffset, colliderSize);
     }
 }
