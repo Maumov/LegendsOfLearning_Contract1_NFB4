@@ -10,11 +10,7 @@ public class Puerta : MonoBehaviour
     public float minValor = 0f;
     public float maxValor = 10f;
     public UnityEvent giroDerecha, giroIzquierda, boton1, boton2, boton3;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   
 
     public void GirarIzquierda() {
         valor -= step;
