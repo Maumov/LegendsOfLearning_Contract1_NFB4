@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWithChest : InteractableObject
+public class InteractWithDoor : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
