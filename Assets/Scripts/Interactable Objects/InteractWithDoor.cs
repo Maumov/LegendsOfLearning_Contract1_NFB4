@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InteractWithDoor : InteractableObject
+public class InteractWithChest : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
@@ -13,7 +13,7 @@ public class InteractWithDoor : InteractableObject
 
     private void Start()
     {
-        //animator = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     public override void Interaction()
@@ -42,13 +42,9 @@ public class InteractWithDoor : InteractableObject
     public override void ModuleCompleted()
     {
         ExitModule();
-        if (prefabContainer != null)
-        {
-            Destroy(prefabContainer);
-        }
         completed = true;
         // Acciones pendientes por el modulo
         // Destroy(module);
-        // animator.SetTrigger(OpenTrigger);
+        animator.SetTrigger(OpenTrigger);
     }
 }
