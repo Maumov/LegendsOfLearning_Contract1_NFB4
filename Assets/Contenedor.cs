@@ -18,5 +18,4 @@ public class Contenedor : MonoBehaviour
     public void SetValue(float value) {
         currentValue = value;
     }
-    
 }

@@ -4,9 +4,29 @@ using UnityEngine;
 
 public class ModuloPuerta : MonoBehaviour
 {
-    public float numerador, denominador;
-    public float currentRespuesta;
-    
-    
 
+    Puerta puerta;
+
+    void Start() {
+        puerta = GetComponentInParent<Puerta>();
+
+    }
+
+    public void CheckRespuesta() {
+
+        if(puerta.CheckQuestion()) {
+            Good();
+        } else {
+            Bad();
+        }
+        
+    }
+
+    void Bad() {
+        Debug.Log("Bad");
+    }
+
+    void Good() {
+        Debug.Log("Good");
+    }
 }
