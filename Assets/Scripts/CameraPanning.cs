@@ -30,7 +30,7 @@ public class CameraPanning : MonoBehaviour
 
         if (waypoint == null)
         {
-            waypoint = interactableScript.InteractionPosition;
+            waypoint = transform;
         }
 
         if (waypoint.childCount <= 0)
