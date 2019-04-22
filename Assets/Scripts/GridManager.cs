@@ -103,7 +103,7 @@ public class GridManager : MonoBehaviour
         }
 
         // Check Icons
-        CheckForIconIndex();
+        //CheckForIconIndex();
 
         Grid.SetFloat("_LineXSize", linesXSize[xIndex]);
         Grid.SetFloat("_GridXSize", fractions[xIndex]);
@@ -147,7 +147,7 @@ public class GridManager : MonoBehaviour
         }
 
         // Check Icons
-        CheckForIconIndex();
+        //CheckForIconIndex();
 
         Grid.SetFloat("_LineYSize", linesYSize[yIndex]);
         Grid.SetFloat("_GridYSize", fractions[yIndex]);
@@ -178,27 +178,23 @@ public class GridManager : MonoBehaviour
         {
             MapIconPrefab iconScript = Instantiate(MapManager.instance.icons[i], transform).GetComponent<MapIconPrefab>();
             icons.Add(iconScript);
-            iconScript.gameObject.transform.parent = transform;
-            Debug.Log(iconScript.status);
-            iconScript.gameObject.SetActive(iconScript.status);
             iconScript.GetComponent<RawImage>().rectTransform.anchoredPosition = new Vector2(rectT.rect.width * iconScript.position.x, rectT.rect.height * -iconScript.position.y);
+            if (iconScript.status)
+            {
+                iconScript.ActivateIcon();
+            }
         }
     }
 
-    private void CheckForIconIndex()
+    public bool CheckForIconIndex(Vector2 index)
     {
-        for (int i = 0; i < icons.Count; i++)
+        if (index.Equals(new Vector2(fractions[xIndex], fractions[yIndex])))
         {
-            Debug.Log(icons[i].index + "  " + new Vector2(fractions[xIndex], fractions[yIndex]) + "   " + icons[i].status);
-            if (icons[i].index.Equals(new Vector2(fractions[xIndex], fractions[yIndex])) && icons[i].status == false)
-            {
-                MapManager.instance.icons[i].GetComponent<MapIconPrefab>().status = true;
-                icons[i].gameObject.SetActive(true);
-                if(MapManager.instance.audioSource != null)
-                {
-                    MapManager.instance.audioSource.Play();
-                }
-            }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 }

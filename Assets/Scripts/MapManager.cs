@@ -28,7 +28,7 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
-        
+        SetIcon(1, 2, 1, 2, "treasure", 0);
         SetIcon(1, 8, 3, 10, "treasure", 1);
         SetIcon(2, 10, 7, 10, "treasure", 2);
         SetIcon(3, 5, 1, 3, "treasure", 3);
@@ -42,6 +42,7 @@ public class MapManager : MonoBehaviour
         RawImage imageTexture = icons[icons.Count - 1].GetComponent<RawImage>();
         MapIconPrefab imageScript = imageTexture.GetComponent<MapIconPrefab>();
         imageScript.gameObject.name = id.ToString();
+        imageScript.arrayIndex = icons.Count - 1;
         imageScript.id = id;
         imageScript.index = new Vector2(xDem, yDem);
         imageScript.position = new Vector2((float)xNum / xDem, (float)yNum / yDem);
@@ -52,8 +53,6 @@ public class MapManager : MonoBehaviour
                 imageTexture.texture = textures[i];
             }
         }
-
-        icons[icons.Count - 1].SetActive(false);
     }
 
     public void DestroyIcon(int id)
@@ -65,6 +64,6 @@ public class MapManager : MonoBehaviour
                 Destroy(icons[i].gameObject);
                 icons.Remove(icons[i]);
             }
-        }
+        }   
     }
 }
