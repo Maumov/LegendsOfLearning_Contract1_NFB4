@@ -15,6 +15,7 @@ public class MapManager : MonoBehaviour
     public List<Texture> textures;
     private GridManager grid;
 
+
     public static MapManager instance;
 
     private void Awake()
@@ -23,6 +24,16 @@ public class MapManager : MonoBehaviour
         {
             instance = this;
         }
+    }
+
+    private void Start()
+    {
+        
+        SetIcon(1, 8, 3, 10, "treasure", 1);
+        SetIcon(2, 10, 7, 10, "treasure", 2);
+        SetIcon(3, 5, 1, 3, "treasure", 3);
+        SetIcon(1, 2, 7, 8, "treasure", 4);
+        
     }
 
     public void SetIcon(int xNum, int xDem, int yNum, int yDem, string icon, int id)

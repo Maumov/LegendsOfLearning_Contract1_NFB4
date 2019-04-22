@@ -104,6 +104,13 @@ ModelImporter:
     100194: transform7
     100196: transform8
     100198: transform9
+    100200: Cerradura
+    100202: Cofre
+    100204: Cofre_Body
+    100206: Tapa
+    100208: tranca_A
+    100210: tranca_B
+    100212: tranca_C
     400000: //RootNode
     400002: front1
     400004: group
@@ -205,12 +212,25 @@ ModelImporter:
     400194: transform7
     400196: transform8
     400198: transform9
+    400200: Cerradura
+    400202: Cofre
+    400204: Cofre_Body
+    400206: Tapa
+    400208: tranca_A
+    400210: tranca_B
+    400212: tranca_C
     2000000: front1
     2000002: persp1
     2000004: persp2
     2000006: right1
     2000008: top1
     2100000: lambert1
+    2100002: blinn2
+    2100004: lambert4
+    2100006: lambert2
+    2100008: lambert3
+    2100010: pasted__blinn3
+    2100012: blinn1
     2300000: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube8
     2300002: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube9
     2300004: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube6
@@ -219,6 +239,12 @@ ModelImporter:
     2300010: pCube9
     2300012: polySurface4
     2300014: polySurface5
+    2300016: Cerradura
+    2300018: Cofre_Body
+    2300020: Tapa
+    2300022: tranca_A
+    2300024: tranca_B
+    2300026: tranca_C
     3300000: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube8
     3300002: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube9
     3300004: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube6
@@ -227,6 +253,12 @@ ModelImporter:
     3300010: pCube9
     3300012: polySurface4
     3300014: polySurface5
+    3300016: Cerradura
+    3300018: Cofre_Body
+    3300020: Tapa
+    3300022: tranca_A
+    3300024: tranca_B
+    3300026: tranca_C
     4300000: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube6
     4300002: pCube7
     4300004: pCube8
@@ -235,6 +267,12 @@ ModelImporter:
     4300010: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube8
     4300012: polySurface5
     4300014: pasted__pasted__pasted__pasted__pasted__pasted__pasted__pasted__pCube9
+    4300016: Tapa
+    4300018: tranca_A
+    4300020: tranca_B
+    4300022: tranca_C
+    4300024: Cerradura
+    4300026: Cofre_Body
   externalObjects: {}
   materials:
     importMaterials: 1
