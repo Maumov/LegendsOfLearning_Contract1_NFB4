@@ -4,13 +4,22 @@ using UnityEngine;
 using UnityEngine.Events;
 public class Puerta : MonoBehaviour
 {
-
+    public Question question;
     public float valor = 0f;
     public float step = 0.01f;
     public float minValor = 0f;
     public float maxValor = 10f;
     public UnityEvent giroDerecha, giroIzquierda, boton1, boton2, boton3;
-   
+
+    private void Start() {
+        SetQuestion();
+    }
+
+    void SetQuestion() {
+        question.numerador = 7f;
+        question.denominador = 4f;
+        question.cociente = question.numerador / question.denominador;
+    }
 
     public void GirarIzquierda() {
         valor -= step;
@@ -22,13 +31,16 @@ public class Puerta : MonoBehaviour
         valor = Mathf.Clamp(valor, minValor, maxValor);
     }
 
-    public void Button1() {
-        boton1.Invoke();
+    public bool CheckQuestion() {
+        if(valor == question.cociente) {
+            return true;
+        }
+        return false;
     }
-    public void Button2() {
-        boton2.Invoke();
-    }
-    public void Button3() {
-        boton3.Invoke();
-    }
+}
+[System.Serializable]
+public class Question {
+    public float numerador;
+    public float denominador;
+    public float cociente;
 }
