@@ -12,7 +12,7 @@ public class InteractableObject : MonoBehaviour
     [Header("Indicators")]
     public GameObject indicatorPrefab;
     //public string prefabText;
-    protected GameObject prefabContainer;
+    private GameObject prefabContainer;
     public bool canBeFocus = false;
     public bool isFocus;
     public bool interacted;
@@ -47,7 +47,7 @@ public class InteractableObject : MonoBehaviour
         {
             canBeFocus = true;
             // Instanciar indicador
-            if (prefabContainer != null)
+            if (indicatorPrefab != null)
             {
                 prefabContainer = Instantiate(indicatorPrefab);
             }
@@ -60,7 +60,7 @@ public class InteractableObject : MonoBehaviour
         {
             canBeFocus = false;
             // Eliminar indicador
-            if (prefabContainer != null)
+            if (indicatorPrefab != null)
             {
                 Destroy(prefabContainer);
             }

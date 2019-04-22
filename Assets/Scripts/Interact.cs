@@ -20,15 +20,7 @@ public class Interact : MonoBehaviour
                     if (interactable.canBeFocus)
                     {
                         RemoveFocus();
-                        if(Vector3.Distance(transform.position, interactable.InteractionPosition.position) < interactable.radius)
-                        {
-                            InteractWithTarget(interactable);
-                        }
-                        else
-                        {
-                            Debug.Log("Not close enough");
-                            // Insertar codigo para mover al personaje hasta el punto de interaccion del cofre, si se desea.
-                        }
+                        InteractWithTarget(interactable);
                     }
                 }
             }
