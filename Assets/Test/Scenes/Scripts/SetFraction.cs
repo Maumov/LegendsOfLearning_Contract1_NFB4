@@ -12,7 +12,6 @@ public class SetFraction : MonoBehaviour
 
     public void SetPosition(float PosX, float PosY)
     {
-        Debug.Log(new Vector2(PosX, PosY));
         RectTransform rectT = GetComponent<RectTransform>();
         rectT.anchoredPosition = new Vector2(PosX, PosY);
     }

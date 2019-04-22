@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MiniMap
   - Map
+  - Icon
   layers:
   - Default
   - TransparentFX

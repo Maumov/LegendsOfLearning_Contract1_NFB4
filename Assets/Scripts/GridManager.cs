@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour
     public GameObject FractionPrefab;
     public GameObject horizontalParent;
     public GameObject verticalParent;
+    public List<MapIconPrefab> icons;
 
     private List<GameObject> prefabsX = new List<GameObject>();
     private List<GameObject> prefabsY = new List<GameObject>();
@@ -57,8 +58,11 @@ public class GridManager : MonoBehaviour
 
         indexMaxValue = fractions.Count - 1;
 
+        FinalFraction();
         SetHorizontal("Start");
         SetVertical("Start");
+
+        SpawnIcons();
     }
 
     public void SetHorizontal(string result)
@@ -98,7 +102,8 @@ public class GridManager : MonoBehaviour
             fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, -rectT.rect.height);
         }
 
-        FinalFraction();
+        // Check Icons
+        CheckForIconIndex();
 
         Grid.SetFloat("_LineXSize", linesXSize[xIndex]);
         Grid.SetFloat("_GridXSize", fractions[xIndex]);
@@ -141,6 +146,9 @@ public class GridManager : MonoBehaviour
             fraction.SetPosition(rectT.rect.width + xOffset, -(rectT.rect.height / fractions[yIndex]) * i + yOffset);
         }
 
+        // Check Icons
+        CheckForIconIndex();
+
         Grid.SetFloat("_LineYSize", linesYSize[yIndex]);
         Grid.SetFloat("_GridYSize", fractions[yIndex]);
     }
@@ -162,5 +170,35 @@ public class GridManager : MonoBehaviour
 
         SetHorizontal("Start");
         SetVertical("Start");
-    } 
+    }
+
+    private void SpawnIcons()
+    {
+        for (int i = 0; i < MapManager.instance.icons.Count; i++)
+        {
+            MapIconPrefab iconScript = Instantiate(MapManager.instance.icons[i], transform).GetComponent<MapIconPrefab>();
+            icons.Add(iconScript);
+            iconScript.gameObject.transform.parent = transform;
+            Debug.Log(iconScript.status);
+            iconScript.gameObject.SetActive(iconScript.status);
+            iconScript.GetComponent<RawImage>().rectTransform.anchoredPosition = new Vector2(rectT.rect.width * iconScript.position.x, rectT.rect.height * -iconScript.position.y);
+        }
+    }
+
+    private void CheckForIconIndex()
+    {
+        for (int i = 0; i < icons.Count; i++)
+        {
+            Debug.Log(icons[i].index + "  " + new Vector2(fractions[xIndex], fractions[yIndex]) + "   " + icons[i].status);
+            if (icons[i].index.Equals(new Vector2(fractions[xIndex], fractions[yIndex])) && icons[i].status == false)
+            {
+                MapManager.instance.icons[i].GetComponent<MapIconPrefab>().status = true;
+                icons[i].gameObject.SetActive(true);
+                if(MapManager.instance.audioSource != null)
+                {
+                    MapManager.instance.audioSource.Play();
+                }
+            }
+        }
+    }
 }
