@@ -64,8 +64,8 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _GridSize: 3
-    - _GridXSize: 5
-    - _GridYSize: 4
+    - _GridXSize: 4
+    - _GridYSize: 5
     - _LineSize: 0.05
     - _LineXSize: 0.0075
     - _LineYSize: 0.01
