@@ -639,7 +639,6 @@ MonoBehaviour:
   icons: []
   fractions: 02000000030000000400000005000000080000000a000000
   linesXSize:
-  - 0
   - 0.005
   - 0.005
   - 0.0075
@@ -647,7 +646,6 @@ MonoBehaviour:
   - 0.01
   - 0.015
   linesYSize:
-  - 0
   - 0.005
   - 0.01
   - 0.01

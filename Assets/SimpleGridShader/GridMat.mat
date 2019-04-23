@@ -64,11 +64,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _GridSize: 3
-    - _GridXSize: 8
-    - _GridYSize: 10
+    - _GridXSize: 5
+    - _GridYSize: 4
     - _LineSize: 0.05
     - _LineXSize: 0.0075
-    - _LineYSize: 0.02
+    - _LineYSize: 0.01
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
