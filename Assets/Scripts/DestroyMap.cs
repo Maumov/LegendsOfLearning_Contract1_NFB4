@@ -7,7 +7,7 @@ public class DestroyMap : MonoBehaviour
 {
     public void DestroyObject()
     {
-        MiniMapController.isMapOpen = false;
+        MapManager.isMapOpen = false;
         CameraMovement.RestoreInputs();
         Destroy(transform.parent.gameObject);
     }

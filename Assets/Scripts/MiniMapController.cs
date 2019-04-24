@@ -16,10 +16,6 @@ public class MiniMapController : MonoBehaviour
     public Color cardinalColor = Color.white;
     public Transform miniMapRender;
     private TextMeshProUGUI[] cardinals;
-
-    [Header("OpenMap")]
-    public GameObject mapPrefab;
-    [HideInInspector] public static bool isMapOpen = false;
     
     private void Start()
     {
@@ -46,14 +42,5 @@ public class MiniMapController : MonoBehaviour
     private void LateUpdate()
     {
         miniMapCam.transform.position = new Vector3(player.position.x, player.position.y + offset, player.position.z);
-    }
-
-    public void SpawnMap()
-    {
-        if (isMapOpen == false)
-        {
-            isMapOpen = true;
-            Instantiate(mapPrefab, transform.root);
-        }
     }
 }

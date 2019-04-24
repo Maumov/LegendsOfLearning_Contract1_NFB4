@@ -101,7 +101,7 @@ public class CameraPanning : MonoBehaviour
         isActive = false;
         objectCamera.SetActive(false);
         mainCamera.SetActive(true);
-        CameraMovement.SetInputs(true);
+        CameraMovement.RestoreInputs();
         objectCamera.transform.position = cameraInitPosition;
     }
 

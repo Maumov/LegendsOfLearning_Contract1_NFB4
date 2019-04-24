@@ -35,28 +35,10 @@ public class GridManager : MonoBehaviour
         xOffset = offset.numerator.rectTransform.rect.width;
         yOffset = (offset.numerator.rectTransform.position.y - offset.demoninator.rectTransform.position.y);
 
-        /*
-        linesXSize.Capacity = fractions.Capacity;
-        linesYSize.Capacity = fractions.Capacity;
-
-        for (int i=0; i < fractions.Count; i++)
-        {
-            if(fractions[i] == 0)
-            {
-                fractions[i] = 1;
-            }
-            if(i >0 && linesXSize[i] == 0)
-            {
-                linesXSize[i] = 0.01f;
-            }
-            if (i > 0 && linesYSize[i] == 0)
-            {
-                linesYSize[i] = 0.01f;
-            }
-        }
-        */
-
         indexMaxValue = fractions.Count - 1;
+
+        xIndex = MapManager.index.x;
+        yIndex = MapManager.index.y;
 
         FinalFraction();
         SetHorizontal("Start");
@@ -102,9 +84,6 @@ public class GridManager : MonoBehaviour
             fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, -rectT.rect.height);
         }
 
-        // Check Icons
-        //CheckForIconIndex();
-
         Grid.SetFloat("_LineXSize", linesXSize[xIndex]);
         Grid.SetFloat("_GridXSize", fractions[xIndex]);
     }
@@ -145,9 +124,6 @@ public class GridManager : MonoBehaviour
             fraction.SetDenominator(fractions[yIndex]);
             fraction.SetPosition(rectT.rect.width + xOffset, -(rectT.rect.height / fractions[yIndex]) * i + yOffset);
         }
-
-        // Check Icons
-        //CheckForIconIndex();
 
         Grid.SetFloat("_LineYSize", linesYSize[yIndex]);
         Grid.SetFloat("_GridYSize", fractions[yIndex]);
@@ -196,5 +172,10 @@ public class GridManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void SaveIndex()
+    {
+        MapManager.index = new Vector2Int(xIndex, yIndex);
     }
 }

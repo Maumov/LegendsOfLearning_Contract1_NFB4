@@ -8,13 +8,16 @@ public class MapManager : MonoBehaviour
     [Header("Extra")]
     public AudioSource audioSource;
 
-    [Header("Prefab & current icons")]
+    [Header("Canvas & Map")]
+    public Transform canvas;
+    public GameObject MapUI;
+    [HideInInspector] public static bool isMapOpen = false;
+
+    [Header("Grid & current icons")]
     public GameObject Iconprefab;
     public List<GameObject> icons;
-    private List<Vector2> iconIndex;
     public List<Texture> textures;
-    private GridManager grid;
-
+    public static Vector2Int index = new Vector2Int(1, 1);
 
     public static MapManager instance;
 
@@ -65,5 +68,14 @@ public class MapManager : MonoBehaviour
                 icons.Remove(icons[i]);
             }
         }   
+    }
+
+    public void SpawnMap()
+    {
+        if (isMapOpen == false)
+        {
+            isMapOpen = true;
+            Instantiate(MapUI, canvas);
+        }
     }
 }

@@ -35,7 +35,7 @@ public class InteractWithChest : InteractableObject
     // Cerrar module sin terminarse
     public void ExitModule()
     {
-        CameraMovement.SetInputs(true);
+        CameraMovement.RestoreInputs();
         isModuleOpen = false;
         // Destroy(module);
     }
