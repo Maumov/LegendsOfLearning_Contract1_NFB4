@@ -20,6 +20,7 @@ public class PanningEvent : MonoBehaviour
         if (panning.tweenID != null)
         {
             panning.tweenID.setOnStart(OnStart.Invoke);
+
             panning.tweenID.setOnComplete(OnComplete.Invoke);
         }
     }

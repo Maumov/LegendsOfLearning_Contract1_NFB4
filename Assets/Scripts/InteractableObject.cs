@@ -10,7 +10,7 @@ public class InteractableObject : MonoBehaviour
     public Vector3 colliderSize = new Vector3(1.5f, 1.5f, 1.5f);
 
     [Header("Indicators")]
-    public GameObject indicatorPrefab;
+    public GameObject canvasIndicatorPrefab;
     //public string prefabText;
     private GameObject prefabContainer;
     public bool canBeFocus = false;
@@ -47,9 +47,9 @@ public class InteractableObject : MonoBehaviour
         {
             canBeFocus = true;
             // Instanciar indicador
-            if (indicatorPrefab != null)
+            if (canvasIndicatorPrefab != null)
             {
-                prefabContainer = Instantiate(indicatorPrefab);
+                prefabContainer = Instantiate(canvasIndicatorPrefab);
             }
         }
     }
@@ -60,7 +60,7 @@ public class InteractableObject : MonoBehaviour
         {
             canBeFocus = false;
             // Eliminar indicador
-            if (indicatorPrefab != null)
+            if (canvasIndicatorPrefab != null)
             {
                 Destroy(prefabContainer);
             }
