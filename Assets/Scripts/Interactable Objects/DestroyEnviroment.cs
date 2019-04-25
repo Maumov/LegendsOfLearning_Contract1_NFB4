@@ -15,6 +15,8 @@ public class DestroyEnviroment : InteractableObject
     {
         EnviromentController.instance.DestroyEnviromentSound(typeOf, transform.position);
         // Animation
+        //AudioSource source = gameObject.AddComponent<AudioSource>();
+        //source.clip =
         Destroy(gameObject);
         yield return null;
     }

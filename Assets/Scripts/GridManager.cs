@@ -7,7 +7,7 @@ public class GridManager : MonoBehaviour
 {
     RectTransform rectT;
     [Header("Prefabs & objects")]
-    public Material Grid;
+    public RawImage Grid;
     public GameObject FractionPrefab;
     public GameObject horizontalParent;
     public GameObject verticalParent;
@@ -84,8 +84,8 @@ public class GridManager : MonoBehaviour
             fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, -rectT.rect.height);
         }
 
-        Grid.SetFloat("_LineXSize", linesXSize[xIndex]);
-        Grid.SetFloat("_GridXSize", fractions[xIndex]);
+        Grid.materialForRendering.SetFloat("_LineXSize", linesXSize[xIndex]);
+        Grid.materialForRendering.SetFloat("_GridXSize", fractions[xIndex]);
     }
 
     public void SetVertical(string result)
@@ -125,8 +125,8 @@ public class GridManager : MonoBehaviour
             fraction.SetPosition(rectT.rect.width + xOffset, -(rectT.rect.height / fractions[yIndex]) * i + yOffset);
         }
 
-        Grid.SetFloat("_LineYSize", linesYSize[yIndex]);
-        Grid.SetFloat("_GridYSize", fractions[yIndex]);
+        Grid.materialForRendering.SetFloat("_LineYSize", linesYSize[yIndex]);
+        Grid.materialForRendering.SetFloat("_GridYSize", fractions[yIndex]);
     }
 
     // Optional
