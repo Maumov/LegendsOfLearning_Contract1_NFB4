@@ -458,7 +458,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3960469016603131978}
   - component: {fileID: 3960469016603131976}
-  - component: {fileID: 3960469016603131979}
+  - component: {fileID: 8538247393189833148}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -494,7 +494,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3960469016603131981}
   m_CullTransparentMesh: 0
---- !u!114 &3960469016603131979
+--- !u!114 &8538247393189833148
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -508,7 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1159,9 +1159,9 @@ MonoBehaviour:
   m_Script: {fileID: -98529514, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: 0cc192ab7f73fcd45befe7c501426515, type: 2}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Material: {fileID: 2100000, guid: d64b29b986fd63246b4e0f3e76e63e94, type: 2}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1755,7 +1755,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: cf1462bc694c3c249831ad8ac5293aa2, type: 3}
+  m_Texture: {fileID: 2800000, guid: 43a7d98bd4222b64e933596512dc09ad, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0

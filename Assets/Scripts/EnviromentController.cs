@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnviromentController : MonoBehaviour
 {
     public AudioSource enviroment;
-    public AudioSource interactableSource;
+    [Header("Sounds")]
     public AudioClip grassSound;
     public AudioClip logSound;
 
@@ -13,27 +13,22 @@ public class EnviromentController : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
     }
 
-    public void DestroyEnviromentSound(string name, Vector3 position)
+    public AudioClip DestroyEnviromentSound(string name)
     {
-        transform.position = position;
-        if (!interactableSource.isPlaying)
+        switch (name)
         {
-            switch (name)
-            {
-                case "Grass":
-                    interactableSource.clip = grassSound;
-                    break;
-                case "Log":
-                    interactableSource.clip = logSound;
-                    break;
-            }
-            interactableSource.Play();
+            case "Grass":
+                return grassSound;
+            case "Log":
+                return logSound;
+            default:
+                return grassSound;
         }
     }
 }
