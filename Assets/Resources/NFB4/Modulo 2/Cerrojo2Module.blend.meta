@@ -6,18 +6,28 @@ ModelImporter:
     100000: //RootNode
     100002: Box
     100004: Wheel
+    100006: Box_001
+    100008: Wheel_001
     400000: //RootNode
     400002: Box
     400004: Wheel
+    400006: Box_001
+    400008: Wheel_001
     2100000: None__UVModulo
     2300000: //RootNode
     2300002: Box
     2300004: Wheel
+    2300006: Box_001
+    2300008: Wheel_001
     3300000: //RootNode
     3300002: Box
     3300004: Wheel
+    3300006: Box_001
+    3300008: Wheel_001
     4300000: Box
     4300002: Wheel
+    4300004: Box_001
+    4300006: Wheel_001
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs

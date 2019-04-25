@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 3caa8ebb534f2364bb5d98803c487767
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Box
+    100002: Cerradura
+    100004: Cofre
+    100006: Cofre_Body
+    100008: //RootNode
+    100010: Module1
+    100012: Tapa
+    100014: tranca_A
+    100016: tranca_B
+    100018: tranca_C
+    100020: Wheel
+    100022: Box_001
+    100024: Module1_001
+    100026: Wheel_001
+    100028: Box_002
+    100030: Module2
+    100032: Module3
+    100034: Plane
+    400000: Box
+    400002: Cerradura
+    400004: Cofre
+    400006: Cofre_Body
+    400008: //RootNode
+    400010: Module1
+    400012: Tapa
+    400014: tranca_A
+    400016: tranca_B
+    400018: tranca_C
+    400020: Wheel
+    400022: Box_001
+    400024: Module1_001
+    400026: Wheel_001
+    400028: Box_002
+    400030: Module2
+    400032: Module3
+    400034: Plane
+    2100000: None__UVCerrojoModule_png_001
+    2100002: lambert3
+    2100004: lambert2
+    2100006: lambert4
+    2100008: blinn2
+    2100010: blinn1
+    2100012: pasted__blinn3
+    2100014: None__UVModulo
+    2100016: None__ColorUV
+    2300000: Box
+    2300002: Cerradura
+    2300004: Cofre_Body
+    2300006: Module1
+    2300008: Tapa
+    2300010: tranca_A
+    2300012: tranca_B
+    2300014: tranca_C
+    2300016: Wheel
+    2300018: Box_001
+    2300020: Module1_001
+    2300022: Wheel_001
+    2300024: Box_002
+    2300026: Module2
+    2300028: Module3
+    2300030: Plane
+    3300000: Box
+    3300002: Cerradura
+    3300004: Cofre_Body
+    3300006: Module1
+    3300008: Tapa
+    3300010: tranca_A
+    3300012: tranca_B
+    3300014: tranca_C
+    3300016: Wheel
+    3300018: Box_001
+    3300020: Module1_001
+    3300022: Wheel_001
+    3300024: Box_002
+    3300026: Module2
+    3300028: Module3
+    3300030: Plane
+    4300000: Module1
+    4300002: Box
+    4300004: Wheel
+    4300006: tranca_C
+    4300008: tranca_B
+    4300010: tranca_A
+    4300012: Tapa
+    4300014: Cofre_Body
+    4300016: Cerradura
+    4300018: Module1_001
+    4300020: Box_001
+    4300022: Wheel_001
+    4300024: Module3
+    4300026: Plane
+    4300028: Box_002
+    4300030: Module2
+    7400000: Default Take
+    9500000: //RootNode
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -57,6 +57,7 @@ ModelImporter:
     100102: Module3
     100104: PortionObject
     100106: SpinTool
+    100108: Circle
     400000: Cerradura
     400002: Cube
     400004: Cylinder
@@ -111,6 +112,7 @@ ModelImporter:
     400102: Module3
     400104: PortionObject
     400106: SpinTool
+    400108: Circle
     2100000: unnamed
     2100002: blinn1
     2100004: lambert5
@@ -170,6 +172,7 @@ ModelImporter:
     2300100: Module3
     2300102: PortionObject
     2300104: SpinTool
+    2300106: Circle
     3300000: Cerradura
     3300002: Cube
     3300004: Cylinder
@@ -223,6 +226,7 @@ ModelImporter:
     3300100: Module3
     3300102: PortionObject
     3300104: SpinTool
+    3300106: Circle
     4300000: Cylinder_008
     4300002: Cylinder_007
     4300004: Cylinder_006
@@ -276,6 +280,7 @@ ModelImporter:
     4300100: Module3
     4300102: PortionObject
     4300104: SpinTool
+    4300106: Circle
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
