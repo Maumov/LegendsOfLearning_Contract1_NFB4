@@ -64,8 +64,13 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _GridSize: 3
+<<<<<<< HEAD
     - _GridXSize: 2
     - _GridYSize: 2
+=======
+    - _GridXSize: 5
+    - _GridYSize: 4
+>>>>>>> tempMaster
     - _LineSize: 0.05
     - _LineXSize: 0.005
     - _LineYSize: 0.005

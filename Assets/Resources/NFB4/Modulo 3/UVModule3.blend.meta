@@ -5,15 +5,24 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: Box
+    100004: Box_002
+    100006: Plane
     400000: //RootNode
     400002: Box
+    400004: Box_002
+    400006: Plane
     2100000: None__ColorUV
     2300000: //RootNode
     2300002: Box
+    2300004: Box_002
+    2300006: Plane
     3300000: //RootNode
     3300002: Box
+    3300004: Box_002
+    3300006: Plane
     4300000: Box
     4300002: Plane
+    4300004: Box_002
     7400000: Default Take
     9500000: //RootNode
     2186277476908879412: ImportLogs
