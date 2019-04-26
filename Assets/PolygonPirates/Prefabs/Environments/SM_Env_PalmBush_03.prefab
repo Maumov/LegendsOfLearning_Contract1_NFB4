@@ -97,7 +97,7 @@ MonoBehaviour:
   canBeFocus: 0
   isFocus: 0
   interacted: 0
-  typeOf: Grass
+  type: Log
 --- !u!65 &2179052821193846066
 BoxCollider:
   m_ObjectHideFlags: 0
