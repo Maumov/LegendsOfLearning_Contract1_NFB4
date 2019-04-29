@@ -15,6 +15,8 @@ public class Puerta : MonoBehaviour
     public UnityEvent giroDerecha, giroIzquierda, boton1, boton2, boton3;
 
     public InputField textRespuesta;
+    public float animDuration = 10f;
+    public bool m1, m2, m3;
 
     private void Start() {
         SetQuestion();
@@ -25,6 +27,22 @@ public class Puerta : MonoBehaviour
         question = posibleQuestions[a];
     }
 
+    public void OpenGate() {
+        if(m1 == true && m2 == true && m3 == true) {
+            StartCoroutine(AnimatePuerta());
+        }
+    }
+
+    IEnumerator AnimatePuerta() {
+        float j = 0f;
+        while(j < 1f) {
+            j += (Time.deltaTime / animDuration);
+            transform.Translate(0f, 1f * Time.deltaTime, 0f);
+            yield return null;
+        }
+        gameObject.SetActive(false);
+        yield return null;
+    }
 
 
     public void UpdateRespuestaUI(string v) {
