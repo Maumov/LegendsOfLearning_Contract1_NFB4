@@ -7,6 +7,7 @@ public class MapManager : MonoBehaviour
 {
     [Header("Extra")]
     public AudioSource audioSource;
+    public List<Door> doors = DoorsManager.doors;
 
     [Header("Canvas & Map")]
     public Transform canvas;
@@ -36,7 +37,19 @@ public class MapManager : MonoBehaviour
         SetIcon(2, 10, 7, 10, "treasure", 2);
         SetIcon(3, 5, 1, 3, "treasure", 3);
         SetIcon(1, 2, 7, 8, "treasure", 4);
-        
+
+        for (int i = 0; i < doors.Count; i++)
+        {
+            doors[i].door.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.M))
+        {
+            SpawnMap();
+        }
     }
 
     public void SetIcon(int xNum, int xDem, int yNum, int yDem, string icon, int id)
