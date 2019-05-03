@@ -14,13 +14,18 @@ public class ModuloPuerta : MonoBehaviour
     
     public Image image;
 
+    public Image boton;
     public GameObject tranca;
 
     void Start() {
         puerta = GetComponentInParent<Puerta>();
+       
+        
+    }
+
+    public void SetUIStart() {
         preguntaNumerador.text = puerta.question.numerador.ToString();
         preguntaDenominador.text = puerta.question.denominador.ToString();
-        
     }
 
     public void CheckRespuesta() {
@@ -120,6 +125,7 @@ public class ModuloPuerta : MonoBehaviour
 
     void Good() {
         StartCoroutine(AnimateTranca());
+        boton.color = Color.green;
         Debug.Log("Good");
     }
 }
