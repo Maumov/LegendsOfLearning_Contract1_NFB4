@@ -25,6 +25,10 @@ public class Puerta : MonoBehaviour
     void SetQuestion() {
         int a = Random.Range(0, posibleQuestions.Length);
         question = posibleQuestions[a];
+        ModuloPuerta[] modulos = GetComponentsInChildren<ModuloPuerta>();
+        foreach(ModuloPuerta mp in modulos) {
+            mp.SetUIStart();
+        }
     }
 
     public void OpenGate() {
@@ -35,9 +39,9 @@ public class Puerta : MonoBehaviour
 
     IEnumerator AnimatePuerta() {
         float j = 0f;
-        while(j < 1f) {
-            j += (Time.deltaTime / animDuration);
-            transform.Translate(0f, 1f * Time.deltaTime, 0f);
+        while(j < animDuration) {
+            j += (Time.deltaTime);
+            transform.Translate(0f, -1f * Time.deltaTime, 0f);
             yield return null;
         }
         gameObject.SetActive(false);
