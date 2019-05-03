@@ -45,6 +45,7 @@ public class InteractWithChest : InteractableObject
         ExitModule();
         Debug.Log("Completed");
         completed = true;
+        interacted = true;
         // Acciones pendientes por el modulo
         // Destroy(module);
         animator.SetTrigger(OpenTrigger);

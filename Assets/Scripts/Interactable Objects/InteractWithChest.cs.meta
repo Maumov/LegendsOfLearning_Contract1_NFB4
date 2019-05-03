@@ -3,7 +3,10 @@ guid: ddded2827afd7714e838d1780e1e93d1
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - canvasIndicatorPrefab: {fileID: 2029471630237048026, guid: 5564ea32c3495c1418382b9addec2288,
+      type: 3}
+  - module: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
