@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3003048762982591351}
   - component: {fileID: 3425307785034273502}
-  - component: {fileID: 287114362924617894}
+  - component: {fileID: 2800534590096004095}
   m_Layer: 0
   m_Name: WhiteCircleAnimation
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &287114362924617894
+--- !u!95 &2800534590096004095
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
