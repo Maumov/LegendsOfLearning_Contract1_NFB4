@@ -47,7 +47,7 @@ public class InteractableObject : MonoBehaviour
         {
             canBeFocus = true;
             // Instanciar indicador
-            if (canvasIndicatorPrefab != null)
+            if (!interacted && canvasIndicatorPrefab != null)
             {
                 prefabContainer = Instantiate(canvasIndicatorPrefab);
             }
