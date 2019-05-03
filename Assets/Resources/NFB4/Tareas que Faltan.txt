@@ -1,4 +1,5 @@
 ﻿- Interactuar con tecla espacio (BRAGI)
+- Abrir el mapa con 
 - Cambiar raycast por trigger (BRAGI)
 - Agregar coordenadas en el mapa para encontrar los cofres (BRAGI)
 - Controles de Jugador, Rota con flechitas y mueve adelante y hacia atras, con camara estatica (Mauricio)
@@ -7,11 +8,12 @@
 	-En caso de puerta final destruir placeholder
 - Armar modelo de la cueva final con los assets (ROKI)
 - Hacer el texto del juego (ROKI ESPAÑOL) - (YALDO INGLES)
-	- Introduccion/Llegada
-	- Tutorial del minimapa
+	- Introduccion/Llegada *
+	- Tutorial del minimapa*
 	- Tutorial de la puerta
 	- Tutorial del cofre
 	- Mensaje de Ganaste
+- Realizar circulo blanco de animacion para tutorial (ROKI)
 - Inlcuir el texto en la libreria (MAURICIO)
 - Instanciar la cantidad de modulos por cofre (MAURICIO)
 	- 1er cofre = 1 modulo
