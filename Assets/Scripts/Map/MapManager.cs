@@ -88,6 +88,7 @@ public class MapManager : MonoBehaviour
         if (isMapOpen == false)
         {
             isMapOpen = true;
+            GameManager.EnableCursor();
             Instantiate(MapUI, canvas);
         }
     }

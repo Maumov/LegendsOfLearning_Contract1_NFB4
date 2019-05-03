@@ -23,6 +23,11 @@ public class TextController : MonoBehaviour
         {
             delayCounter -= Time.deltaTime;
         }
+
+        if(Input.GetAxisRaw("Interact") == 1)
+        {
+            UpdateMessage();
+        }
     }
 
     public void UpdateMessage()
