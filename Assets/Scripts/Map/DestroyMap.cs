@@ -9,6 +9,7 @@ public class DestroyMap : MonoBehaviour
     {
         MapManager.isMapOpen = false;
         CameraMovement.RestoreInputs();
+        GameManager.DisableCursor();
         Destroy(transform.parent.gameObject);
     }
 }
