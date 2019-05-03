@@ -10,6 +10,7 @@ public static class DoorsManager
     {
         if (index >= 0 && index < doors.Count)
         {
+            doors[index].placeholder.SetActive(false);
             doors[index].door.SetActive(true);
             MapManager.instance.SetIcon(doors[index].xNum, doors[index].xDem, doors[index].yNum, doors[index].yDem, "Treasure", doors[index].id);
             return true;
@@ -26,6 +27,7 @@ public static class DoorsManager
         {
             if (door == doors[i].door)
             {
+                doors[i].placeholder.SetActive(false);
                 doors[i].door.SetActive(true);
                 MapManager.instance.SetIcon(doors[i].xNum, doors[i].xDem, doors[i].yNum, doors[i].yDem, "Treasure", doors[i].id);
                 return true;
@@ -40,6 +42,7 @@ public static class DoorsManager
         if (index >= 0 && index < doors.Count)
         {
             doors[index].door.SetActive(false);
+            doors[index].placeholder.SetActive(true);
             MapManager.instance.DestroyIcon(doors[index].id);
             return true;
         }
@@ -56,6 +59,7 @@ public static class DoorsManager
             if (door == doors[i].door)
             {
                 doors[i].door.SetActive(false);
+                doors[i].placeholder.SetActive(true);
                 MapManager.instance.DestroyIcon(doors[i].id);
                 return true;
             }
@@ -69,6 +73,7 @@ public static class DoorsManager
 public class Door
 {
     public GameObject door;
+    public GameObject placeholder;
     public int xNum;
     public int xDem;
     public int yNum;

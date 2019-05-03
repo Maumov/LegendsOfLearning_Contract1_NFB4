@@ -1,3 +1,14 @@
 {
-    "lists": []
+    "lists": [
+        {
+            "name": "Antonio",
+            "list": [
+                "Hola, Soy Antonio",
+                "Esta es una prueba de texto y animaciones del prefab, si vez este mensaje no te asustes.",
+                "Para eliminar solo entrar en messageController y quitar el metodo de llamada que busca el nombre de esta lista de texto.",
+                "El nombre de esta lista es Antonio por que aja.",
+                "Byeeee.!"
+            ]
+        }
+    ]
 }
