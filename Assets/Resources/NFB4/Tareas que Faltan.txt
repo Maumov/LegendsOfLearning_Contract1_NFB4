@@ -1,0 +1,24 @@
+﻿- Interactuar con tecla espacio (BRAGI)
+- Cambiar raycast por trigger (BRAGI)
+- Agregar coordenadas en el mapa para encontrar los cofres (BRAGI)
+- Controles de Jugador, Rota con flechitas y mueve adelante y hacia atras, con camara estatica (Mauricio)
+- Ubicar Placeholder de puerta en sitio correcto (ROKI)
+- Realizar programacion para que se active la puerta y destruya al placeholder(BRAGI)
+	-En caso de puerta final destruir placeholder
+- Armar modelo de la cueva final con los assets (ROKI)
+- Hacer el texto del juego (ROKI ESPAÑOL) - (YALDO INGLES)
+	- Introduccion/Llegada
+	- Tutorial del minimapa
+	- Tutorial de la puerta
+	- Tutorial del cofre
+	- Mensaje de Ganaste
+- Inlcuir el texto en la libreria (MAURICIO)
+- Instanciar la cantidad de modulos por cofre (MAURICIO)
+	- 1er cofre = 1 modulo
+	- 2do cofre = 2 modulos
+	- 3er cofre = 4 modulos
+	- 4to cofre = 6 modulos
+- Programacion de modulo 1, modulo 2, modulo 3 (MAURICIO)
+- Programar interaccion de cofre con modulos (MAURICIO)
+- Vainas para enviar al servidor de LoL (BRAGI - MAURICIO)
+- Prefab que diga interactuar con Espacio (BRAGI)
