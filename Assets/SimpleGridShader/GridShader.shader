@@ -13,11 +13,27 @@ Shader "PDT Shaders/TestGrid" {
 		[IntRange] _SelectCell("Select Cell Toggle ( 0 = False , 1 = True )", Range(0,1)) = 0.0
 		[IntRange] _SelectedCellX("Selected Cell X", Range(0,8)) = 0.0
 		[IntRange] _SelectedCellY("Selected Cell Y", Range(0,8)) = 0.0
+
+		_StencilComp ("Stencil Comparison", Float) = 8
+        _Stencil ("Stencil ID", Float) = 0
+        _StencilOp ("Stencil Operation", Float) = 0
+        _StencilWriteMask ("Stencil Write Mask", Float) = 255
+        _StencilReadMask ("Stencil Read Mask", Float) = 255
+        _ColorMask ("Color Mask", Float) = 15
 	}
 	SubShader {
 		Tags { "Queue"="AlphaTest" "RenderType"="TransparentCutout" }
 		LOD 200
 	
+	    Stencil
+        {
+             Ref [_Stencil]
+             Comp [_StencilComp]
+             Pass [_StencilOp] 
+             ReadMask [_StencilReadMask]
+             WriteMask [_StencilWriteMask]
+        }
+        ColorMask [_ColorMask]
 
 		CGPROGRAM
 		// Physically based Standard lighting model, and enable shadows on all light types

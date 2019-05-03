@@ -54,8 +54,17 @@ public class CameraMovement : MonoBehaviour
     public void SetInputStatus(bool status)
     {
         inputStatus = status;
-        movement = target.GetComponent<PlayerMovement>();
+
         if(movement != null)
+        {
+            movement.SetInputStatus(status);
+        }
+    }
+
+    public static void SetInputs(bool status)
+    {
+        inputStatus = status;
+        if (movement != null)
         {
             movement.SetInputStatus(status);
         }

@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 8272759067851242838}
   - component: {fileID: 8272759067851242833}
   - component: {fileID: 8272759067851242839}
-  - component: {fileID: 8272759067851242836}
+  - component: {fileID: 7159415443831016484}
   - component: {fileID: 8272759067851242837}
   - component: {fileID: 8272759067851242832}
   m_Layer: 9
@@ -228,7 +228,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8272759067851242842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
   m_LocalPosition: {x: -3.945, y: 0.16751283, z: 0.1620574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -272,7 +272,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8272759067851242836
+--- !u!114 &7159415443831016484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -281,11 +281,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8272759067851242842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35f4e484748d57547853c8433dd5965b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddded2827afd7714e838d1780e1e93d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionPosition: {fileID: 8272759067974591290}
-  radius: 1
+  interactionOffset: {x: 0.75, y: 0.25, z: -0.25}
+  colliderSize: {x: 1.5, y: 1.5, z: 1.5}
+  canvasIndicatorPrefab: {fileID: 2029471630237048026, guid: 5564ea32c3495c1418382b9addec2288,
+    type: 3}
   canBeFocus: 1
   isFocus: 0
   interacted: 0
@@ -343,7 +345,7 @@ MonoBehaviour:
   OnComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8272759067851242836}
+      - m_Target: {fileID: 0}
         m_MethodName: ModuleCompleted
         m_Mode: 1
         m_Arguments:

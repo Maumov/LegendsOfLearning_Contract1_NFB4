@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(AudioSource))]
 public class DestroyEnviroment : InteractableObject
 {
+    public string type;
+
     public override void Interaction()
     {
-        StartCoroutine(DestroyObject());
+        if (!interacted)
+        {
+            interacted = true;
+            StartCoroutine(DestroyObject());
+        }
     }
 
     IEnumerator DestroyObject()
     {
-        AudioSource source = GetComponent<AudioSource>();
-        if (source.clip != null)
-        {
-            source.Play();
-            yield return new WaitForSeconds(source.clip.length);
-        }
         // Animation
-
+        AudioSource source = gameObject.AddComponent<AudioSource>();
+        source.clip = EnviromentController.instance.DestroyEnviromentSound(type);
+        source.Play();
+        yield return new WaitForSeconds(source.clip.length);
         Destroy(gameObject);
+        yield return null;
     }
 }

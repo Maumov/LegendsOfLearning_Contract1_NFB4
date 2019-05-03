@@ -35,6 +35,7 @@ public class InteractWithChest : InteractableObject
     // Cerrar module sin terminarse
     public void ExitModule()
     {
+        CameraMovement.RestoreInputs();
         isModuleOpen = false;
         // Destroy(module);
     }
@@ -42,8 +43,9 @@ public class InteractWithChest : InteractableObject
     public override void ModuleCompleted()
     {
         ExitModule();
-
+        Debug.Log("Completed");
         completed = true;
+        interacted = true;
         // Acciones pendientes por el modulo
         // Destroy(module);
         animator.SetTrigger(OpenTrigger);

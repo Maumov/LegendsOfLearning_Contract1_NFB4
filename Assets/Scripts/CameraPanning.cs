@@ -75,6 +75,7 @@ public class CameraPanning : MonoBehaviour
 
             if (tween == TypeOfTween.Smooth)
             {
+                LeanTween.cancelAll();
                 int id = LeanTween.move(objectCamera, waypoint.position, duration).setEase(LeanTweenType.easeOutQuad).id;
                 tweenID = LeanTween.descr(id);
             }
@@ -84,8 +85,9 @@ public class CameraPanning : MonoBehaviour
     public void ActivateCinematic()
     {
         isActive = true;
-        objectCamera.SetActive(true);
         mainCamera.SetActive(false);
+        objectCamera.SetActive(true);
+        CameraMovement.SetInputs(false);
 
         if (tween == TypeOfTween.Waypoints)
         {
@@ -97,9 +99,9 @@ public class CameraPanning : MonoBehaviour
     public void AnimationCompleted()
     {
         isActive = false;
-        mainCamera.SetActive(true);
         objectCamera.SetActive(false);
-
+        mainCamera.SetActive(true);
+        CameraMovement.RestoreInputs();
         objectCamera.transform.position = cameraInitPosition;
     }
 
