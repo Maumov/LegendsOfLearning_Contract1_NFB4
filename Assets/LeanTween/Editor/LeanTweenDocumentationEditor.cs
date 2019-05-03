@@ -20,7 +20,7 @@ public class LeanTweenDocumentationEditor : Editor {
 			}
 		}
 		documentationPath = documentationPath.Substring(documentationPath.IndexOf("/"));
-		string browserPath = "file://" + Application.dataPath + documentationPath + "#index";
+		string browserPath = "file://" + Application.dataPath + documentationPath + "#denimators";
 		Application.OpenURL(browserPath);
 
 		#else
