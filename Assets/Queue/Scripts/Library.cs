@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Library : MonoBehaviour
 {
+    
     public List<TextList> lists = new List<TextList>();
-
     [HideInInspector] public string filename { get; private set; } = "gameContent.json"; 
     string path;
     InGameData data = new InGameData();
