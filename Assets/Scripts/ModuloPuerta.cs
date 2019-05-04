@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ModuloPuerta : MonoBehaviour
 {
     public int modulo;
-    Puerta puerta;
+    public Puerta puerta;
     public GameObject[] gameObjectsToFill;
     public GameObject[] gameObjectsToEmpty;
     public float animDuration = 10f;

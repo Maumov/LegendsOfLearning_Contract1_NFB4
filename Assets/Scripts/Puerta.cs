@@ -17,10 +17,13 @@ public class Puerta : MonoBehaviour
     public InputField textRespuesta;
     public float animDuration = 10f;
     public bool m1, m2, m3;
+    
 
     private void Start() {
+        
         SetQuestion();
     }
+    
 
     void SetQuestion() {
         int a = Random.Range(0, posibleQuestions.Length);
@@ -30,6 +33,7 @@ public class Puerta : MonoBehaviour
             mp.SetUIStart();
         }
     }
+
 
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {

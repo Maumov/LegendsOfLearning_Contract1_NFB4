@@ -2534,6 +2534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modulo: 2
+  puerta: {fileID: 8021551205417439883}
   gameObjectsToFill:
   - {fileID: 8021551206213461348}
   gameObjectsToEmpty:
@@ -2792,6 +2793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modulo: 1
+  puerta: {fileID: 8021551205417439883}
   gameObjectsToFill:
   - {fileID: 8021551206213461128}
   - {fileID: 8021551206213461130}
@@ -3853,6 +3855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   modulo: 3
+  puerta: {fileID: 8021551205417439883}
   gameObjectsToFill: []
   gameObjectsToEmpty: []
   animDuration: 10
