@@ -10,12 +10,11 @@ public class MessagesController : MonoBehaviour
     private void Start()
     {
         // Prueba
-        SpawnText("Antonio");
+        //SpawnText("Antonio");
     }
     public bool SpawnText(string ListName)
     {
         List<string> list = Library.instance.GetText(ListName);
-        Debug.Log(list.Count);
         if(list != null)
         {
             TextController text = Instantiate(textPrefab, canvas).GetComponentInChildren<TextController>();

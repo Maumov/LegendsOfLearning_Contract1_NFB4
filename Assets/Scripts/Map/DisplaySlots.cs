@@ -10,7 +10,6 @@ public class DisplaySlots : MonoBehaviour
 
     private void Start()
     {
-
         for(int i= 0; i < IconList.icons.Count; i++)
         {
             SlotController temp = Instantiate(slot, destinationPoint).GetComponent<SlotController>();

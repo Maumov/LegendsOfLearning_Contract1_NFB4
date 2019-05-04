@@ -60,6 +60,6 @@ public class TextController : MonoBehaviour
 
     public void DestroyThisObject()
     {
-        Destroy(gameObject);
+        Destroy(transform.parent);
     }
 }

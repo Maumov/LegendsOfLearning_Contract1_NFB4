@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
-public class GridManager : MonoBehaviour
+public class GridManager2 : MonoBehaviour
 {
     RectTransform rectT;
     [Header("Prefabs & objects")]
-    public Transform grid;
+    public RawImage Grid;
     public GameObject FractionPrefab;
     public GameObject horizontalParent;
     public GameObject verticalParent;
@@ -84,20 +84,17 @@ public class GridManager : MonoBehaviour
 
         for (int i = 1; i < fractions[xIndex]; i++)
         {
-            linesX.Add(Instantiate(line, grid));
-            RectTransform temp = linesX[i - 1].GetComponent<RectTransform>();
-            temp.sizeDelta = new Vector2(lineSize, rectT.rect.height);
-            temp.GetComponent<RawImage>().color = colorX;
-            temp.anchoredPosition = new Vector2((rectT.rect.width / fractions[xIndex]) * i, 0f);
-        }
-
-        for (int i = 1; i < fractions[xIndex]; i++)
-        {
             prefabsX.Add(Instantiate(FractionPrefab, horizontalParent.transform));
             SetFraction fraction = prefabsX[i - 1].GetComponent<SetFraction>();
             fraction.SetNumerator(i);
             fraction.SetDenominator(fractions[xIndex]);
             fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, -rectT.rect.height);
+
+            linesX.Add(Instantiate(line, horizontalParent.transform));
+            RectTransform temp = linesX[i - 1].GetComponent<RectTransform>();
+            temp.sizeDelta = new Vector2(lineSize, rectT.rect.height);
+            temp.GetComponent<RawImage>().color = colorX;
+            temp.anchoredPosition = new Vector2((rectT.rect.width / fractions[xIndex]) * i, 0f);
         }
     }
 
@@ -133,21 +130,18 @@ public class GridManager : MonoBehaviour
 
         for (int i = 1; i < fractions[yIndex]; i++)
         {
-            linesY.Add(Instantiate(line, grid));
-            RectTransform temp = linesY[i - 1].GetComponent<RectTransform>();
-            temp.sizeDelta = new Vector2(lineSize, rectT.rect.width);
-            temp.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
-            temp.GetComponent<RawImage>().color = colorY;
-            temp.anchoredPosition = new Vector2(0f, -(rectT.rect.height / fractions[yIndex]) * i);
-        }
-
-        for (int i = 1; i < fractions[yIndex]; i++)
-        {
             prefabsY.Add(Instantiate(FractionPrefab, verticalParent.transform));
             SetFraction fraction = prefabsY[i - 1].GetComponent<SetFraction>();
             fraction.SetNumerator(i);
             fraction.SetDenominator(fractions[yIndex]);
             fraction.SetPosition(rectT.rect.width + xOffset, -(rectT.rect.height / fractions[yIndex]) * i + yOffset);
+
+            linesY.Add(Instantiate(line, horizontalParent.transform));
+            RectTransform temp = linesY[i - 1].GetComponent<RectTransform>();
+            temp.sizeDelta = new Vector2(lineSize, rectT.rect.width);
+            temp.rotation = Quaternion.Euler(new Vector3(0f, 0f, 90f));
+            temp.GetComponent<RawImage>().color = colorY;
+            temp.anchoredPosition = new Vector2(0f, (rectT.rect.height / fractions[xIndex]) * i);
         }
 
 
