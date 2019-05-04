@@ -91,8 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6294dd67b28f584482286ee4adaeef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionOffset: {x: 0, y: 2, z: 0}
-  colliderSize: {x: 2, y: 2, z: 2}
+  interactionOffset: {x: 0, y: 1, z: 0}
+  colliderSize: {x: 2.5, y: 3, z: 2.5}
   canvasIndicatorPrefab: {fileID: 0}
   canBeFocus: 0
   isFocus: 0
