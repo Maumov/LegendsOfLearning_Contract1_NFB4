@@ -57,7 +57,7 @@ public class ObjectPanning : MonoBehaviour
 
     public void CompletedAnimation(float value)
     {
-        LeanTween.cancel(gameObject, true);
+        LeanTween.cancel(target, true);
         duration = value;
         Rotation();
     }
