@@ -3,25 +3,37 @@ using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine;
 
-[RequireComponent(typeof(CameraPanning))]
 public class PanningEvent : MonoBehaviour
 {
-    CameraPanning panning;
+    LTDescr panning;
+    public Panning type;
     public UnityEvent OnStart;
+    public UnityEvent OnUpdate;
     public UnityEvent OnComplete;
 
     private void Start()
     {
-        panning = GetComponent<CameraPanning>();
+        if (type == Panning.Camera)
+        {
+            panning = GetComponent<CameraPanning>().tweenID;
+        }
+        if (type == Panning.Object)
+        {
+            panning = GetComponent<ObjectPanning>().tweenID;
+        }
     }
 
     private void Update()
     {
-        if (panning.tweenID != null)
+        if (panning != null)
         {
-            panning.tweenID.setOnStart(OnStart.Invoke);
+            panning.setOnStart(OnStart.Invoke);
+            panning.setOnUpdate(OnUpdate.Invoke);
+            panning.setOnComplete(OnComplete.Invoke);
 
-            panning.tweenID.setOnComplete(OnComplete.Invoke);
+            panning = null;
         }
     }
 }
+
+public enum Panning { Camera, Object}
