@@ -6,6 +6,7 @@
 - Cambiar raycast por trigger (BRAGI)*
 - Agregar coordenadas en el mapa para encontrar los cofres (BRAGI)*
 - Prefab que diga interactuar con Espacio (BRAGI)*
+- Cambiar valores exactos por multiplicaciones en la recta numerica minimapa(BRAGI)*
 
 - Ubicar Placeholder de puerta en sitio correcto (ROKI)*
 - Realizar circulo blanco de animacion para tutorial (ROKI)*
@@ -19,7 +20,6 @@
 
 - Colocar animacion del cofre, con el cofre adecuado(BRAGI)
 - Colocar animacion de salida en el barco(BRAGI)
-- Cambiar valores exactos por multiplicaciones en la recta numerica minimapa(BRAGI)
 - Realizar programacion para que se active la puerta y destruya al placeholder(BRAGI)
 	-En caso de puerta final destruir placeholder
 
