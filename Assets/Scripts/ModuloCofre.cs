@@ -23,12 +23,12 @@ public class ModuloCofre : MonoBehaviour
     void SetQuestion() {
         int a = Random.Range(0, cofre.posibleQuestions.Length);
         question = cofre.posibleQuestions[a];
-        ModuloPuerta[] modulos = GetComponentsInChildren<ModuloPuerta>();
-        foreach(ModuloPuerta mp in modulos) {
-            mp.SetUIStart();
-        }
+        SetUIStart();
     }
-
+    public void SetUIStart() {
+        preguntaNumerador.text = question.numerador.ToString();
+        preguntaDenominador.text = question.denominador.ToString();
+    }
     // Update is called once per frame
     void Update()
     {
