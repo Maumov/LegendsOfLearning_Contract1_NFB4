@@ -9,21 +9,23 @@
 
 - Ubicar Placeholder de puerta en sitio correcto (ROKI)*
 - Realizar circulo blanco de animacion para tutorial (ROKI)*
+- Armar modelo de la cueva final con los assets (ROKI)*
+- Hacer el texto del juego (ROKI ESPAÑOL)* - (YALDO INGLES)
+	- Introduccion/Llegada *
+	- Tutorial del minimapa*
+	- Tutorial de la puerta*
+	- Tutorial del cofre*
+	- Mensaje de Ganaste*
 
 - Colocar animacion del cofre, con el cofre adecuado(BRAGI)
+- Colocar animacion de salida en el barco(BRAGI)
 - Cambiar valores exactos por multiplicaciones en la recta numerica minimapa(BRAGI)
 - Realizar programacion para que se active la puerta y destruya al placeholder(BRAGI)
 	-En caso de puerta final destruir placeholder
 
 - Buscar Sonido de Cortando Grama(ROKI)
 
-- Armar modelo de la cueva final con los assets (ROKI)
-- Hacer el texto del juego (ROKI ESPAÑOL) - (YALDO INGLES)
-	- Introduccion/Llegada *
-	- Tutorial del minimapa*
-	- Tutorial de la puerta*
-	- Tutorial del cofre
-	- Mensaje de Ganaste
+
 
 - Controles de Jugador, Rota con flechitas y mueve adelante y hacia atras, con camara estatica (MAURICIO)
 - Inlcuir el texto en la libreria (MAURICIO)
