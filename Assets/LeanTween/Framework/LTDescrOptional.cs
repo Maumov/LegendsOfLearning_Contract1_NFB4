@@ -19,7 +19,8 @@ public class LTDescrOptional  {
 
 	public LTRect ltRect { get; set; } // maybe get rid of this eventually
 
-	public Action<float> onUpdateFloat { get; set; }
+    public Action onUpdate { get; set; }
+    public Action<float> onUpdateFloat { get; set; }
 	public Action<float,float> onUpdateFloatRatio { get; set; }
 	public Action<float,object> onUpdateFloatObject { get; set; }
 	public Action<Vector2> onUpdateVector2 { get; set; }
@@ -52,7 +53,8 @@ public class LTDescrOptional  {
 	public void reset(){
 		animationCurve = null;
 
-		this.onUpdateFloat = null;
+        this.onUpdate = null;
+        this.onUpdateFloat = null;
 		this.onUpdateFloatRatio = null;
 		this.onUpdateVector2 = null;
 		this.onUpdateVector3 = null;
@@ -69,9 +71,11 @@ public class LTDescrOptional  {
 	}
 
 	public void callOnUpdate( float val, float ratioPassed){
-		if(this.onUpdateFloat!=null)
-			this.onUpdateFloat(val);
 
+        if (this.onUpdate != null)
+            this.onUpdate();
+        if (this.onUpdateFloat!=null)
+			this.onUpdateFloat(val);
 		if (this.onUpdateFloatRatio != null){
 			this.onUpdateFloatRatio(val,ratioPassed);
 		}else if(this.onUpdateFloatObject!=null){

@@ -15,6 +15,8 @@ public class TextController : MonoBehaviour
     private void Start()
     {
         delayCounter = delay;
+        CameraMovement.SetInputs(false);
+        GameManager.EnableCursor();
     }
 
     private void Update()
@@ -46,6 +48,8 @@ public class TextController : MonoBehaviour
             else
             {
                 GetComponent<Animator>().SetTrigger("Completed");
+                CameraMovement.SetInputs(false);
+                GameManager.DisableCursor();
             }
 
             delayCounter = delay;

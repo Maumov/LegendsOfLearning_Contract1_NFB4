@@ -782,7 +782,7 @@ GameObject:
   - component: {fileID: 3334898}
   - component: {fileID: 2330266}
   m_Layer: 0
-  m_Name: SM_Veh_Boat_Warship_01_Hull_Upsized_Pirate
+  m_Name: Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
