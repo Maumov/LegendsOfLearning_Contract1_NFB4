@@ -5,96 +5,60 @@ using UnityEngine;
 
 public class ObjectPanning : MonoBehaviour
 {
-    [Header("Object Settings")]
-    public GameObject target;
-
-    [Header("Waypoints & References")]
-    public bool ShowGizmos;
-    [Range(0f, 300f)]
-    public float duration;
-    public Transform waypoint;
-    [HideInInspector] public InteractableObject interactableScript;
-    public enum TypeOfTween { Smooth, Waypoints };
-    public TypeOfTween tween = TypeOfTween.Waypoints;
-
-    [HideInInspector] public bool isActive;
-    private Vector3[] wayPoints;
-    private LTSpline spline;
+    [Header("Object Movement")]
+    public Transform[] waypoints;
+    [Range(0, 120f)]
+    public float movementDuration;
+    LTSpline path;
     public LTDescr tweenID;
 
-    private void Start()
+    [Header("Rotate")]
+    public bool enableRotation = true;
+    public GameObject target;
+    public float minRotation;
+    public float maxRotation;
+    [Range(0, 10f)]
+    public float duration;
+    float RotationX;
+    float RotationY;
+
+    void Start()
     {
-        if (waypoint.childCount > 0)
+        Vector3[] points = new Vector3[waypoints.Length];
+        for (int i = 0; i < waypoints.Length; i++)
         {
-            if (tween == TypeOfTween.Waypoints)
-            {
-                wayPoints = new Vector3[waypoint.childCount];
-                for (int i = 0; i < waypoint.childCount; i++)
-                {
-                    wayPoints[i] = waypoint.GetChild(i).transform.position;
-                }
-
-                spline = new LTSpline(wayPoints);
-
-                ActivateCinematic();
-            }
-
-            if (tween == TypeOfTween.Smooth)
-            {
-                waypoint.position = waypoint.GetChild(waypoint.childCount - 1).position;
-            }
+            points[i] = waypoints[i].position;
         }
-        else
+        path = new LTSpline(points);
+
+        if (enableRotation)
         {
-            if (tween == TypeOfTween.Waypoints)
-            {
-                tween = TypeOfTween.Smooth;
-                return;
-            }
+            Rotation();
         }
+        tweenID = LeanTween.descr(LeanTween.moveSpline(gameObject, path, movementDuration).setOrientToPath(true).id);
     }
 
-    void Update()
+    public void Rotation()
     {
-        if (isActive)
-        {
-            if (tween == TypeOfTween.Smooth)
-            {
-                int id = LeanTween.move(target, waypoint.position, duration).setOrientToPath(true).setEase(LeanTweenType.easeOutQuad).id;
-                tweenID = LeanTween.descr(id);
-            }
-        }
-    }
+        LeanTween.cancel(target);
+        RotationX = Random.Range(minRotation, maxRotation);
+        RotationY = Random.Range(minRotation, maxRotation);
 
-    public void ActivateCinematic()
-    {
-        if (tween == TypeOfTween.Waypoints)
-        {
-            int id = LeanTween.moveSpline(target, spline, duration).setOrientToPath(true).setEase(LeanTweenType.animationCurve).id;
-            tweenID = LeanTween.descr(id);
-        }
-    }
-
-    public void AnimationCompleted()
-    {
+        LeanTween.rotateX(target, RotationX, duration).setLoopPingPong(1).setOnComplete(InverseRotation);
+        LeanTween.rotateZ(target, RotationY, duration).setLoopPingPong(1).setOnComplete(InverseRotation);
 
     }
 
-    private void OnDrawGizmos()
+    public void InverseRotation()
     {
-        if (ShowGizmos)
-        {
-            wayPoints = new Vector3[waypoint.childCount];
-            for (int i = 0; i < waypoint.childCount; i++)
-            {
-                wayPoints[i] = waypoint.GetChild(i).transform.position;
-            }
+        LeanTween.rotateX(target, -RotationX, duration).setLoopPingPong(1).setOnComplete(Rotation);
+        LeanTween.rotateZ(target, -RotationY, duration).setLoopPingPong(1).setOnComplete(Rotation);
+    }
 
-            spline = new LTSpline(wayPoints);
-
-            Gizmos.color = Color.blue;
-            if (spline != null)
-                spline.gizmoDraw();
-        }
+    public void CompletedAnimation(float value)
+    {
+        LeanTween.cancel(target, true);
+        duration = value;
+        Rotation();
     }
 }
