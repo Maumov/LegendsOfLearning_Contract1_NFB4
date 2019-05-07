@@ -18,6 +18,7 @@ public class ModuloCofre : MonoBehaviour {
     public RectTransform canvasTransform;
     public Image image1;
     public Image bigDenominator, smallDenominator;
+    public GameObject rotator;
     private void Start() {
         cofre = GetComponentInParent<Cofre>();
         SetQuestion();
@@ -80,12 +81,9 @@ public class ModuloCofre : MonoBehaviour {
                 Vector3 dir = new Vector3(x, y, 0f) * 330f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
             }
-
-           
+            
         }
         
-        
-
     }
     // Update is called once per frame
     void Update() {
@@ -96,11 +94,11 @@ public class ModuloCofre : MonoBehaviour {
     }
 
     public void TestAnswer() {
-        if(valor == question.numerador * question2.numerador) {
-            Good();
-        } else {
-            Bad();
+        if(modulo == 0 || modulo == 1) {
+            StartCoroutine(AnimateSolution());
         }
+        
+        
     }
 
     void Bad() {
@@ -111,6 +109,30 @@ public class ModuloCofre : MonoBehaviour {
         StartCoroutine(AnimateTranca());
         //boton.color = Color.green;
         Debug.Log("Good");
+    }
+    IEnumerator AnimateSolution() {
+
+        float animDuration = 2f;
+        float i = 0f;
+        float den = (float)(question.denominador * question2.denominador);
+        
+        while( i <= animDuration) {
+            i += Time.deltaTime;
+            if(modulo == 0) {
+                rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 360f) * (Time.deltaTime / animDuration));
+            } else {
+                rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 180f) * (Time.deltaTime / animDuration));
+            }
+            
+            yield return null;
+        }
+
+        if(valor == question.numerador * question2.numerador) {
+            Good();
+        } else {
+            Bad();
+        }
+        yield return null;
     }
 
     IEnumerator AnimateTranca() {
