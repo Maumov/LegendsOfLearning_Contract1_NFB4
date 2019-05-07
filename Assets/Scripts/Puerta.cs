@@ -72,6 +72,5 @@ public class Question {
     public float numerador;
     public float denominador;
     public float cociente;
-
     
 }

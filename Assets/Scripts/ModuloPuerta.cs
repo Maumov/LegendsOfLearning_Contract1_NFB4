@@ -48,7 +48,7 @@ public class ModuloPuerta : MonoBehaviour
                 gameObjectsToFill[i].transform.localScale = Vector3.Lerp(new Vector3(0.001f, 1f, 1f), new Vector3(1f, 1f, 1f), j);
             }
             for(int i = 0; i < gameObjectsToEmpty.Length; i++) {
-                gameObjectsToEmpty[i].transform.localScale = Vector3.Lerp(new Vector3(1f, 1f, 1f), new Vector3(0f, 0f, 0f), j);
+                gameObjectsToEmpty[i].transform.localScale = Vector3.Lerp(new Vector3(1f, 1f, 1f), new Vector3(1f, 1f, 0f), j);
             }
             yield return null;
         }

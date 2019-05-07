@@ -11,7 +11,7 @@ public class Cofre : MonoBehaviour {
     // Start is called before the first frame update
     void Start()
     {
-        posibleQuestions = FindObjectOfType<Puerta>().posibleQuestions;
+        
     }
 
     // Update is called once per frame
