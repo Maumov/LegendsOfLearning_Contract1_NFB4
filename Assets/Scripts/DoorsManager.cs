@@ -14,7 +14,7 @@ public static class DoorsManager
         {
             if (id == doors[i].id)
             {
-                doors[i].placeholder.SetActive(false);
+//                doors[i].placeholder.SetActive(false);
                 doors[i].door.SetActive(true);
                 //MapManager.instance.SetIcon(doors[i].xNum, doors[i].xDem, doors[i].yNum, doors[i].yDem, "Treasure", doors[i].id);
                 exist = true;
