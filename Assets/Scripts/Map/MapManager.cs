@@ -33,9 +33,9 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         SetIcon(1, 8, 3, 10, "Treasure", 1);
-        SetIcon(2, 10, 7, 10, "Treasure", 2);
-        SetIcon(3, 5, 1, 3, "Treasure", 3);
-        SetIcon(1, 2, 7, 8, "Treasure", 4);
+        SetIcon(2, 9, 7, 10, "Treasure", 2);
+        SetIcon(4, 9, 5, 6, "Treasure", 3);
+        SetIcon(5, 8, 3, 9, "Treasure", 4);
 
         for (int i = 0; i < doors.Count; i++)
         {

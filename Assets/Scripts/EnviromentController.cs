@@ -8,6 +8,7 @@ public class EnviromentController : MonoBehaviour
     [Header("Sounds")]
     public AudioClip grassSound;
     public AudioClip logSound;
+    public ParticleSystem grassParticle;
 
     public static EnviromentController instance;
 
