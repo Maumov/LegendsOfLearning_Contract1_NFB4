@@ -29,6 +29,8 @@ public class MapIconPrefab : MonoBehaviour
             imageOrigin.color = new Color(1, 1, 1, 1);
             imageOrigin.raycastTarget = false;
             imageOrigin.GetComponent<MapIconPrefab>().status = true;
+
+            DoorsManager.SpawnDoor(id);
         }
     }
 }
