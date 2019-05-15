@@ -5,55 +5,63 @@ using UnityEngine;
 public static class DoorsManager
 {
     public static List<Door> doors = new List<Door>();
+    public static List<Door> completed;
 
-    public static bool SpawnDoor(int index)
+    public static bool SpawnDoor(int id)
     {
-        if (index >= 0 && index < doors.Count)
+        bool exist = false;
+        for (int i = 0; i < doors.Count; i++)
         {
-            doors[index].placeholder.SetActive(false);
-            doors[index].door.SetActive(true);
-            MapManager.instance.SetIcon(doors[index].xNum, doors[index].xDem, doors[index].yNum, doors[index].yDem, "Treasure", doors[index].id);
-            return true;
+            if (id == doors[i].id)
+            {
+//                doors[i].placeholder.SetActive(false);
+                doors[i].door.SetActive(true);
+                //MapManager.instance.SetIcon(doors[i].xNum, doors[i].xDem, doors[i].yNum, doors[i].yDem, "Treasure", doors[i].id);
+                exist = true;
+            }
         }
-        else
-        {
-            return false;
-        }
+
+        return exist;
     }
 
     public static bool SpawnDoor(GameObject door)
     {
+        bool exist = false;
         for (int i = 0; i < doors.Count; i++)
         {
             if (door == doors[i].door)
             {
                 doors[i].placeholder.SetActive(false);
                 doors[i].door.SetActive(true);
-                MapManager.instance.SetIcon(doors[i].xNum, doors[i].xDem, doors[i].yNum, doors[i].yDem, "Treasure", doors[i].id);
-                return true;
+                //MapManager.instance.SetIcon(doors[i].xNum, doors[i].xDem, doors[i].yNum, doors[i].yDem, "Treasure", doors[i].id);
+                exist = true;
             }
         }
 
-        return false;
+        return exist;
     }
 
-    public static bool RemoveDoor(int index)
+    public static bool RemoveDoor(int id)
     {
-        if (index >= 0 && index < doors.Count)
+        bool exist = false;
+        for (int i = 0; i < doors.Count; i++)
         {
-            doors[index].door.SetActive(false);
-            doors[index].placeholder.SetActive(true);
-            MapManager.instance.DestroyIcon(doors[index].id);
-            return true;
+            if (id == doors[i].id)
+            {
+                doors[id].door.SetActive(false);
+                doors[id].placeholder.SetActive(true);
+                MapManager.instance.DestroyIcon(doors[id].id);
+                exist = true;
+
+                completed.Add(doors[i]);
+            }
         }
-        else
-        {
-            return false;
-        }
+        return exist;
     }
 
     public static bool RemoveDoor(GameObject door)
     {
+        bool exist = false;
         for (int i = 0; i < doors.Count; i++)
         {
             if (door == doors[i].door)
@@ -61,11 +69,13 @@ public static class DoorsManager
                 doors[i].door.SetActive(false);
                 doors[i].placeholder.SetActive(true);
                 MapManager.instance.DestroyIcon(doors[i].id);
-                return true;
+                exist = true;
+
+                completed.Add(doors[i]);
             }
         }
 
-        return false;
+        return exist;
     }
 }
 
