@@ -166,7 +166,8 @@ public class ModuloCofre : MonoBehaviour {
                 //float basePositionY = panel.transform.position.y;
                 //Rect rect = new Rect(((float)i) * width, ((float)j) * height, width, height);
                 rT.anchoredPosition = new Vector2(basePositionX + ((float)i) * width, basePositionY + ((float)j) * height);
-                rT.sizeDelta = new Vector2(width, height);
+                rT.sizeDelta = new Vector2(width * 0.85f, height * 0.85f);
+                go.SetActive(true);
                 //( basePositionX + ((float)i) * width, basePositionY + ((float)j) * height, width, height);
                 botones.Add(go);
             }
