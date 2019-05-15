@@ -23,7 +23,8 @@ public class PlayerMovement : MonoBehaviour
         if (inputStatus)
         {
             GetInputs();
-            Vector3 direction = new Vector3(horizontal, 0f, vertical);
+            Vector3 direction = new Vector3(horizontal, -10f, vertical);
+
             characterController.Move(transform.rotation * direction * movementSpeed * Time.deltaTime);
         }
     }
