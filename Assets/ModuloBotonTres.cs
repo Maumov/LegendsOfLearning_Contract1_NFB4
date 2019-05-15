@@ -7,7 +7,7 @@ public class ModuloBotonTres : MonoBehaviour
 {
     Image image;
     public Color activo, noActivo;
-    bool sw = false;
+    public bool sw = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,4 +23,5 @@ public class ModuloBotonTres : MonoBehaviour
         }
         sw = !sw;
     }
+
 }

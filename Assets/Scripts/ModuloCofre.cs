@@ -119,6 +119,7 @@ public class ModuloCofre : MonoBehaviour {
                 left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
                 left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activo;
             }
+            CreateButtons();
         }
 
     }
@@ -134,7 +135,46 @@ public class ModuloCofre : MonoBehaviour {
         if(modulo == 0 || modulo == 1) {
             StartCoroutine(AnimateSolution());
         }
+        if(modulo == 2) {
+            if( question.numerador * question2.numerador == numeradorRespuesta() && question.denominador * question2.denominador == botones.Count  ) {
+                Good();
+            } else {
+                Bad();
+            }
+        }
     }
+
+    int numeradorRespuesta() {
+        int c = 0;
+        for(int i = 0; i < botones.Count; i++) {
+            if(botones[i].GetComponent<ModuloBotonTres>().sw) {
+                c++;
+            }
+        }
+        return c;
+    }
+
+    public void AddDenominador1() {
+        currentDenominatorX++;
+        currentDenominatorX = Mathf.Clamp(currentDenominatorX, 2, 10);
+        CreateButtons();
+    }
+    public void AddDenominador2() {
+        currentDenominatorY++;
+        currentDenominatorY = Mathf.Clamp(currentDenominatorY, 2, 10);
+        CreateButtons();
+    }
+    public void TakeoutDenominador1() {
+        currentDenominatorX--;
+        currentDenominatorX = Mathf.Clamp(currentDenominatorX, 2, 10);
+        CreateButtons();
+    }
+    public void TakeoutDenominador2() {
+        currentDenominatorY--;
+        currentDenominatorY = Mathf.Clamp(currentDenominatorY, 2, 10);
+        CreateButtons();
+    }
+
 
     void Bad() {
         Debug.Log("Bad");
@@ -150,6 +190,7 @@ public class ModuloCofre : MonoBehaviour {
         for(int i=0; i < botones.Count; i++) {
             Destroy(botones[i].gameObject);
         }
+        botones = new List<GameObject>();
     }
     [ContextMenu("Test")]
     void CreateButtons() {
