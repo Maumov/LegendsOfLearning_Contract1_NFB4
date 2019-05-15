@@ -5,13 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ModuloCofre : MonoBehaviour {
+    [Header ("Base")]
     Cofre cofre;
     public int modulo;
     public Question question, question2;
 
     public int valor = 0;
-
-    public Text preguntaNumerador1, preguntaDenominador1;
+    [Header("Modulo 1 y 2")]
+    public Text preguntaNumerador1;
+    public Text preguntaDenominador1;
     public Text preguntaNumerador2, preguntaDenominador2;
     public Text preguntaDenominador3;
     public GameObject tranca;
@@ -19,6 +21,15 @@ public class ModuloCofre : MonoBehaviour {
     public Image image1;
     public Image bigDenominator, smallDenominator;
     public GameObject rotator;
+    [Header("Modulo 3")]
+    public GameObject[] top;
+    public GameObject[] left;
+    public GameObject buttonPrefab;
+    public Material activo, noActivo;
+    public int currentDenominatorX, currentDenominatorY;
+    public GameObject panel;
+    public List<GameObject> botones;
+
     private void Start() {
         cofre = GetComponentInParent<Cofre>();
         SetQuestion();
@@ -29,17 +40,20 @@ public class ModuloCofre : MonoBehaviour {
         question.numerador = Random.Range(1, Mathf.CeilToInt(question.denominador));
         question2.denominador = Random.Range(2, 10);
         question2.numerador = Random.Range(1, Mathf.CeilToInt(question2.denominador));
-
-        if(modulo == 0 || modulo == 1) {
-            SetUIStart();
-        }
+        SetUIStart();
     }
+
     public void SetUIStart() {
+
         preguntaNumerador1.text = question.numerador.ToString();
         preguntaDenominador1.text = question.denominador.ToString();
         preguntaNumerador2.text = question2.numerador.ToString();
         preguntaDenominador2.text = question2.denominador.ToString();
-        preguntaDenominador3.text = (question.denominador * question2.denominador).ToString();
+
+        if(modulo != 2) {
+            preguntaDenominador3.text = (question.denominador * question2.denominador).ToString();
+        }
+        
         if(modulo == 0) {
             image1.fillAmount = (question2.numerador / question2.denominador);
             float den = (float)(question.denominador * question2.denominador);
@@ -59,9 +73,8 @@ public class ModuloCofre : MonoBehaviour {
                 Vector3 dir = new Vector3(x, y, 0f) * 280f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
             }
-
-            
         }
+
         if(modulo == 1) {
             image1.fillAmount = (question2.numerador / question2.denominador) * 0.5f;
             float den = (float)(question.denominador * question2.denominador);
@@ -81,9 +94,33 @@ public class ModuloCofre : MonoBehaviour {
                 Vector3 dir = new Vector3(x, y, 0f) * 330f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
             }
-            
         }
-        
+
+        if(modulo == 2) {
+            top[(int)question.denominador - 2].SetActive(true);
+            left[(int)question2.denominador - 2].SetActive(true);
+            //scala
+            for(int i = 0; i < question.denominador; i++) {
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivo;
+            }
+            for(int i = 0; i < (int)question2.denominador; i++) {
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivo;
+            }
+            //color
+            for(int i = 0; i < (int)question.numerador ; i++) {
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activo;
+            }
+            for(int i = 0; i < (int)question2.numerador; i++) {
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activo;
+            }
+        }
+
     }
     // Update is called once per frame
     void Update() {
@@ -97,8 +134,6 @@ public class ModuloCofre : MonoBehaviour {
         if(modulo == 0 || modulo == 1) {
             StartCoroutine(AnimateSolution());
         }
-        
-        
     }
 
     void Bad() {
@@ -110,6 +145,34 @@ public class ModuloCofre : MonoBehaviour {
         //boton.color = Color.green;
         Debug.Log("Good");
     }
+
+    void DestroyAllButtons() {
+        for(int i=0; i < botones.Count; i++) {
+            Destroy(botones[i].gameObject);
+        }
+    }
+    [ContextMenu("Test")]
+    void CreateButtons() {
+        DestroyAllButtons();
+        for(int i = 0; i < currentDenominatorX; i++ ) {
+            for(int j = 0; j < currentDenominatorY; j++) {
+                GameObject go = (GameObject)Instantiate(buttonPrefab, panel.transform);
+                RectTransform rT = go.GetComponent<RectTransform>();
+                float height = panel.GetComponent<RectTransform>().rect.height / currentDenominatorY;
+                float width = panel.GetComponent<RectTransform>().rect.width / currentDenominatorX;
+                float basePositionX = panel.transform.position.x - (panel.GetComponent<RectTransform>().rect.width * .5f) + (width * 0.5f);
+                float basePositionY = panel.transform.position.y - (panel.GetComponent<RectTransform>().rect.height * .5f) + (height * 0.5f);
+                //float basePositionX = panel.transform.position.x;
+                //float basePositionY = panel.transform.position.y;
+                //Rect rect = new Rect(((float)i) * width, ((float)j) * height, width, height);
+                rT.anchoredPosition = new Vector2(basePositionX + ((float)i) * width, basePositionY + ((float)j) * height);
+                rT.sizeDelta = new Vector2(width, height);
+                //( basePositionX + ((float)i) * width, basePositionY + ((float)j) * height, width, height);
+                botones.Add(go);
+            }
+        }
+    }
+
     IEnumerator AnimateSolution() {
 
         float animDuration = 2f;
@@ -123,7 +186,6 @@ public class ModuloCofre : MonoBehaviour {
             } else {
                 rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 180f) * (Time.deltaTime / animDuration));
             }
-            
             yield return null;
         }
 
