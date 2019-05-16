@@ -19,6 +19,8 @@ public class Puerta : MonoBehaviour
     public bool m1, m2, m3;
     public Camera camera;
 
+    public UnityEvent InteractionFinished;
+
     private void Start() {
         
         SetQuestion();
@@ -43,6 +45,7 @@ public class Puerta : MonoBehaviour
 
     IEnumerator AnimatePuerta() {
         camera.gameObject.SetActive(false);
+        InteractionFinished.Invoke();
         float j = 0f;
         while(j < animDuration) {
             j += (Time.deltaTime);
