@@ -6,15 +6,6 @@ public class InteractWithDoor : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
-    public GameObject module;
-
-    private Animator animator;
-    public string OpenTrigger;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
 
     public override void Interaction()
     {
@@ -45,6 +36,5 @@ public class InteractWithDoor : InteractableObject
         completed = true;
         // Acciones pendientes por el modulo
         // Destroy(module);
-        animator.SetTrigger(OpenTrigger);
     }
 }
