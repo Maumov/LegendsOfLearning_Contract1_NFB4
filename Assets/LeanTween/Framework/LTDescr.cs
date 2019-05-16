@@ -1989,7 +1989,7 @@ public class LTDescr
 	}
 
 
-    /**
+	/**
 	* Have a method called on each frame that the tween is being animated (passes a float value)
 	* @method setOnUpdate
 	* @param {Action<float>} onUpdate:Action<float> a method that will be called on every frame with the float value of the tweened object
@@ -1999,15 +1999,7 @@ public class LTDescr
 	* <br>
 	* void tweenMoved( float val ){ }<br>
 	*/
-
-    public LTDescr setOnUpdate(Action onUpdate)
-    {
-        this._optional.onUpdate = onUpdate;
-        this.hasUpdateCallback = true;
-        return this;
-    }
-
-    public LTDescr setOnUpdate( Action<float> onUpdate ){
+	public LTDescr setOnUpdate( Action<float> onUpdate ){
 		this._optional.onUpdateFloat = onUpdate;
 		this.hasUpdateCallback = true;
 		return this;

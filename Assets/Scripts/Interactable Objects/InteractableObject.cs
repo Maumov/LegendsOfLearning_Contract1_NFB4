@@ -27,6 +27,7 @@ public class InteractableObject : MonoBehaviour
 
     public virtual void Interaction()
     {
+        interacted = true;
         // Place here the interaction behaviour
     }
 
@@ -59,6 +60,7 @@ public class InteractableObject : MonoBehaviour
         if (!interacted && Input.GetAxisRaw("Interact") == 1)
         {
             Interaction();
+            DestroyContainer();
         }
     }
 
@@ -68,10 +70,15 @@ public class InteractableObject : MonoBehaviour
         {
             canBeFocus = false;
             // Eliminar indicador
-            if (canvasIndicatorPrefab != null)
-            {
-                Destroy(prefabContainer);
-            }
+            DestroyContainer();
+        }
+    }
+
+    public void DestroyContainer()
+    {
+        if (prefabContainer != null)
+        {
+            Destroy(prefabContainer);
         }
     }
 

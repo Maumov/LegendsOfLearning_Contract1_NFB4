@@ -13,10 +13,6 @@ public class PanningEvent : MonoBehaviour
 
     private void Start()
     {
-        if (type == Panning.Camera)
-        {
-            panning = GetComponent<CameraPanning>().tweenID;
-        }
         if (type == Panning.Object)
         {
             panning = GetComponent<ObjectPanning>().tweenID;
@@ -27,10 +23,8 @@ public class PanningEvent : MonoBehaviour
     {
         if (panning != null)
         {
-            panning.setOnStart(OnStart.Invoke);
-            panning.setOnUpdate(OnUpdate.Invoke);
+            //panning.setOnStart(OnStart.Invoke);
             panning.setOnComplete(OnComplete.Invoke);
-
             panning = null;
         }
     }

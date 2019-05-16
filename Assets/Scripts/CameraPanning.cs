@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class CameraPanning : MonoBehaviour
@@ -22,7 +23,10 @@ public class CameraPanning : MonoBehaviour
     [HideInInspector] public bool isActive;
     private Vector3[] wayPoints;
     private LTSpline spline;
-    public LTDescr tweenID;
+
+    [Header("Events")]
+    public UnityEvent OnStart;
+    public UnityEvent OnComplete;
 
     private void Start()
     {
@@ -67,6 +71,17 @@ public class CameraPanning : MonoBehaviour
         }
     }
 
+    public void StartTween()
+    {
+        Debug.Log("Started");
+    }
+
+    public void Completed()
+    {
+        Debug.Log("Completed");
+    }
+
+
     void Update()
     {
         if (isActive)
@@ -76,12 +91,11 @@ public class CameraPanning : MonoBehaviour
             if (tween == TypeOfTween.Smooth)
             {
                 LeanTween.cancelAll();
-                int id = LeanTween.move(objectCamera, waypoint.position, duration).setEase(LeanTweenType.easeOutQuad).id;
-                tweenID = LeanTween.descr(id);
+                int id = LeanTween.move(objectCamera, waypoint.position, duration).setOnStart(OnStart.Invoke).setOnComplete(OnComplete.Invoke).setEase(LeanTweenType.easeOutQuad).id;
             }
         }
     }
-
+    
     public void ActivateCinematic()
     {
         isActive = true;
@@ -91,8 +105,7 @@ public class CameraPanning : MonoBehaviour
 
         if (tween == TypeOfTween.Waypoints)
         {
-            int id = LeanTween.moveSpline(objectCamera, spline, duration).setEase(LeanTweenType.animationCurve).id;
-            tweenID = LeanTween.descr(id);
+            int id = LeanTween.moveSpline(objectCamera, spline, duration).setOnStart(OnStart.Invoke).setOnComplete(OnComplete.Invoke).setEase(LeanTweenType.animationCurve).id;
         }
     }
 

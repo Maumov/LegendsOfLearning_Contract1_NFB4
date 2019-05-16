@@ -3760,7 +3760,6 @@ GameObject:
   - component: {fileID: 8021551205417439883}
   - component: {fileID: 8071445439939313143}
   - component: {fileID: 449086527948530393}
-  - component: {fileID: 4814943077027897025}
   m_Layer: 0
   m_Name: ModuloPuerta1
   m_TagString: Untagged
@@ -3955,22 +3954,31 @@ MonoBehaviour:
   interactableScript: {fileID: 0}
   tween: 1
   isActive: 0
---- !u!114 &4814943077027897025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8021551206213461202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d42c701324fc450458236a98ab70ec2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
   OnStart:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: SetMapStatus
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: SetInputStatus
         m_Mode: 6
@@ -3984,25 +3992,9 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  OnUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   OnComplete:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: CursorStatus
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 0}
         m_MethodName: SetActive
         m_Mode: 6
@@ -4014,9 +4006,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8021551205417439883}
-        m_MethodName: StartInteraction
-        m_Mode: 1
+      - m_Target: {fileID: 0}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5594,6 +5586,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8021551206213236978}
     m_Modifications:
+    - target: {fileID: 182560, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
+      propertyPath: m_Name
+      value: SM_Bld_Fort_Base_Circle_02
+      objectReference: {fileID: 0}
     - target: {fileID: 491736, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0072543
@@ -5650,21 +5646,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.012
       objectReference: {fileID: 0}
-    - target: {fileID: 182560, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
-      propertyPath: m_Name
-      value: SM_Bld_Fort_Base_Circle_02
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
---- !u!1 &2599608190143818024 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 182560, guid: f13660f99fcad8047a78a78d1dc1d46a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2599608190143635464}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2599608190143471824 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 491736, guid: f13660f99fcad8047a78a78d1dc1d46a,
+    type: 3}
+  m_PrefabInstance: {fileID: 2599608190143635464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2599608190143818024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 182560, guid: f13660f99fcad8047a78a78d1dc1d46a,
     type: 3}
   m_PrefabInstance: {fileID: 2599608190143635464}
   m_PrefabAsset: {fileID: 0}
