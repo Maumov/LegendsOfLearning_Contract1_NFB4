@@ -30,7 +30,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (inputStatus)
         {
-            GetInputs();
+            //GetInputs();
 
             target.RotateAround(target.position, Vector3.up, horizontal);
             YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
