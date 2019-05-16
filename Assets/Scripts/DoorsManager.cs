@@ -5,7 +5,7 @@ using UnityEngine;
 public static class DoorsManager
 {
     public static List<Door> doors = new List<Door>();
-    public static List<Door> completed;
+    public static List<Door> completed = new List<Door>();
 
     public static bool SpawnDoor(int id)
     {
