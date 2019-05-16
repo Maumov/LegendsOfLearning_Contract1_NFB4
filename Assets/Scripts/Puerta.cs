@@ -17,7 +17,7 @@ public class Puerta : MonoBehaviour
     public InputField textRespuesta;
     public float animDuration = 10f;
     public bool m1, m2, m3;
-    
+    public Camera camera;
 
     private void Start() {
         
@@ -42,6 +42,7 @@ public class Puerta : MonoBehaviour
     }
 
     IEnumerator AnimatePuerta() {
+        camera.gameObject.SetActive(false);
         float j = 0f;
         while(j < animDuration) {
             j += (Time.deltaTime);
@@ -64,6 +65,9 @@ public class Puerta : MonoBehaviour
             return true;
         }
         return false;
+    }
+    public void StartInteraction() {
+        camera.gameObject.SetActive(true);
     }
 }
 
