@@ -13,6 +13,7 @@ public class MapManager : MonoBehaviour
     public Transform canvas;
     public GameObject MapUI;
     [HideInInspector] public static bool isMapOpen = false;
+    bool enabled = true;
 
     [Header("Grid & current icons")]
     public GameObject Iconprefab;
@@ -83,13 +84,21 @@ public class MapManager : MonoBehaviour
         }   
     }
 
+    public void SetMapStatus(bool status)
+    {
+        enabled = status;
+    }
+
     public void SpawnMap()
     {
-        if (isMapOpen == false)
+        if (enabled)
         {
-            isMapOpen = true;
-            GameManager.EnableCursor();
-            Instantiate(MapUI, canvas);
+            if (isMapOpen == false)
+            {
+                isMapOpen = true;
+                GameManager.EnableCursor();
+                Instantiate(MapUI, canvas);
+            }
         }
     }
 }
