@@ -18,6 +18,7 @@ public class Puerta : MonoBehaviour
     public float animDuration = 10f;
     public bool m1, m2, m3;
     public Camera camera;
+    public GameObject placeHolder;
 
     public UnityEvent InteractionFinished;
 
@@ -50,9 +51,11 @@ public class Puerta : MonoBehaviour
         while(j < animDuration) {
             j += (Time.deltaTime);
             transform.Translate(0f, -1f * Time.deltaTime, 0f);
+            placeHolder.transform.Translate(-1f * Time.deltaTime, 0f, 0f);
             yield return null;
         }
         gameObject.SetActive(false);
+        placeHolder.SetActive(false);
         yield return null;
     }
 
