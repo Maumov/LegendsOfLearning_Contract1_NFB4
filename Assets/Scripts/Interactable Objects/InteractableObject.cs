@@ -31,17 +31,6 @@ public class InteractableObject : MonoBehaviour
         // Place here the interaction behaviour
     }
 
-    // For Chest and etc
-    public virtual void StartModule()
-    {
-        // Instantiate module
-    }
-
-    public virtual void ModuleCompleted()
-    {
-        // Complete module
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.name.Contains("Player"))
