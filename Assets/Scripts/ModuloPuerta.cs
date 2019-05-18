@@ -29,6 +29,7 @@ public class ModuloPuerta : MonoBehaviour
     }
 
     public void CheckRespuesta() {
+        Debug.Log("Check respuesta");
         if(modulo == 1) {
             StartCoroutine(Animate1());
         }
@@ -36,6 +37,7 @@ public class ModuloPuerta : MonoBehaviour
             StartCoroutine(Animate2());
         }
         if(modulo == 3) {
+            Debug.Log(" entro ");
             StartCoroutine(Animate3());
         }
     }

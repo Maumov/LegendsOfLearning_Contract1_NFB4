@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Cofre : MonoBehaviour {
 
@@ -8,10 +9,16 @@ public class Cofre : MonoBehaviour {
 
     public float animDuration = 10f;
     public bool m1, m2, m3;
+
+    public ModuloCofre[] modulos;
+    
+    public UnityEvent endInteraction;
+
+    int currentModulo = 0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        modulos = GetComponentsInChildren<ModuloCofre>();
     }
 
     // Update is called once per frame
@@ -19,6 +26,28 @@ public class Cofre : MonoBehaviour {
     {
         
     }
+
+    public void InteractionStart() {
+        modulos[currentModulo].StartInteraction();
+    }
+
+    public void ModuloFinished() {
+        currentModulo++;
+        NextModulo();
+    }
+
+    void NextModulo() {
+        if(currentModulo >= modulos.Length) {
+            InteractionFinished();
+        } else {
+            modulos[currentModulo].StartInteraction();
+        }
+    }
+
+    void InteractionFinished() {
+        endInteraction.Invoke();
+    }
+
 
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
