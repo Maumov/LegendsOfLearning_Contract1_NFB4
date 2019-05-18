@@ -9,7 +9,7 @@ public class ModuloCofre : MonoBehaviour {
     Cofre cofre;
     public int modulo;
     public Question question, question2;
-
+    public Camera cam;
     public int valor = 0;
     [Header("Modulo 1 y 2")]
     public Text preguntaNumerador1;
@@ -29,7 +29,7 @@ public class ModuloCofre : MonoBehaviour {
     public int currentDenominatorX, currentDenominatorY;
     public GameObject panel;
     public List<GameObject> botones;
-
+    bool isBusy;
     private void Start() {
         cofre = GetComponentInParent<Cofre>();
         SetQuestion();
@@ -132,6 +132,10 @@ public class ModuloCofre : MonoBehaviour {
     }
 
     public void TestAnswer() {
+        if(isBusy) {
+            return;
+        }
+        isBusy = true;
         if(modulo == 0 || modulo == 1) {
             StartCoroutine(AnimateSolution());
         }
@@ -177,6 +181,7 @@ public class ModuloCofre : MonoBehaviour {
 
 
     void Bad() {
+        isBusy = false;
         Debug.Log("Bad");
     }
 
@@ -247,6 +252,17 @@ public class ModuloCofre : MonoBehaviour {
             yield return null;
         }
         tranca.SetActive(false);
+        EndInteraction();
+    }
 
+    public void StartInteraction() {
+        canvasTransform.gameObject.SetActive(true);
+        cam.gameObject.SetActive(true);
+    }
+
+    public void EndInteraction() {
+        canvasTransform.gameObject.SetActive(false);
+        GetComponentInParent<Cofre>().ModuloFinished();
+        cam.gameObject.SetActive(false);
     }
 }

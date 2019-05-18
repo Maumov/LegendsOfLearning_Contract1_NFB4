@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4410314834769960643
 RectTransform:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 117455909326867564}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -361,6 +361,7 @@ MonoBehaviour:
     numerador: 0
     denominador: 0
     cociente: 0
+  cam: {fileID: 117455909326867564}
   valor: 0
   preguntaNumerador1: {fileID: 2282861239977581578}
   preguntaDenominador1: {fileID: 2309110760069922945}
@@ -1195,7 +1196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1392818317284914236}
         m_MethodName: TestAnswer
         m_Mode: 1
         m_Arguments:

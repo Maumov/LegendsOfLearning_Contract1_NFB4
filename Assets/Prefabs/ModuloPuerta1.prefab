@@ -448,7 +448,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16183
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -3760,7 +3760,7 @@ GameObject:
   - component: {fileID: 8021551205417439883}
   - component: {fileID: 8071445439939313143}
   - component: {fileID: 449086527948530393}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: ModuloPuerta1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3909,6 +3909,7 @@ MonoBehaviour:
   m2: 0
   m3: 0
   camera: {fileID: 967998663502388365}
+  placeHolder: {fileID: 0}
   InteractionFinished:
     m_PersistentCalls:
       m_Calls: []
@@ -5141,7 +5142,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8021551206218034922
 RectTransform:
   m_ObjectHideFlags: 0

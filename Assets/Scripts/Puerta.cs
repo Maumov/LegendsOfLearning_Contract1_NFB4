@@ -67,6 +67,8 @@ public class Puerta : MonoBehaviour
     
 
     public bool CheckQuestion() {
+        Debug.Log(valor.GetType() + " , " + question.cociente.GetType());
+        Debug.Log(valor + " , " + question.cociente);
         if(valor == question.cociente) {
             return true;
         }
