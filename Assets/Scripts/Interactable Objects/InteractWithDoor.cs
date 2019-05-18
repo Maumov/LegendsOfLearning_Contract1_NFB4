@@ -13,28 +13,17 @@ public class InteractWithDoor : InteractableObject
         {
             isModuleOpen = true;
             CameraPanning panning = GetComponent<CameraPanning>();
-            panning.ActivateCinematic();
-            // Iniciar animacion hacia el cofre
+            if(panning != null)
+            {
+                panning.ActivateCinematic();
+            }
         }
-    }
-
-    public override void StartModule()
-    {
-        // Instantiate module;
     }
 
     // Cerrar module sin terminarse
     public void ExitModule()
     {
         isModuleOpen = false;
-        // Destroy(module);
-    }
-
-    public override void ModuleCompleted()
-    {
-        ExitModule();
-        completed = true;
-        // Acciones pendientes por el modulo
         // Destroy(module);
     }
 }
