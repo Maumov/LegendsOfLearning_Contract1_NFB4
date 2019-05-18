@@ -269,6 +269,7 @@ GameObject:
   - component: {fileID: 8066575586346555932}
   - component: {fileID: 8246290088392744784}
   - component: {fileID: 926871075794099438}
+  - component: {fileID: 1392818317284914236}
   m_Layer: 0
   m_Name: Module1
   m_TagString: Untagged
@@ -290,6 +291,7 @@ Transform:
   - {fileID: 4285535401973712981}
   - {fileID: 6672768534308340308}
   - {fileID: 4410314834769960643}
+  - {fileID: 6167350226833940727}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -338,6 +340,48 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1392818317284914236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877075126502376135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde6ff334c7d10342a1d0d91a65c2230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modulo: 0
+  question:
+    numerador: 0
+    denominador: 0
+    cociente: 0
+  question2:
+    numerador: 0
+    denominador: 0
+    cociente: 0
+  valor: 0
+  preguntaNumerador1: {fileID: 2282861239977581578}
+  preguntaDenominador1: {fileID: 2309110760069922945}
+  preguntaNumerador2: {fileID: 7367798462942253339}
+  preguntaDenominador2: {fileID: 7223149343450314827}
+  preguntaDenominador3: {fileID: 4325306973412608710}
+  tranca: {fileID: 0}
+  canvasTransform: {fileID: 4410314834769960643}
+  image1: {fileID: 8356403633063403392}
+  bigDenominator: {fileID: 7561316500232647444}
+  smallDenominator: {fileID: 8850487904456755424}
+  rotator: {fileID: 8230353556059486808}
+  top: []
+  left: []
+  buttonPrefab: {fileID: 0}
+  activo: {fileID: 0}
+  noActivo: {fileID: 0}
+  currentDenominatorX: 0
+  currentDenominatorY: 0
+  panel: {fileID: 0}
+  botones: []
 --- !u!1 &1551703819841465043
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +456,88 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!1 &1570885948019009329
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6167350226833940727}
+  - component: {fileID: 117455909326867564}
+  - component: {fileID: 1974233826526245815}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6167350226833940727
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570885948019009329}
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0.519, y: -0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8066575586346555932}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
+--- !u!20 &117455909326867564
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570885948019009329}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_projectionMatrixMode: 1
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_GateFitMode: 2
+  m_FocalLength: 50
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.1
+  far clip plane: 1
+  field of view: 60
+  orthographic: 1
+  orthographic size: 0.1
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &1974233826526245815
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570885948019009329}
+  m_Enabled: 1
 --- !u!1 &1752091054894463605
 GameObject:
   m_ObjectHideFlags: 0
@@ -1485,7 +1611,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1392818317284914236}
         m_MethodName: SetValor
         m_Mode: 0
         m_Arguments:
