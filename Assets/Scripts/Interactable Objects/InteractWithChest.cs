@@ -1,20 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class InteractWithChest : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
-    public GameObject module;
-
-    private Animator animator;
-    public string OpenTrigger;
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    public UnityEvent StartUsingChest;
 
     public override void Interaction()
     {
@@ -22,14 +15,15 @@ public class InteractWithChest : InteractableObject
         {
             isModuleOpen = true;
             CameraPanning panning = GetComponent<CameraPanning>();
-            panning.ActivateCinematic();
-            // Iniciar animacion hacia el cofre
+            if(panning != null)
+            {
+                panning.ActivateCinematic();
+            }
+            else
+            {
+                StartUsingChest.Invoke();
+            }
         }
-    }
-
-    public override void StartModule()
-    {
-        // Instantiate module;
     }
 
     // Cerrar module sin terminarse
@@ -37,17 +31,13 @@ public class InteractWithChest : InteractableObject
     {
         CameraMovement.RestoreInputs();
         isModuleOpen = false;
-        // Destroy(module);
     }
 
-    public override void ModuleCompleted()
+    // Llamar al completar el cofre
+    public void ChestCompleted()
     {
         ExitModule();
-        Debug.Log("Completed");
         completed = true;
         interacted = true;
-        // Acciones pendientes por el modulo
-        // Destroy(module);
-        animator.SetTrigger(OpenTrigger);
     }
 }
