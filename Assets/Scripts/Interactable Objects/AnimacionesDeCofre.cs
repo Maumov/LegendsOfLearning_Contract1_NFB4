@@ -30,8 +30,8 @@ public class AnimacionesDeCofre : MonoBehaviour
     IEnumerator InstanciarRewards()
     {
 
-        yield return new WaitForSeconds(2.2f);
-        Instantiate(reward);
+        yield return new WaitForSeconds(1f);
+        reward.SetActive(true);
         yield return null;
     }
 }
