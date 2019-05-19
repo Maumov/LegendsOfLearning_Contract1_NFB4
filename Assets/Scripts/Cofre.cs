@@ -46,6 +46,7 @@ public class Cofre : MonoBehaviour {
     }
 
     void InteractionFinished() {
+        animaciones.ActivateAnimation(cerrojo.tapa);
         endInteraction.Invoke();
     }
 
