@@ -26,4 +26,12 @@ public class InteractWithDoor : InteractableObject
         isModuleOpen = false;
         // Destroy(module);
     }
+
+    public void ChestCompleted()
+    {
+        //ExitModule();
+        Destroy(this);
+        //completed = true;
+        //interacted = true;
+    }
 }

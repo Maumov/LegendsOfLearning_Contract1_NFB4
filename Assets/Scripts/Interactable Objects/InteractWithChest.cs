@@ -7,10 +7,10 @@ public class InteractWithChest : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
-    public UnityEvent StartUsingChest;
 
     public override void Interaction()
     {
+        base.Interaction();
         if (!completed && !isModuleOpen)
         {
             isModuleOpen = true;
@@ -19,25 +19,22 @@ public class InteractWithChest : InteractableObject
             {
                 panning.ActivateCinematic();
             }
-            else
-            {
-                StartUsingChest.Invoke();
-            }
         }
     }
 
     // Cerrar module sin terminarse
     public void ExitModule()
     {
-        CameraMovement.RestoreInputs();
         isModuleOpen = false;
+        interacted = false;
     }
 
     // Llamar al completar el cofre
     public void ChestCompleted()
     {
-        ExitModule();
-        completed = true;
-        interacted = true;
+        //ExitModule();
+        Destroy(this);
+        //completed = true;
+        //interacted = true;
     }
 }

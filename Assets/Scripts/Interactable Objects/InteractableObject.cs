@@ -11,7 +11,6 @@ public class InteractableObject : MonoBehaviour
 
     [Header("Indicators")]
     public GameObject canvasIndicatorPrefab;
-    //public string prefabText;
     private GameObject prefabContainer;
     public bool canBeFocus = false;
     public bool isFocus;
@@ -28,7 +27,6 @@ public class InteractableObject : MonoBehaviour
     public virtual void Interaction()
     {
         interacted = true;
-        // Place here the interaction behaviour
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,7 +34,6 @@ public class InteractableObject : MonoBehaviour
         if (other.name.Contains("Player"))
         {
             canBeFocus = true;
-            // Instanciar indicador
             if (!interacted && canvasIndicatorPrefab != null)
             {
                 prefabContainer = Instantiate(canvasIndicatorPrefab);
@@ -58,7 +55,6 @@ public class InteractableObject : MonoBehaviour
         if (other.name.Contains("Player"))
         {
             canBeFocus = false;
-            // Eliminar indicador
             DestroyContainer();
         }
     }
