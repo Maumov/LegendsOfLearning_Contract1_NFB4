@@ -19,6 +19,7 @@ public class Puerta : MonoBehaviour
     public bool m1, m2, m3;
     public Camera camera;
     public GameObject placeHolder;
+    public GameObject canvasDoor;
 
     public UnityEvent InteractionFinished;
 
@@ -48,6 +49,7 @@ public class Puerta : MonoBehaviour
         camera.gameObject.SetActive(false);
         InteractionFinished.Invoke();
         float j = 0f;
+        canvasDoor.SetActive(false);
         while(j < animDuration) {
             j += (Time.deltaTime);
             transform.Translate(0f, -1f * Time.deltaTime, 0f);
@@ -67,8 +69,6 @@ public class Puerta : MonoBehaviour
     
 
     public bool CheckQuestion() {
-        Debug.Log(valor.GetType() + " , " + question.cociente.GetType());
-        Debug.Log(valor + " , " + question.cociente);
         if(valor == question.cociente) {
             return true;
         }
