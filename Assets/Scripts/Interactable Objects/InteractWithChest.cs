@@ -32,9 +32,9 @@ public class InteractWithChest : InteractableObject
     // Llamar al completar el cofre
     public void ChestCompleted()
     {
-        //ExitModule();
-        Destroy(this);
-        //completed = true;
-        //interacted = true;
+        ExitModule();
+        //Destroy(this);
+        completed = true;
+        interacted = true;
     }
 }
