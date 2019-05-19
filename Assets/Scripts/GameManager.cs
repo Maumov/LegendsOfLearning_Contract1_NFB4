@@ -7,10 +7,10 @@ public class GameManager : MonoBehaviour
 {
     private void Start()
     {
-        DisableCursor();
+        CursorStatus(false);
     }
 
-    public static void SetCursorStatus(bool status)
+    public static void StaticSetCursorStatus(bool status)
     {
         Cursor.visible = status;
     }
@@ -18,17 +18,5 @@ public class GameManager : MonoBehaviour
     public void CursorStatus(bool status)
     {
         Cursor.visible = status;
-    }
-
-    [MenuItem("Tools/Cursor/Enable")]
-    public static void EnableCursor()
-    {
-        Cursor.visible = true;
-    }
-
-    [MenuItem("Tools/Cursor/Disable")]
-    public static void DisableCursor()
-    {
-        Cursor.visible = false;
     }
 }

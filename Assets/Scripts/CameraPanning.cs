@@ -101,7 +101,7 @@ public class CameraPanning : MonoBehaviour
         isActive = true;
         mainCamera.SetActive(false);
         objectCamera.SetActive(true);
-        CameraMovement.SetInputs(false);
+        CameraMovement.StaticSetInputs(false);
 
         if (tween == TypeOfTween.Waypoints)
         {
@@ -114,7 +114,7 @@ public class CameraPanning : MonoBehaviour
         isActive = false;
         objectCamera.SetActive(false);
         mainCamera.SetActive(true);
-        CameraMovement.RestoreInputs();
+        CameraMovement.StaticSetInputs(true);
         objectCamera.transform.position = cameraInitPosition;
     }
 

@@ -15,8 +15,9 @@ public class TextController : MonoBehaviour
     private void Start()
     {
         delayCounter = delay;
-        CameraMovement.SetInputs(false);
-        GameManager.EnableCursor();
+        CameraMovement.StaticSetInputs(false);
+        GameManager.StaticSetCursorStatus(true);
+        MapManager.StaticSetMapStatus(false);
     }
 
     private void Update()
@@ -48,8 +49,10 @@ public class TextController : MonoBehaviour
             else
             {
                 GetComponent<Animator>().SetTrigger("Completed");
-                CameraMovement.SetInputs(false);
-                GameManager.DisableCursor();
+                CameraMovement.StaticSetInputs(true);
+                GameManager.StaticSetCursorStatus(false);
+                MapManager.StaticSetMapStatus(true);
+                DestroyThisObject();
             }
 
             delayCounter = delay;
@@ -64,6 +67,6 @@ public class TextController : MonoBehaviour
 
     public void DestroyThisObject()
     {
-        Destroy(transform.parent);
+        Destroy(transform.parent.gameObject);
     }
 }

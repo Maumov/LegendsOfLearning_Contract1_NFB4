@@ -8,8 +8,8 @@ public class DestroyMap : MonoBehaviour
     public void DestroyObject()
     {
         MapManager.isMapOpen = false;
-        CameraMovement.RestoreInputs();
-        GameManager.DisableCursor();
+        CameraMovement.StaticSetInputs(true);
+        GameManager.StaticSetCursorStatus(false);
         Destroy(transform.parent.gameObject);
     }
 }
