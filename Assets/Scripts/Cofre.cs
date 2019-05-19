@@ -11,7 +11,7 @@ public class Cofre : MonoBehaviour {
     public bool m1, m2, m3;
 
     public ModuloCofre[] modulos;
-    
+    AnimacionesDeCofre animaciones;
     public UnityEvent endInteraction;
 
     int currentModulo = 0;
@@ -19,6 +19,7 @@ public class Cofre : MonoBehaviour {
     void Start()
     {
         modulos = GetComponentsInChildren<ModuloCofre>();
+        animaciones = GetComponent<AnimacionesDeCofre>();
     }
 
     // Update is called once per frame

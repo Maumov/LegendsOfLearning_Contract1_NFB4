@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class InteractWithDoor : InteractableObject
@@ -30,7 +31,7 @@ public class InteractWithDoor : InteractableObject
     public void ChestCompleted()
     {
         //ExitModule();
-        Destroy(this);
+        //Destroy(this);
         //completed = true;
         //interacted = true;
     }

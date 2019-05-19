@@ -7,6 +7,7 @@ public class InteractWithChest : InteractableObject
 {
     public bool completed = false;
     private bool isModuleOpen = false;
+    public UnityEvent onStart;
 
     public override void Interaction()
     {
@@ -18,6 +19,10 @@ public class InteractWithChest : InteractableObject
             if(panning != null)
             {
                 panning.ActivateCinematic();
+            }
+            else
+            {
+                onStart.Invoke();
             }
         }
     }
@@ -33,8 +38,8 @@ public class InteractWithChest : InteractableObject
     public void ChestCompleted()
     {
         ExitModule();
-        //Destroy(this);
-        completed = true;
-        interacted = true;
+        Destroy(this);
+        //completed = true;
+        //interacted = true;
     }
 }
