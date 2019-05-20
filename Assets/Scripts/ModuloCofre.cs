@@ -102,12 +102,12 @@ public class ModuloCofre : MonoBehaviour {
             //scala
             for(int i = 0; i < question.denominador; i++) {
                 top[(int)question.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
-                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
+//                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
                 top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivo;
             }
             for(int i = 0; i < (int)question2.denominador; i++) {
                 left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
-                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
+//                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
                 left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivo;
             }
             //color
