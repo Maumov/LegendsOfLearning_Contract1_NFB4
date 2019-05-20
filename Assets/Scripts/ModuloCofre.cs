@@ -26,7 +26,8 @@ public class ModuloCofre : MonoBehaviour {
     public GameObject[] top;
     public GameObject[] left;
     public GameObject buttonPrefab;
-    public Material activo, noActivo;
+    public Material activoVertical, noActivoVertical;
+    public Material activoHorizontal, noActivoHorizontal;
     public int currentDenominatorX, currentDenominatorY;
     public GameObject panel;
     public List<GameObject> botones;
@@ -104,21 +105,21 @@ public class ModuloCofre : MonoBehaviour {
             for(int i = 0; i < question.denominador; i++) {
                 top[(int)question.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
 //                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
-                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivo;
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivoHorizontal;
             }
             for(int i = 0; i < (int)question2.denominador; i++) {
                 left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
 //                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.transform.localScale *= 0.85f;
-                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivo;
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = noActivoVertical;
             }
             //color
             for(int i = 0; i < (int)question.numerador ; i++) {
                 top[(int)question.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
-                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activo;
+                top[(int)question.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activoHorizontal;
             }
             for(int i = 0; i < (int)question2.numerador; i++) {
                 left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.SetActive(true);
-                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activo;
+                left[(int)question2.denominador - 2].transform.GetChild(i).gameObject.GetComponent<Renderer>().material = activoVertical;
             }
             CreateButtons();
         }
