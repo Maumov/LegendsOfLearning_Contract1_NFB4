@@ -456,6 +456,11 @@ PrefabInstance:
       propertyPath: tranca
       value: 
       objectReference: {fileID: 3872711660886887854}
+    - target: {fileID: 581961860003419402, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a9836a080d4eb4dbc3cdbec3f80611, type: 3}
 --- !u!4 &7052509707600205696 stripped

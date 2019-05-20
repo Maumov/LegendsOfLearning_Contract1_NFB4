@@ -7479,6 +7479,7 @@ MonoBehaviour:
   bigDenominator: {fileID: 0}
   smallDenominator: {fileID: 0}
   rotator: {fileID: 0}
+  checkButton: {fileID: 3159235453249600793}
   top:
   - {fileID: 2674475184590701415}
   - {fileID: 3860350672836542425}

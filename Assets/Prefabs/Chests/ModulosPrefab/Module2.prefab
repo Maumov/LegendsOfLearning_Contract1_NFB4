@@ -929,6 +929,7 @@ MonoBehaviour:
   bigDenominator: {fileID: 1258626701652859643}
   smallDenominator: {fileID: 5151333086647457915}
   rotator: {fileID: 3287001022277443678}
+  checkButton: {fileID: 6908386705620941595}
   top: []
   left: []
   buttonPrefab: {fileID: 0}

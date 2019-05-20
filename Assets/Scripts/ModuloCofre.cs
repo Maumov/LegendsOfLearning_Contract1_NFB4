@@ -21,6 +21,7 @@ public class ModuloCofre : MonoBehaviour {
     public Image image1;
     public Image bigDenominator, smallDenominator;
     public GameObject rotator;
+    public Image checkButton;
     [Header("Modulo 3")]
     public GameObject[] top;
     public GameObject[] left;
@@ -187,7 +188,7 @@ public class ModuloCofre : MonoBehaviour {
 
     void Good() {
         StartCoroutine(AnimateTranca());
-        //boton.color = Color.green;
+        checkButton.color = Color.green;
         Debug.Log("Good");
     }
 
