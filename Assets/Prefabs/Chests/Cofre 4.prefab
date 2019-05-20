@@ -82,6 +82,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Item_Gem_03
       objectReference: {fileID: 0}
+    - target: {fileID: 156336, guid: e1dfdc62d151cdd4b9beddbbf0034d65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 405722, guid: e1dfdc62d151cdd4b9beddbbf0034d65, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.005
@@ -156,7 +160,7 @@ PrefabInstance:
     - target: {fileID: 5995526789558858028, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
         type: 3}
       propertyPath: m_Name
-      value: CofreConModulo
+      value: CofreJuegoPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 5995526789558562060, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
         type: 3}
