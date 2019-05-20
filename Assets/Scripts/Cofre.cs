@@ -46,6 +46,10 @@ public class Cofre : MonoBehaviour {
     }
 
     void InteractionFinished() {
+        if(GameManager.counter != null)
+        {
+            GameManager.counter();
+        }
         animaciones.ActivateAnimation(cerrojo.tapa);
         endInteraction.Invoke();
     }
