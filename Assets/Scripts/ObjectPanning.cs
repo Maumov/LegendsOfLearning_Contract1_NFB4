@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
-using UnityEngine.Playables;
 using UnityEngine;
 
 public class ObjectPanning : MonoBehaviour
@@ -24,7 +23,6 @@ public class ObjectPanning : MonoBehaviour
     float RotationY;
 
     [Header("EndingTween")]
-    public PlayableDirector director;
     public UnityEvent OnEndingCompleted;
 
     [Header("Events")]
@@ -78,7 +76,6 @@ public class ObjectPanning : MonoBehaviour
     public void EndingTween()
     {
         LeanTween.cancelAll(true);
-        director.Play();
         LeanTween.moveSpline(gameObject, pathEnding, 20f).setOrientToPath(true).setOnStart(OnStart.Invoke).setOnComplete(OnEndingCompleted.Invoke);
     }
 }

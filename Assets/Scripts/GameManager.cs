@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,10 @@ public class GameManager : MonoBehaviour
     public GameObject finalPlaceHolder;
     public delegate void GemCounter();
     public static GemCounter counter;
+    public GameObject GameOverCanvas;
+    public GameObject treasure;
+    public PlayableDirector director;
+    public ObjectPanning shipPanning;
 
     private void Start()
     {
@@ -39,5 +44,17 @@ public class GameManager : MonoBehaviour
     public void CursorStatus(bool status)
     {
         Cursor.visible = status;
+    }
+
+    public void GameOver()
+    {
+        treasure.SetActive(true);
+        shipPanning.EndingTween();
+        director.Play();
+    }
+
+    public void LoadCanvas()
+    {
+        Instantiate(GameOverCanvas);
     }
 }

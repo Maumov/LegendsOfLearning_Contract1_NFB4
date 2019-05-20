@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+
 using UnityEngine;
 
 public class EndingGame : MonoBehaviour
 {
     public GameObject GameOverCanvas;
+    public GameObject treasure;
 
     public void LoadCanvas()
     {
