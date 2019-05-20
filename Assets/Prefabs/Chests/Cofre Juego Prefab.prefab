@@ -179,20 +179,9 @@ MonoBehaviour:
   isFocus: 0
   interacted: 0
   completed: 0
-  StartUsingChest:
+  onStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5995526789558957983}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &6442030810973773116
@@ -332,16 +321,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5995526789558562060}
     m_Modifications:
-    - target: {fileID: 8753641616868041240, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 8972356610577237833, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
-        type: 3}
-      propertyPath: m_Name
-      value: tranca_F
-      objectReference: {fileID: 0}
     - target: {fileID: 8612529713347629470, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
       propertyPath: m_Name
@@ -402,6 +381,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8753641616868041240, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5675772047226427408, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -412,10 +396,35 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.2341994
       objectReference: {fileID: 0}
+    - target: {fileID: 5488997496499281503, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2524268420816827896, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.1948805
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136352377436730588, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136352377436730588, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2136352377436730588, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8972356610577237833, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_Name
+      value: tranca_F
       objectReference: {fileID: 0}
     - target: {fileID: 8908973444590672701, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
@@ -427,16 +436,6 @@ PrefabInstance:
       propertyPath: tranca
       value: 
       objectReference: {fileID: 6278883784605954112}
-    - target: {fileID: 4744259955619798585, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
-        type: 3}
-      propertyPath: tranca
-      value: 
-      objectReference: {fileID: 4409622518034223420}
-    - target: {fileID: 2136352377436597862, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
-        type: 3}
-      propertyPath: tranca
-      value: 
-      objectReference: {fileID: 3872711660886887854}
     - target: {fileID: 7406647490280396763, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
       propertyPath: m_IsActive
@@ -447,11 +446,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5488997496499281503, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+    - target: {fileID: 4744259955619798585, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: tranca
+      value: 
+      objectReference: {fileID: 4409622518034223420}
+    - target: {fileID: 2136352377436597862, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: tranca
+      value: 
+      objectReference: {fileID: 3872711660886887854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79a9836a080d4eb4dbc3cdbec3f80611, type: 3}
 --- !u!4 &7052509707600205696 stripped
