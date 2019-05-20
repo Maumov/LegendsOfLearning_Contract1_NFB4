@@ -206,8 +206,8 @@ public class ModuloCofre : MonoBehaviour {
                 RectTransform rT = go.GetComponent<RectTransform>();
                 float height = panel.GetComponent<RectTransform>().rect.height / currentDenominatorY;
                 float width = panel.GetComponent<RectTransform>().rect.width / currentDenominatorX;
-                float basePositionX = panel.transform.position.x - (panel.GetComponent<RectTransform>().rect.width * .5f) + (width * 0.5f);
-                float basePositionY = panel.transform.position.y - (panel.GetComponent<RectTransform>().rect.height * .5f) + (height * 0.5f);
+                float basePositionX = panel.transform.position.x - (panel.GetComponent<RectTransform>().rect.width * .5f) + (width * .5f);
+                float basePositionY = panel.transform.position.y - (panel.GetComponent<RectTransform>().rect.height * .5f) + (height * .5f);
                 //float basePositionX = panel.transform.position.x;
                 //float basePositionY = panel.transform.position.y;
                 //Rect rect = new Rect(((float)i) * width, ((float)j) * height, width, height);
