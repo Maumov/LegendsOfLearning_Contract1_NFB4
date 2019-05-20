@@ -42,9 +42,10 @@ public class ModuloPuerta : MonoBehaviour
 
     IEnumerator Animate1() {
         float j = 0f;
+        int objectsToFill = int.Parse(preguntaDenominador.text);
         while(j < puerta.valor) {
             j += (Time.deltaTime / animDuration);
-            for(int i = 0; i < gameObjectsToFill.Length; i++) {
+            for(int i = 0; i < objectsToFill; i++) {
                 gameObjectsToFill[i].transform.localScale = Vector3.Lerp(new Vector3(0.001f, 1f, 1f), new Vector3(1f, 1f, 1f), j);
             }
             for(int i = 0; i < gameObjectsToEmpty.Length; i++) {
@@ -116,11 +117,36 @@ public class ModuloPuerta : MonoBehaviour
         yield return null;
     }
 
-    
+    private void Reset() {
+        if(modulo == 1) {
+            for(int i = 0; i < gameObjectsToFill.Length; i++) {
+                gameObjectsToFill[i].transform.localScale = new Vector3(0.001f, 1f, 1f);
+            }
+            for(int i = 0; i < gameObjectsToEmpty.Length; i++) {
+                gameObjectsToEmpty[i].transform.localScale = new Vector3(1f, 1f, 1f);
+               
+            }
+        }
+        if(modulo == 2) {
+            for(int i = 0; i < gameObjectsToFill.Length; i++) {
+                gameObjectsToFill[i].transform.localScale = new Vector3(1f, 1f, 0.001f);
+            }
+            for(int i = 0; i < gameObjectsToEmpty.Length; i++) {
+                gameObjectsToEmpty[i].transform.localScale = new Vector3(1f, 1f, 1f);
+
+            }
+        }
+        if(modulo == 3) {
+            image.fillAmount = 0f;
+        }
+    }
+
+
 
 
     void Bad() {
         Debug.Log("Bad");
+        Reset();
     }
 
     void Good() {
