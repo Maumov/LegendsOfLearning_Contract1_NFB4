@@ -66,6 +66,7 @@ public class ModuloCofre : MonoBehaviour {
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
                 Vector3 dir = new Vector3(x, y, 0f) * 280f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
+                im.rectTransform.Rotate(0f, 0f, - angle + 90f);
             }
             for(int i = 0; i < question2.denominador + 1; i++) {
                 Image im = Instantiate(bigDenominator, image1.rectTransform);
@@ -74,6 +75,7 @@ public class ModuloCofre : MonoBehaviour {
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
                 Vector3 dir = new Vector3(x, y, 0f) * 280f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
+                im.rectTransform.Rotate(0f, 0f, -angle + 90f);
             }
         }
 
@@ -83,10 +85,13 @@ public class ModuloCofre : MonoBehaviour {
             for(int i = 0; i < den + 1; i++) {
                 Image im = Instantiate(smallDenominator, image1.rectTransform);
                 float angle = (i * 180f / den) - 90f;
+
                 float x = Mathf.Cos(-angle * Mathf.Deg2Rad);
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
                 Vector3 dir = new Vector3(x, y, 0f) * 330f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
+                im.rectTransform.Rotate(0f, 0f, -angle + 90f);
+
             }
             for(int i = 0; i < question2.denominador + 1; i++) {
                 Image im = Instantiate(bigDenominator, image1.rectTransform);
@@ -95,6 +100,7 @@ public class ModuloCofre : MonoBehaviour {
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
                 Vector3 dir = new Vector3(x, y, 0f) * 330f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
+                im.rectTransform.Rotate(0f, 0f, -angle + 90f);
             }
         }
 
