@@ -335,7 +335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Of
+  m_Text: of
 --- !u!1 &877075126502376135
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,8 +456,10 @@ MonoBehaviour:
   top: []
   left: []
   buttonPrefab: {fileID: 0}
-  activo: {fileID: 0}
-  noActivo: {fileID: 0}
+  activoVertical: {fileID: 0}
+  noActivoVertical: {fileID: 0}
+  activoHorizontal: {fileID: 0}
+  noActivoHorizontal: {fileID: 0}
   currentDenominatorX: 0
   currentDenominatorY: 0
   panel: {fileID: 0}
