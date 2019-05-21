@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+        director.gameObject.SetActive(true);
         treasure.SetActive(true);
         shipPanning.EndingTween();
         director.Play();

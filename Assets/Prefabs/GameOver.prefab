@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4017256830242271318}
   - component: {fileID: 2140981796925023782}
   - component: {fileID: 7094281170522269627}
-  - component: {fileID: 2233091168391591801}
   m_Layer: 5
   m_Name: Mask
   m_TagString: Untagged
@@ -95,20 +94,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2233091168391591801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3638726119205369987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32216a3705dd6946badffa5503f2851, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOverCanvas: {fileID: 2735750748094760187, guid: 5218d87db4281f04e9323fcf89b584b9,
-    type: 3}
 --- !u!1 &8201137575108240801
 GameObject:
   m_ObjectHideFlags: 0
