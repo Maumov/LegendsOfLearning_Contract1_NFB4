@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class CineMachineMovement : MonoBehaviour
 {
-    public Vector3[] panning;
+    public Vector3[] firstPart;
+    public Vector3[] secondPart;
+    public Vector3 initialRotation;
+    public Vector3 finalRotation;
 
     public void StartPanning()
     {
-        LeanTween.moveSpline(gameObject, panning, 4f).setOnComplete(StartRotating);
+
+        LeanTween.moveSplineLocal(gameObject, firstPart, 4f).setOnStart(SetInitialRotation).setOnComplete(StartRotating);
     }
 
     void StartRotating()
     {
-        LeanTween.rotateAround(gameObject, Vector3.up, -120f, 8f);
+        LeanTween.moveSplineLocal(gameObject, secondPart, 6f).setDelay(2f).setOnStart(SetFinalRotation);
+    }
+
+    void SetInitialRotation()
+    {
+        transform.localRotation = Quaternion.Euler(initialRotation);
+    }
+    void SetFinalRotation()
+    {
+        transform.localRotation = Quaternion.Euler(finalRotation);
     }
 }
