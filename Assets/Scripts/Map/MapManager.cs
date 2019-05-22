@@ -13,12 +13,15 @@ public class MapManager : MonoBehaviour
     public Transform canvas;
     public GameObject MapUI;
     [HideInInspector] public static bool isMapOpen = false;
+    static bool AbletoOpenMap = true;
 
     [Header("Grid & current icons")]
     public GameObject Iconprefab;
     public List<GameObject> icons;
-    public List<Texture> textures;
+    public Texture textures;
     public static Vector2Int index = new Vector2Int(1, 1);
+
+    public List<int> doorsIndicatorMask = new List<int>();
 
     public static MapManager instance;
 
@@ -33,14 +36,15 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         SetIcon(1, 8, 3, 10, "Treasure", 1);
-        SetIcon(2, 10, 7, 10, "Treasure", 2);
-        SetIcon(3, 5, 1, 3, "Treasure", 3);
-        SetIcon(1, 2, 7, 8, "Treasure", 4);
-
+        SetIcon(2, 9, 7, 10, "Treasure", 2);
+        SetIcon(4, 9, 5, 6, "Treasure", 3);
+        SetIcon(5, 8, 3, 9, "Treasure", 4);
+        /*
         for (int i = 0; i < doors.Count; i++)
         {
             doors[i].door.SetActive(false);
         }
+        */
     }
 
     private void Update()
@@ -62,13 +66,7 @@ public class MapManager : MonoBehaviour
         imageScript.numerators = new Vector2(xNum, yNum);
         imageScript.denimators = new Vector2(xDem, yDem);
         imageScript.position = new Vector2((float)xNum / xDem, (float)yNum / yDem);
-        for (int i = 0; i < textures.Count; i++)
-        {
-            if (textures[i].name.Contains(icon))
-            {
-                imageTexture.texture = textures[i];
-            }
-        }
+        imageTexture.texture = textures;
     }
 
     public void DestroyIcon(int id)
@@ -83,13 +81,26 @@ public class MapManager : MonoBehaviour
         }   
     }
 
+    public void SetMapStatus(bool status)
+    {
+        AbletoOpenMap = status;
+    }
+
+    public static void StaticSetMapStatus(bool status)
+    {
+        AbletoOpenMap = status;
+    }
+
     public void SpawnMap()
     {
-        if (isMapOpen == false)
+        if (AbletoOpenMap)
         {
-            isMapOpen = true;
-            GameManager.EnableCursor();
-            Instantiate(MapUI, canvas);
+            if (isMapOpen == false)
+            {
+                isMapOpen = true;
+                GameManager.StaticSetCursorStatus(true);
+                Instantiate(MapUI, canvas);
+            }
         }
     }
 }

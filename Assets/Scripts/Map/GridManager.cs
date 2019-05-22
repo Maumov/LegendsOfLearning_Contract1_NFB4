@@ -13,6 +13,9 @@ public class GridManager : MonoBehaviour
     public GameObject verticalParent;
     public GameObject line;
     public List<MapIconPrefab> icons;
+    public float xOffsetFraction;
+
+    public List<DeactivateSlot> slots = new List<DeactivateSlot>();
 
     [Header("SetupLine")]
     [Range(0f, 10f)]
@@ -31,6 +34,7 @@ public class GridManager : MonoBehaviour
     private int indexMaxValue;
     private float xOffset;
     private float yOffset;
+    
 
     private void Start()
     {
@@ -97,7 +101,7 @@ public class GridManager : MonoBehaviour
             SetFraction fraction = prefabsX[i - 1].GetComponent<SetFraction>();
             fraction.SetNumerator(i);
             fraction.SetDenominator(fractions[xIndex]);
-            fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, -rectT.rect.height);
+            fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, xOffsetFraction);
         }
     }
 

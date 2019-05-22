@@ -1,0 +1,82 @@
+﻿{
+  "_meta": {
+    "maxChars": {
+      "welcome": 20,
+      "readyToPlay": 20,
+      "pressContinue": 50,
+      "greatJob": 20,
+      "onePlusOne": 30,
+      "0": 30,
+	  "intro_1": 30,
+	  "intro_2": 30,
+	  "intro_3": 30,
+	  "intro_4": 30,
+	  "puertaTutorial_1": 50,
+	  "puertaTutorial_2": 50,
+	  "puertaTutorial_3": 50,
+	  "puertaTutorial_4": 50,
+	  "puertaTutorial_5": 50,
+	  "puertaTutorial_6": 50,
+	  "puertaTutorial_7": 50,
+	  "puertaTutorial_8": 50,
+	  "puertaTutorial_9": 50,
+	  "puertaTutorial_10": 50,
+	  "puertaTutorial_11": 50,
+
+
+    }
+  },
+  "en": {
+    "welcome": "Welcome!",
+    "readyToPlay": "Are you ready to play?",
+    "greatJob": "Great job!",
+    "pressContinue": "Press the next button to continue.",
+    "onePlusOne": "One + One = Two",
+	"0": "One + One = Two",
+
+	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
+	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
+	"intro_3": "Abrire el mapa para encontrar la ubicacion de las gemas",
+	"intro_4": "Presiona la letra 'M'",
+
+	"puertaTutorial_1": "¡Ok! Tengo la ubicacion de las gemas a la izquierda, probare con la gema amarilla",
+	"puertaTutorial_2": "Parece que tengo una ubicacion roja y una azul, probare con la roja",
+	"puertaTutorial_3": "En esta debo multiplicar 1/2 por 1/4, la respuesta es 1/8.",
+	"puertaTutorial_4": "En la azul la multiplicacion es 3/5 por 1/2, eso da 3/10.",
+	"puertaTutorial_5": "Segun la leyenda debo colocar la cantidad de lineas rojas y azules segun sus el denominador resultado de cada color",
+	"puertaTutorial_6": "En este caso la ubicacion roja es 1/8, osea que deberia colocar 8 lineas de color rojo, probare haciendolo con los botones de abajo.",
+
+	"puertaTutorial_7": "Ok, ahora colocare 10 lineas azules con los botones de abajo",
+	"puertaTutorial_8": "¡Genial! ya tengo las lineas adecuadas ahora debo dar click donde se cruzan la primera linea roja y la tercera linea azul"
+
+
+  },
+  "es": {
+    "welcome": "¡Bienvenido!",
+    "readyToPlay": "¿Estás listo para jugar?",
+    "greatJob": "¡Gran trabajo!",
+    "pressContinue": "Presione el botón 'siguiente' para continuar.",
+    "onePlusOne": "Uno + Uno = Dos"
+  },
+  "zh": {
+    "welcome": "欢迎！",
+    "readyToPlay": "你准备好玩吗",
+    "greatJob": "做得好！",
+    "pressContinue": "按“下一步”按钮继续。",
+    "onePlusOne": "一+一=二"
+  },
+  "jp": {
+    "welcome": "ようこそ!",
+    "readyToPlay": "あなたは遊ぶ準備ができていますか？",
+    "greatJob": "よくやった！",
+    "pressContinue": "続行するには '次へ'ボタンを押してください。",
+    "onePlusOne": "1 + 1 = 2"
+  },
+  "ru": {
+    "welcome": "Добро пожаловать!",
+    "readyToPlay": "Вы готовы играть?",
+    "greatJob": "Отличная работа!",
+    "pressContinue": "Нажмите следующую кнопку, чтобы продолжить.",
+    "onePlusOne": "один + один"
+  }
+}

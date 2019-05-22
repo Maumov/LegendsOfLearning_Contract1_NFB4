@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float movementSpeed = 3f;
+    public float rotationSpeed = 45f;
     float vertical;
     float horizontal;
     private bool inputStatus = true;
@@ -23,7 +24,8 @@ public class PlayerMovement : MonoBehaviour
         if (inputStatus)
         {
             GetInputs();
-            Vector3 direction = new Vector3(horizontal, 0f, vertical);
+            Vector3 direction = new Vector3(0f, -10f, vertical);
+            transform.Rotate(0f,horizontal * rotationSpeed * Time.deltaTime,0f);
             characterController.Move(transform.rotation * direction * movementSpeed * Time.deltaTime);
         }
     }

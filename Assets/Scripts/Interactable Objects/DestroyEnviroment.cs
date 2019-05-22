@@ -5,7 +5,7 @@ using UnityEngine;
 public class DestroyEnviroment : InteractableObject
 {
     public string type;
-
+    public GameObject sfxPrefab;
     public override void Interaction()
     {
         if (!interacted)
@@ -17,11 +17,10 @@ public class DestroyEnviroment : InteractableObject
 
     IEnumerator DestroyObject()
     {
-        // Animation
-        AudioSource source = gameObject.AddComponent<AudioSource>();
-        source.clip = EnviromentController.instance.DestroyEnviromentSound(type);
-        source.Play();
-        yield return new WaitForSeconds(source.clip.length);
+        ParticleSystem grassPart = Instantiate(EnviromentController.instance.grassParticle, transform.position + (Vector3.up * 1.5f), Quaternion.identity);
+        grassPart.gameObject.GetComponent<AudioSource>().clip = EnviromentController.instance.DestroyEnviromentSound(type);
+        grassPart.gameObject.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
         Destroy(gameObject);
         yield return null;
     }

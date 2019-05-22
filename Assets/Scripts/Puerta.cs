@@ -17,10 +17,17 @@ public class Puerta : MonoBehaviour
     public InputField textRespuesta;
     public float animDuration = 10f;
     public bool m1, m2, m3;
+    public Camera camera;
+    public GameObject placeHolder;
+    public GameObject canvasDoor;
+
+    public UnityEvent InteractionFinished;
 
     private void Start() {
+        
         SetQuestion();
     }
+    
 
     void SetQuestion() {
         int a = Random.Range(0, posibleQuestions.Length);
@@ -31,6 +38,7 @@ public class Puerta : MonoBehaviour
         }
     }
 
+
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
@@ -38,13 +46,18 @@ public class Puerta : MonoBehaviour
     }
 
     IEnumerator AnimatePuerta() {
+        camera.gameObject.SetActive(false);
+        InteractionFinished.Invoke();
         float j = 0f;
+        canvasDoor.SetActive(false);
         while(j < animDuration) {
             j += (Time.deltaTime);
             transform.Translate(0f, -1f * Time.deltaTime, 0f);
+            placeHolder.transform.Translate(-1f * Time.deltaTime, 0f, 0f);
             yield return null;
         }
         gameObject.SetActive(false);
+        placeHolder.SetActive(false);
         yield return null;
     }
 
@@ -61,6 +74,9 @@ public class Puerta : MonoBehaviour
         }
         return false;
     }
+    public void StartInteraction() {
+        camera.gameObject.SetActive(true);
+    }
 }
 
 [System.Serializable]
@@ -68,6 +84,5 @@ public class Question {
     public float numerador;
     public float denominador;
     public float cociente;
-
     
 }

@@ -30,7 +30,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (inputStatus)
         {
-            GetInputs();
+            //GetInputs();
 
             target.RotateAround(target.position, Vector3.up, horizontal);
             YRotationtransform.RotateAround(YRotationtransform.position, YRotationtransform.right, vertical);
@@ -61,22 +61,12 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
-    public static void SetInputs(bool status)
+    public static void StaticSetInputs(bool status)
     {
         inputStatus = status;
         if (movement != null)
         {
             movement.SetInputStatus(status);
-        }
-    }
-
-    public static void RestoreInputs()
-    {
-        inputStatus = true;
-        
-        if (movement != null)
-        {
-            movement.SetInputStatus(inputStatus);
         }
     }
 }
