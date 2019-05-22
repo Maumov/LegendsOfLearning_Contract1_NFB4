@@ -15,6 +15,8 @@ public class GridManager : MonoBehaviour
     public List<MapIconPrefab> icons;
     public float xOffsetFraction;
 
+    public List<DeactivateSlot> slots = new List<DeactivateSlot>();
+
     [Header("SetupLine")]
     [Range(0f, 10f)]
     public float lineSize;

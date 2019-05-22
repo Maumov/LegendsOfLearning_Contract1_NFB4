@@ -8,6 +8,7 @@ public class ColisionConTesoro : MonoBehaviour
     public GameObject player;
     public GameObject mainCamera;
     public GameManager manager;
+    public GameObject UI;
     public CineMachineMovement cameraMovement;
     public PlayableDirector director;
     public PlayableDirector ending;
@@ -15,9 +16,12 @@ public class ColisionConTesoro : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        
         if (other.name.Contains("Player"))
         {
+            MapManager.instance.SetMapStatus(false);
             parent.SetActive(true);
+            UI.SetActive(false);
             player.SetActive(false);
             mainCamera.SetActive(false);
             cameraMovement.StartPanning();

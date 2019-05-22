@@ -18,8 +18,10 @@ public class MapManager : MonoBehaviour
     [Header("Grid & current icons")]
     public GameObject Iconprefab;
     public List<GameObject> icons;
-    public List<Texture> textures;
+    public Texture textures;
     public static Vector2Int index = new Vector2Int(1, 1);
+
+    public List<int> doorsIndicatorMask = new List<int>();
 
     public static MapManager instance;
 
@@ -37,11 +39,12 @@ public class MapManager : MonoBehaviour
         SetIcon(2, 9, 7, 10, "Treasure", 2);
         SetIcon(4, 9, 5, 6, "Treasure", 3);
         SetIcon(5, 8, 3, 9, "Treasure", 4);
-
+        /*
         for (int i = 0; i < doors.Count; i++)
         {
             doors[i].door.SetActive(false);
         }
+        */
     }
 
     private void Update()
@@ -63,13 +66,7 @@ public class MapManager : MonoBehaviour
         imageScript.numerators = new Vector2(xNum, yNum);
         imageScript.denimators = new Vector2(xDem, yDem);
         imageScript.position = new Vector2((float)xNum / xDem, (float)yNum / yDem);
-        for (int i = 0; i < textures.Count; i++)
-        {
-            if (textures[i].name.Contains(icon))
-            {
-                imageTexture.texture = textures[i];
-            }
-        }
+        imageTexture.texture = textures;
     }
 
     public void DestroyIcon(int id)

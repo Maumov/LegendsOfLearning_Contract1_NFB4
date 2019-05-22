@@ -11,10 +11,16 @@ public class MapIconPrefab : MonoBehaviour
     public Vector2 numerators;
     public Vector2 denimators;
     public Vector2 position;
+    GridManager gridManager;
+
+    private void Start()
+    {
+        gridManager = transform.parent.GetComponent<GridManager>();
+    }
 
     public void ActivateIcon()
     {
-        if (transform.parent.GetComponent<GridManager>().CheckForIconIndex(denimators))
+        if (gridManager.CheckForIconIndex(denimators))
         {
             RawImage image = GetComponent<RawImage>();
             image.color = new Color(1, 1, 1, 1);
@@ -29,8 +35,16 @@ public class MapIconPrefab : MonoBehaviour
             imageOrigin.color = new Color(1, 1, 1, 1);
             imageOrigin.raycastTarget = false;
             imageOrigin.GetComponent<MapIconPrefab>().status = true;
-
             DoorsManager.SpawnDoor(id);
+        }
+    }
+
+    public void ActivateMask()
+    {
+        MapManager.instance.doorsIndicatorMask.Add(id);
+        if (gridManager != null)
+        {
+            gridManager.slots[id - 1].ActivateMask();
         }
     }
 }
