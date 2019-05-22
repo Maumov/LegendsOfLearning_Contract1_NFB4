@@ -26,7 +26,7 @@ public class LOLAPI : MonoBehaviour
         // Register event handlers
         LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(this.HandleStartGame);
         LOLSDK.Instance.GameStateChanged += new GameStateChangedHandler(this.HandleGameStateChange);
-        LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(this.HandleQuestions);
+     //   LOLSDK.Instance.QuestionsReceived += new QuestionListReceivedHandler(this.HandleQuestions);
         LOLSDK.Instance.LanguageDefsReceived += new LanguageDefsReceivedHandler(this.HandleLanguageDefs);
 
         // Mock the platform-to-game messages when in the Unity editor.
@@ -51,10 +51,10 @@ public class LOLAPI : MonoBehaviour
     }
 
     // Store the questions and show them in order based on your game flow.
-    void HandleQuestions(MultipleChoiceQuestionList questionList) {
-        Debug.Log("HandleQuestions");
-        SharedState.QuestionList = questionList;
-    }
+    //void HandleQuestions(MultipleChoiceQuestionList questionList) {
+    //    Debug.Log("HandleQuestions");
+    //    SharedState.QuestionList = questionList;
+    //}
 
     // Use language to populate UI
     void HandleLanguageDefs(string json) {
@@ -97,13 +97,13 @@ public class LOLAPI : MonoBehaviour
         }
 
         // Load Dev Questions from StreamingAssets
-        string questionsFilePath = Path.Combine(Application.streamingAssetsPath, questionsJSONFilePath);
-        if(File.Exists(questionsFilePath)) {
-            string questionsDataAsJson = File.ReadAllText(questionsFilePath);
-            MultipleChoiceQuestionList qs =
-                MultipleChoiceQuestionList.CreateFromJSON(questionsDataAsJson);
-            HandleQuestions(qs);
-        }
+        //string questionsFilePath = Path.Combine(Application.streamingAssetsPath, questionsJSONFilePath);
+        //if(File.Exists(questionsFilePath)) {
+        //    string questionsDataAsJson = File.ReadAllText(questionsFilePath);
+        //    MultipleChoiceQuestionList qs =
+        //        MultipleChoiceQuestionList.CreateFromJSON(questionsDataAsJson);
+        //    HandleQuestions(qs);
+        //}
 #endif
     }
 }
