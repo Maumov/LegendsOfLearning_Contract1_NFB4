@@ -6,7 +6,19 @@
       "pressContinue": 50,
       "greatJob": 20,
       "onePlusOne": 30,
-      "0": 30
+      "0": 30,
+	  "intro_1": 30,
+	  "intro_2": 30,
+	  "intro_3": 30,
+	  "intro_4": 30,
+	  "puertaTutorial_1": 30,
+	  "puertaTutorial_2": 30,
+	  "puertaTutorial_3": 30,
+	  "puertaTutorial_4": 30,
+	  "puertaTutorial_5": 30,
+	  "puertaTutorial_6": 30,
+
+
     }
   },
   "en": {
@@ -15,7 +27,18 @@
     "greatJob": "Great job!",
     "pressContinue": "Press the next button to continue.",
     "onePlusOne": "One + One = Two",
-	"0": "One + One = Two"
+	"0": "One + One = Two",
+
+	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
+	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
+	"intro_3": "Abrire el mapa para encontrar la ubicacion de las gemas",
+	"intro_4": "Presiona la letra 'M'",
+
+	"puertaTutorial_1": "¡Ok! Tengo la ubicacion a la izquierda, probare con la primera ubicacion",
+	"puertaTutorial_2": "1/2 multiplicado por 1/4, eso es 1/8.",
+	"puertaTutorial_3": "Al parecer debo colocar 8 lineas en pantalla, me pregunto para que sera el 1",
+	"puertaTutorial_4": "Bueno, por ahora seguire con las fracciones azules"
+
   },
   "es": {
     "welcome": "¡Bienvenido!",
