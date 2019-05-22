@@ -11,12 +11,17 @@
 	  "intro_2": 30,
 	  "intro_3": 30,
 	  "intro_4": 30,
-	  "puertaTutorial_1": 30,
-	  "puertaTutorial_2": 30,
-	  "puertaTutorial_3": 30,
-	  "puertaTutorial_4": 30,
-	  "puertaTutorial_5": 30,
-	  "puertaTutorial_6": 30,
+	  "puertaTutorial_1": 50,
+	  "puertaTutorial_2": 50,
+	  "puertaTutorial_3": 50,
+	  "puertaTutorial_4": 50,
+	  "puertaTutorial_5": 50,
+	  "puertaTutorial_6": 50,
+	  "puertaTutorial_7": 50,
+	  "puertaTutorial_8": 50,
+	  "puertaTutorial_9": 50,
+	  "puertaTutorial_10": 50,
+	  "puertaTutorial_11": 50,
 
 
     }
@@ -34,10 +39,16 @@
 	"intro_3": "Abrire el mapa para encontrar la ubicacion de las gemas",
 	"intro_4": "Presiona la letra 'M'",
 
-	"puertaTutorial_1": "¡Ok! Tengo la ubicacion a la izquierda, probare con la primera ubicacion",
-	"puertaTutorial_2": "1/2 multiplicado por 1/4, eso es 1/8.",
-	"puertaTutorial_3": "Al parecer debo colocar 8 lineas en pantalla, me pregunto para que sera el 1",
-	"puertaTutorial_4": "Bueno, por ahora seguire con las fracciones azules"
+	"puertaTutorial_1": "¡Ok! Tengo la ubicacion de las gemas a la izquierda, probare con la gema amarilla",
+	"puertaTutorial_2": "Parece que tengo una ubicacion roja y una azul, probare con la roja",
+	"puertaTutorial_3": "En esta debo multiplicar 1/2 por 1/4, la respuesta es 1/8.",
+	"puertaTutorial_4": "En la azul la multiplicacion es 3/5 por 1/2, eso da 3/10.",
+	"puertaTutorial_5": "Segun la leyenda debo colocar la cantidad de lineas rojas y azules segun sus el denominador resultado de cada color",
+	"puertaTutorial_6": "En este caso la ubicacion roja es 1/8, osea que deberia colocar 8 lineas de color rojo, probare haciendolo con los botones de abajo.",
+
+	"puertaTutorial_7": "Ok, ahora colocare 10 lineas azules con los botones de abajo",
+	"puertaTutorial_8": "¡Genial! ya tengo las lineas adecuadas ahora debo dar click donde se cruzan la primera linea roja y la tercera linea azul"
+
 
   },
   "es": {
