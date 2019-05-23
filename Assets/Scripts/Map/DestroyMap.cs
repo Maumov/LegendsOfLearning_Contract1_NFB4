@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class DestroyMap : MonoBehaviour
 {
+    private void Start()
+    {
+        CameraMovement.StaticSetInputs(false);
+    }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.M))
+        if (Input.GetKeyUp(KeyCode.M))
         {
             DestroyObject();
         }
@@ -16,6 +20,7 @@ public class DestroyMap : MonoBehaviour
 
     public void DestroyObject()
     {
+        CameraMovement.StaticSetInputs(true);
         MapManager.isMapOpen = false;
         CameraMovement.StaticSetInputs(true);
         GameManager.StaticSetCursorStatus(false);

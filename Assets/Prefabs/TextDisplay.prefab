@@ -400,7 +400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text: {fileID: 8824028451051964505}
   buttonText: {fileID: 8824028449796574861}
-  delay: 0.5
+  delay: 0.3
 --- !u!1 &8824028451051964507
 GameObject:
   m_ObjectHideFlags: 0

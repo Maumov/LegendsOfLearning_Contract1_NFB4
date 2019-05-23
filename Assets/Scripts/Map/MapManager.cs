@@ -49,7 +49,7 @@ public class MapManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.M))
+        if (Input.GetKeyUp(KeyCode.M))
         {
             SpawnMap();
         }
