@@ -8,6 +8,9 @@
       "onePlusOne": 30,
       "0": 30,
 
+	  "enterTheCode": 20,
+	  "of": 10,
+
 	  "intro_1": 30,
 	  "intro_2": 30,
 	  "intro_3": 30,
@@ -71,6 +74,18 @@
     "onePlusOne": "One + One = Two",
 	"0": "One + One = Two",
 
+	
+  },
+  "es": {
+    "welcome": "¡Bienvenido!",
+    "readyToPlay": "¿Estás listo para jugar?",
+    "greatJob": "¡Gran trabajo!",
+    "pressContinue": "Presione el botón 'siguiente' para continuar.",
+    "onePlusOne": "Uno + Uno = Dos",
+
+	"enterTheCode": "Valor",
+	"of": "of",
+
 	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
 	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
 	"intro_3": "Abrire el mapa para encontrar la ubicacion de las gemas",
@@ -129,13 +144,6 @@
 	"treasureFinded": "Este es el gran tesoro, ¡Al fin lo encontre! ahora debo llevarmelo en mi barco",
 
 
-  },
-  "es": {
-    "welcome": "¡Bienvenido!",
-    "readyToPlay": "¿Estás listo para jugar?",
-    "greatJob": "¡Gran trabajo!",
-    "pressContinue": "Presione el botón 'siguiente' para continuar.",
-    "onePlusOne": "Uno + Uno = Dos"
   },
   "zh": {
     "welcome": "欢迎！",
