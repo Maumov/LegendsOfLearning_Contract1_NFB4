@@ -13,13 +13,9 @@ public class MapIconPrefab : MonoBehaviour
     public Vector2 position;
     GridManager gridManager;
 
-    private void Start()
-    {
-        gridManager = transform.parent.GetComponent<GridManager>();
-    }
-
     public void ActivateIcon()
     {
+        gridManager = transform.parent.GetComponent<GridManager>();
         if (gridManager.CheckForIconIndex(denimators))
         {
             RawImage image = GetComponent<RawImage>();
@@ -41,10 +37,14 @@ public class MapIconPrefab : MonoBehaviour
 
     public void ActivateMask()
     {
-        MapManager.instance.doorsIndicatorMask.Add(id);
-        if (gridManager != null)
+        gridManager = transform.parent.GetComponent<GridManager>();
+        if (gridManager.CheckForIconIndex(denimators))
         {
-            gridManager.slots[id - 1].ActivateMask();
-        }
+            MapManager.instance.doorsIndicatorMask.Add(id);
+            if (gridManager != null)
+            {
+                gridManager.slots[id - 1].ActivateMask();
+            }
+        } 
     }
 }
