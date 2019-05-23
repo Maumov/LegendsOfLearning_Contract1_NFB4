@@ -7,23 +7,60 @@
       "greatJob": 20,
       "onePlusOne": 30,
       "0": 30,
+
 	  "intro_1": 30,
 	  "intro_2": 30,
 	  "intro_3": 30,
 	  "intro_4": 30,
+
+	  "mapaTutorial_1": 50,
+	  "mapaTutorial_2": 50,
+	  "mapaTutorial_3": 50,
+	  "mapaTutorial_4": 50,
+	  "mapaTutorial_5": 50,
+	  "mapaTutorial_6": 50,
+
+	  "mapaTutorial_7": 50,
+
+	  "mapaTutorial_8": 50,
+
 	  "puertaTutorial_1": 50,
 	  "puertaTutorial_2": 50,
 	  "puertaTutorial_3": 50,
+
+	  "puertaTutorialGood_1": 50,
+	  "puertaTutorialGood_2": 50,
+	  "puertaTutorialBad": 50,
+
 	  "puertaTutorial_4": 50,
-	  "puertaTutorial_5": 50,
-	  "puertaTutorial_6": 50,
-	  "puertaTutorial_7": 50,
-	  "puertaTutorial_8": 50,
+	  
+	  "cofre_1": 50,
 	  "modulo1Tutorial_1": 50,
 	  "modulo1Tutorial_2": 50,
 	  "modulo1Tutorial_3": 50,
+	  "modulo1Tutorial_4": 50,
+	  "modulo1Tutorial_5": 50,
+	  "modulo1Tutorial_6": 50,
 
+	  "modulo2Tutorial_1": 50,
+	  "modulo2Tutorial_2": 50,
 
+	  "modulo12Tutorial_Bad": 50,
+	  "modulo12Tutorial_Good": 50,
+
+	  "modulo3Tutorial_1": 50,
+	  "modulo3Tutorial_2": 50,
+	  "modulo3Tutorial_3": 50,
+	  "modulo3Tutorial_4": 50,
+
+	  "modulo3Tutorial_Bad": 50,
+	  "modulo3Tutorial_Good": 50,
+
+	  "cofreFinished": 50,
+
+	  "lastChestOpen": 50,
+
+	  "treasureFinded": 50
     }
   },
   "en": {
@@ -39,17 +76,57 @@
 	"intro_3": "Abrire el mapa para encontrar la ubicacion de las gemas",
 	"intro_4": "Presiona la letra 'M'",
 
-	"puertaTutorial_1": "¡Ok! Tengo la ubicacion de las gemas a la izquierda, probare con la gema amarilla",
-	"puertaTutorial_2": "Parece que tengo una ubicacion roja y una azul, probare con la roja",
-	"puertaTutorial_3": "En esta debo multiplicar 1/2 por 1/4, la respuesta es 1/8.",
-	"puertaTutorial_4": "En la azul la multiplicacion es 3/5 por 1/2, eso da 3/10.",
-	"puertaTutorial_5": "Segun la leyenda debo colocar la cantidad de lineas rojas y azules segun sus el denominador resultado de cada color",
-	"puertaTutorial_6": "En este caso la ubicacion roja es 1/8, osea que deberia colocar 8 lineas de color rojo, probare haciendolo con los botones de abajo.",
+	"mapaTutorial_1": "¡Ok! Tengo la ubicacion de las gemas a la izquierda, probare con la gema amarilla",
+	"mapaTutorial_2": "Parece que tengo una ubicacion roja y una azul, probare con la roja",
+	"mapaTutorial_3": "En esta debo multiplicar 1/2 por 1/4, la respuesta es 1/8.",
+	"mapaTutorial_4": "En la azul la multiplicacion es 3/5 por 1/2, eso da 3/10.",
+	"mapaTutorial_5": "Segun la leyenda debo colocar la cantidad de lineas rojas y azules segun sus el denominador resultado de cada color",
+	"mapaTutorial_6": "En este caso la ubicacion roja es 1/8, osea que deberia colocar 8 lineas de color rojo, probare haciendolo con los botones de abajo.",
 
-	"puertaTutorial_7": "Ok, ahora colocare 10 lineas azules con los botones de abajo",
-	"puertaTutorial_8": "¡Genial! ya tengo las lineas adecuadas ahora debo dar click donde se cruzan la primera linea roja y la tercera linea azul",
+	"mapaTutorial_7": "Ok, ahora colocare 10 lineas azules con los botones de abajo",
 
-	"modulo1Tutorial_1": ""
+	"mapaTutorial_8": "¡Genial! ya tengo las lineas adecuadas ahora debo dar click donde se cruzan la primera linea roja y la tercera linea azul",
+
+	"puertaTutorial_1": "Esta puerta esta bloqueando mi acceso hacia la gema, intentare abrirla.",
+	"puertaTutorial_2": "Segun veo, el mecanismo se abre al colocar el valor adecuado en el centro de la puerta",
+	"puertaTutorial_3": "Probare colocando la respuesta de la operacion de la izquierda y presionare el boton con el circulo rojo de la izquierda",
+
+	"puertaTutorialGood_1": "Esa era la respuesta correcta... Parece que las respuestas estan relacionadas, probare la misma respuesta para las demas partes de la puerta.",
+	"puertaTutorialGood_2": "Probare presionando los botones con circulo rojo de la parte derecha y la parte de abajo",
+
+	"puertaTutorialBad": "Mmmm... Parece que esta no es la respuesta correcta de la operacion",
+
+	"puertaTutorial_4": "Las respuestas si estaban relacionadas, la division tambien la puedo ver como una multiplicacion y como una fraccion",
+
+	"cofre_1": "He encontrado la primera gema, pero parece estar dentro del cofre, tendre que abrirlo",
+
+	"modulo1Tutorial_1": "Esta parte del cofre debo resolverla colocando un valor en el numerador de la fraccion morada. Para resolver esto observare la cerradura",
+	"modulo1Tutorial_2": "Esta seccionada en la misma cantidad de veces que el denominador de la fraccion roja.",
+	"modulo1Tutorial_3": "Dentro de cada pedazo en rojo hay la misma cantidad de secciones azules que el denominador de la fraccion azul",
+	"modulo1Tutorial_4": "Esto quiere decir que si cortamos un pedazo de cerradura segun la fraccion roja, y luego esta la seccionamos la cantidad de veces que dice la fraccion azul.",
+	"modulo1Tutorial_5": "Encontraremos cuanto es coger una fraccion de otra fraccion. Si observo la la fraccion morada el denominador es el resultado de multiplicar los denominadores rojo y azul",
+	"modulo1Tutorial_6": "Quizas halle la respuesta multiplicando los numeradores rojo y azul para encontrar la respuesta. Cuando coloque el numero probare presionando el boton con el circulo rojo",
+
+	"modulo2Tutorial_1": "Vaya este modulo es bastante similar al anterior, tratare de usar la misma logica",
+	"modulo2Tutorial_2": "Con esta respuesta presionare el boton",
+
+	"modulo12Tutorial_Good": "Esta era la respuesta correcta, ¡Genial!",
+	"modulo12Tutorial_Bad": "Parece que esta no es la respuesta de multiplicar los numeradores, lo intentare de nuevo",
+
+	"modulo3Tutorial_1": "Este acertijo se ve sencillo, cuadros azules arriba en columnas, rojos a la izquierda como filas y en el centro cuadros morados.",
+	"modulo3Tutorial_2": "Eso me indica que debo colocar la misma cantidad de filas y columnas en los cubos morados, probare con los botones rojos y azules en la parte de abajo.",
+
+	"modulo3Tutorial_3": "Ahora que tengo la cantidad de cuadros morados necesarios, intentare encender algunos cuadros dando click sobre ellos",
+	"modulo3Tutorial_4": "Tratare de encender los cuadros morados que estan debajo de las columnas azules encendidos y que estan al lado de las filas rojas encendidas",
+
+	"modulo3Tutorial_Good": "Eso es la cantidad de cuadros que debia encender son los mismos que si multiplicara la cantidad de cuadros rojos y azules encendidos",
+	"modulo3Tutorial_Bad": "Parece que no era la cantidad correcta, quizas la respuesta es la multiplicacion de la cantidad de cuadros rojos y azules encendidos",
+
+	"cofreFinished": "¡He abierto el cofre!, La gema esta liberada, tengo 1 me faltan 3 mas y se abrira la gran puerta del tesoro",
+	
+	"lastChestOpen": "He encontrado la ultima gema y sucedio un terremoto, ire a revisar la gran puerta",
+
+	"treasureFinded": "Este es el gran tesoro, ¡Al fin lo encontre! ahora debo llevarmelo en mi barco",
 
 
   },
