@@ -9,7 +9,7 @@ public class ModuloCofre : MonoBehaviour {
     Cofre cofre;
     public int modulo;
     public Question question, question2;
-    public Camera cam;
+    public GameObject cam;
     public int valor = 0;
     [Header("Modulo 1 y 2")]
     public Text preguntaNumerador1;
@@ -264,12 +264,12 @@ public class ModuloCofre : MonoBehaviour {
 
     public void StartInteraction() {
         canvasTransform.gameObject.SetActive(true);
-        cam.gameObject.SetActive(true);
+        cam.SetActive(true);
     }
 
     public void EndInteraction() {
         canvasTransform.gameObject.SetActive(false);
         GetComponentInParent<Cofre>().ModuloFinished();
-        cam.gameObject.SetActive(false);
+        cam.SetActive(false);
     }
 }

@@ -48,7 +48,6 @@ public class TextController : MonoBehaviour
             }
             else
             {
-                GetComponent<Animator>().SetTrigger("Completed");
                 CameraMovement.StaticSetInputs(true);
                 GameManager.StaticSetCursorStatus(false);
                 MapManager.StaticSetMapStatus(true);

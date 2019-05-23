@@ -1,30 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Playables;
 using UnityEngine;
 
 public class AnimacionesDeCofre : MonoBehaviour
 {
-    public Animator trancaA, trancaB, trancaC, tapa;
+    public Animator tapa;
     public GameObject reward;
+    public PlayableDirector director;
 
-    public void ActivateAnimation(cerrojo objetoAnimar)
+    public void AnimacionTapa()
     {
-        switch (objetoAnimar)
-        {
-            case cerrojo.trancaA:
-                trancaA.SetTrigger("Open");
-                break;
-            case cerrojo.trancaB:
-                trancaB.SetTrigger("Open");
-                break;
-            case cerrojo.trancaC:
-                trancaC.SetTrigger("Open");
-                break;
-            case cerrojo.tapa:
-                tapa.SetTrigger("Open");
-                StartCoroutine(InstanciarRewards());
-                break;
-        }
+        tapa.SetTrigger("Open");
+        director.Play();
+        StartCoroutine(InstanciarRewards());
     }
 
     IEnumerator InstanciarRewards()
@@ -35,5 +24,3 @@ public class AnimacionesDeCofre : MonoBehaviour
         yield return null;
     }
 }
-
-public enum cerrojo { trancaA, trancaB, trancaC, tapa}

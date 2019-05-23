@@ -572,6 +572,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4006557173831601235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7406647490280396763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ExcludedPropertiesInInspector:
+  - m_Script
+  m_LockStageInInspector: 
+  m_StreamingVersion: 20170927
+  m_Priority: 10
+  m_StandbyUpdate: 2
+  m_LookAt: {fileID: 0}
+  m_Follow: {fileID: 0}
+  m_Lens:
+    FieldOfView: 40
+    OrthographicSize: 10
+    NearClipPlane: 0.1
+    FarClipPlane: 5000
+    Dutch: 0
+    LensShift: {x: 0, y: 0}
+  m_Transitions:
+    m_BlendHint: 0
+    m_InheritPosition: 0
+    m_OnCameraLive:
+      m_PersistentCalls:
+        m_Calls: []
+      m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+  m_LegacyBlendHint: 0
+  m_ComponentOwner: {fileID: 0}
 --- !u!1 &8049898329640298077
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,8 +895,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 5886897707143036090, guid: 5a05cf46af97913489017a522b7c60db,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8772613465556499307, guid: 5a05cf46af97913489017a522b7c60db,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6167560155717501137, guid: 5a05cf46af97913489017a522b7c60db, type: 3}
+    - {fileID: 3533888392438175881, guid: 5a05cf46af97913489017a522b7c60db, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a05cf46af97913489017a522b7c60db, type: 3}
+--- !u!1 &7406647490280396763 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8551556873561961816, guid: 5a05cf46af97913489017a522b7c60db,
+    type: 3}
+  m_PrefabInstance: {fileID: 1181219692942353027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5906287570557422739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4725349466660875792, guid: 5a05cf46af97913489017a522b7c60db,
