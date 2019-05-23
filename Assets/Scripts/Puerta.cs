@@ -17,7 +17,7 @@ public class Puerta : MonoBehaviour
     public InputField textRespuesta;
     public float animDuration = 10f;
     public bool m1, m2, m3;
-    public Camera camera;
+    public GameObject virtualCamera;
     public GameObject placeHolder;
     public GameObject canvasDoor;
 
@@ -46,7 +46,7 @@ public class Puerta : MonoBehaviour
     }
 
     IEnumerator AnimatePuerta() {
-        camera.gameObject.SetActive(false);
+        virtualCamera.SetActive(false);
         InteractionFinished.Invoke();
         float j = 0f;
         canvasDoor.SetActive(false);
@@ -75,7 +75,7 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
-        camera.gameObject.SetActive(true);
+        virtualCamera.SetActive(true);
     }
 }
 
@@ -84,5 +84,4 @@ public class Question {
     public float numerador;
     public float denominador;
     public float cociente;
-    
 }

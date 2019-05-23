@@ -8,17 +8,17 @@ public class CameraPanning : MonoBehaviour
 {
     [Header("Camera Settings")]
     public GameObject objectCamera;
-    public GameObject mainCamera;
     private Vector3 cameraInitPosition;
+    public Transition transition;
 
     [Header("Waypoints & References")]
     public bool ShowGizmos;
     [Range(0f, 300f)]
     public float duration;
+    public float durationBetweenModules;
     public Transform waypoint;
-    [HideInInspector] public InteractableObject interactableScript;
-    public enum TypeOfTween { Smooth, Waypoints };
-    public TypeOfTween tween = TypeOfTween.Waypoints;
+    public Transform[] referencePointsModule;
+    Vector3[] path = new Vector3[4];
 
     [HideInInspector] public bool isActive;
     private Vector3[] wayPoints;
@@ -30,23 +30,15 @@ public class CameraPanning : MonoBehaviour
 
     private void Start()
     {
-        interactableScript = GetComponent<InteractableObject>();
-
         if (waypoint == null)
         {
             waypoint = transform;
         }
 
-        if (waypoint.childCount <= 0)
-        {
-
-        }
         cameraInitPosition = objectCamera.transform.position;
 
         if(waypoint.childCount > 0)
         {
-            if (tween == TypeOfTween.Waypoints)
-            {
                 wayPoints = new Vector3[waypoint.childCount];
                 for (int i = 0; i < waypoint.childCount; i++)
                 {
@@ -54,66 +46,91 @@ public class CameraPanning : MonoBehaviour
                 }
 
                 spline = new LTSpline(wayPoints);
-            }
-
-            if (tween == TypeOfTween.Smooth)
-            {
-                waypoint.position = waypoint.GetChild(waypoint.childCount - 1).position;
-            }
-        }
-        else
-        {
-            if (tween == TypeOfTween.Waypoints)
-            {
-                tween = TypeOfTween.Smooth;
-                return;
-            }
         }
     }
 
-    public void StartTween()
-    {
-        Debug.Log("Started");
-    }
-
-    public void Completed()
-    {
-        Debug.Log("Completed");
-    }
-
-
-    void Update()
-    {
-        if (isActive)
-        {
-            objectCamera.transform.LookAt(transform);
-
-            if (tween == TypeOfTween.Smooth)
-            {
-                LeanTween.cancelAll();
-                int id = LeanTween.move(objectCamera, waypoint.position, duration).setOnStart(OnStart.Invoke).setOnComplete(OnComplete.Invoke).setEase(LeanTweenType.easeOutQuad).id;
-            }
-        }
-    }
-    
     public void ActivateCinematic()
     {
         isActive = true;
-        mainCamera.SetActive(false);
         objectCamera.SetActive(true);
         CameraMovement.StaticSetInputs(false);
 
-        if (tween == TypeOfTween.Waypoints)
-        {
-            int id = LeanTween.moveSpline(objectCamera, spline, duration).setOnStart(OnStart.Invoke).setOnComplete(OnComplete.Invoke).setEase(LeanTweenType.animationCurve).id;
-        }
+        LeanTween.moveSpline(objectCamera, spline, duration).setOnStart(OnStart.Invoke).setOnUpdate(LookAtObjectDoor).setOnComplete(TweenModulo1).setEase(LeanTweenType.animationCurve);
+    }
+
+    public void LookAtObjectDoor()
+    {
+        objectCamera.transform.LookAt(transform.position);
+    }
+
+    public void TweenModulo1()
+    {
+        path[0] = objectCamera.transform.position;
+        path[1] = objectCamera.transform.position;
+        path[2] = referencePointsModule[0].position;
+        path[3] = referencePointsModule[0].position;
+
+        LTSpline newSpline = new LTSpline(path);
+
+        LeanTween.moveSpline(objectCamera, newSpline, durationBetweenModules).setOnComplete(TweenModulo2).setEase(LeanTweenType.animationCurve);
+    }
+
+    public void TweenModulo2()
+    {
+        path[0] = objectCamera.transform.position;
+        path[1] = objectCamera.transform.position;
+        path[2] = referencePointsModule[1].position;
+        path[3] = referencePointsModule[1].position;
+
+        LTSpline newSpline = new LTSpline(path);
+
+        LeanTween.moveSpline(objectCamera, newSpline, durationBetweenModules).setOnComplete(TweenModulo3);
+    }
+
+    public void TweenModulo3()
+    {
+        path[0] = objectCamera.transform.position;
+        path[1] = objectCamera.transform.position;
+        path[2] = referencePointsModule[2].position;
+        path[3] = referencePointsModule[2].position;
+
+        LTSpline newSpline = new LTSpline(path);
+
+        LeanTween.moveSpline(objectCamera, newSpline, durationBetweenModules).setOnComplete(LeanTweenCompleted);
+    }
+
+    public void LookAtObjectModulo1()
+    {
+        objectCamera.transform.LookAt(referencePointsModule[0]);
+    }
+    public void LookAtObjectModulo2()
+    {
+        objectCamera.transform.LookAt(referencePointsModule[1]);
+    }
+    public void LookAtObjectModulo3()
+    {
+        objectCamera.transform.LookAt(referencePointsModule[2]);
+    }
+
+    public void LeanTweenCompleted()
+    {
+        transition.transform.parent.gameObject.SetActive(true);
+        transition.ActivateTransition();
+        StartCoroutine(Transition());
+    }
+
+    IEnumerator Transition()
+    {
+        yield return new WaitForSeconds(0.5f);
+        objectCamera.transform.position = cameraInitPosition;
+        OnComplete.Invoke();
+        yield break;
     }
 
     public void AnimationCompleted()
     {
         isActive = false;
         objectCamera.SetActive(false);
-        mainCamera.SetActive(true);
         CameraMovement.StaticSetInputs(true);
         objectCamera.transform.position = cameraInitPosition;
     }

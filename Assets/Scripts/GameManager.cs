@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public GameObject treasure;
     public PlayableDirector director;
     public ObjectPanning shipPanning;
+    public GameObject canvasPointer;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour
     public void CursorStatus(bool status)
     {
         Cursor.visible = status;
+        canvasPointer.SetActive(!status);
     }
 
     public void GameOver()
