@@ -1,7 +1,11 @@
 fileFormatVersion: 2
 guid: a03f32d2098fe454699017af79dd5d86
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: gaviota_0
+    21300002: gaviota_1
+    21300004: gaviota_2
+    21300006: gaviota_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -93,11 +97,91 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: gaviota_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 12
+        width: 3
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d04adfc40a15142a451ddeddac263a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gaviota_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 11
+        width: 4
+        height: 1
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a753d9a5b0736f74fa55f00aa5e64da2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gaviota_2
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328e96125b785c741a25c79c41c4d25b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gaviota_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 10
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16b5215fc004de944bb4c8e77abfb151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 9ec4340b0795b284aaeeaed54fdf2fc5
     vertices: []
     indices: 
     edges: []
