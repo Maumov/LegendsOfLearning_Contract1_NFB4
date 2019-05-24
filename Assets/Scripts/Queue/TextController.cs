@@ -11,7 +11,7 @@ public class TextController : MonoBehaviour
     bool completed;
     public float delay = 1;
     private float delayCounter;
-
+    
     private void Start()
     {
         delayCounter = delay;
@@ -64,8 +64,14 @@ public class TextController : MonoBehaviour
         text.text = message.Dequeue();
     }
 
+    public void AddText(string data) {
+        message.Enqueue(data);
+    }
+
+
     public void DestroyThisObject()
     {
-        Destroy(transform.parent.gameObject);
+        transform.parent.gameObject.SetActive(false);
+        //stroy(transform.parent.gameObject);
     }
 }
