@@ -201,11 +201,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 862750058229709692, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 821916049584160114, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -276,21 +271,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CofreCam 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2820954511399705144, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
-        type: 3}
-      propertyPath: m_LookAt
-      value: 
-      objectReference: {fileID: 1062712724966380075}
-    - target: {fileID: 3828510099507403671, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
-        type: 3}
-      propertyPath: m_ScreenY
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 3828510099507403671, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
-        type: 3}
-      propertyPath: m_BiasY
-      value: -0.000000074505806
-      objectReference: {fileID: 0}
     - target: {fileID: 3226436047824277335, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
         type: 3}
       propertyPath: m_ComponentOwner
@@ -300,6 +280,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ComponentOwner
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4143016998546064867, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
+        type: 3}
+      propertyPath: m_ComponentOwner
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2820954511399705144, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
+        type: 3}
+      propertyPath: m_LookAt
+      value: 
+      objectReference: {fileID: 1062712724966380075}
+    - target: {fileID: 862750058229709692, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828510099507403671, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
+        type: 3}
+      propertyPath: m_ScreenY
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3828510099507403671, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
+        type: 3}
+      propertyPath: m_BiasY
+      value: -0.000000074505806
       objectReference: {fileID: 0}
     - target: {fileID: 4947423643597538038, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
         type: 3}
@@ -315,11 +320,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4143016998546064867, guid: 5632d6947ea62a24fa7d3f1dd8ca9778,
-        type: 3}
-      propertyPath: m_ComponentOwner
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6924013955584723977, guid: 5632d6947ea62a24fa7d3f1dd8ca9778, type: 3}
@@ -364,7 +364,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 433196, guid: b3bb07980d0cc224dac14439a9d0e47c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.636
+      value: 0.474
       objectReference: {fileID: 0}
     - target: {fileID: 433196, guid: b3bb07980d0cc224dac14439a9d0e47c, type: 3}
       propertyPath: m_LocalPosition.z
