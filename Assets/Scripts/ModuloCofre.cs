@@ -19,6 +19,7 @@ public class ModuloCofre : MonoBehaviour {
     public GameObject tranca;
     public RectTransform canvasTransform;
     public Image image1;
+    public Image image2;
     public Image bigDenominator, smallDenominator;
     public GameObject rotator;
     public Image checkButton;
@@ -136,6 +137,12 @@ public class ModuloCofre : MonoBehaviour {
 
     }
     public void SetValor(string val) {
+        if(val == "") {
+            val = "0";
+        }
+        if(val == ".") {
+            val = "0.";
+        }
         valor = int.Parse(val);
     }
 
@@ -237,8 +244,13 @@ public class ModuloCofre : MonoBehaviour {
             i += Time.deltaTime;
             if(modulo == 0) {
                 rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 360f) * (Time.deltaTime / animDuration));
+                Debug.Log(Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f);
+                
+                image2.fillAmount = Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f; 
             } else {
                 rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 180f) * (Time.deltaTime / animDuration));
+                
+                image2.fillAmount = Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f;
             }
             yield return null;
         }

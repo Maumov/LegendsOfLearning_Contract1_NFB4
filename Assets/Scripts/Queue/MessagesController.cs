@@ -8,9 +8,10 @@ public class MessagesController : MonoBehaviour
     public Transform canvas;
 
 
-    public void SpawnText(string ListName)
+    public void SpawnText(string keyName)
     {
-        List<string> list = Library.instance.GetText(ListName);
+        List<string> list = new List<string>();
+        list.Add(SharedState.LanguageDefs[keyName]);
         if(list != null)
         {
             TextController text = Instantiate(textPrefab, canvas).GetComponentInChildren<TextController>();
