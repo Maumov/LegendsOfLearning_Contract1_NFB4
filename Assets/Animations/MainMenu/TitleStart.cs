@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class TitleStart : MonoBehaviour
 {
-    public AnimatorController controller;
+    public Animator nextGame;
 
-    public void StartNewGameAnimation()
+    public void AnimateNewGameButton()
     {
-        controller.AnimateNewGameButton();
+        nextGame.Play("NewGame_Init");
     }
 }

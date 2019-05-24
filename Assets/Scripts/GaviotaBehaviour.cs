@@ -18,10 +18,6 @@ public class GaviotaBehaviour : MonoBehaviour
 
     private void Update()
     {
-        if (trigger)
-        {
-            Debug.Log(rect.anchoredPosition.x);
-        }
         rect.anchoredPosition += new Vector2(Time.deltaTime * -xSpeed, Mathf.Sin(offset + Time.time * ySpeed));
 
         if(rect.anchoredPosition.x <= -600)
@@ -29,5 +25,4 @@ public class GaviotaBehaviour : MonoBehaviour
             rect.anchoredPosition = new Vector2(600, rect.anchoredPosition.y);
         }
     }
-
 }

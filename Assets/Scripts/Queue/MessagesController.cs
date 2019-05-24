@@ -7,7 +7,6 @@ public class MessagesController : MonoBehaviour
     public TextController textPrefab;
     public GameObject canvas;
 
-
     public void SpawnText(string keyName)
     {
         canvas.SetActive(true);
@@ -22,6 +21,4 @@ public class MessagesController : MonoBehaviour
     public void AddText(string keyName) {
         textPrefab.AddText(SharedState.LanguageDefs[keyName]);
     }
-
-
 }
