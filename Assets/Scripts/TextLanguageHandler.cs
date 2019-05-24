@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TextLanguageHandler : MonoBehaviour
 {
@@ -9,8 +10,9 @@ public class TextLanguageHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        Debug.Log(SharedState.LanguageDefs[key]);
+
+        GetComponent<Text>().text = SharedState.LanguageDefs[key];
+        //Debug.Log(SharedState.LanguageDefs[key]);
         
     }
 
