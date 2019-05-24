@@ -41,6 +41,7 @@ public static class SharedState
 
 	public static JSONNode LanguageDefs
 	{
+
 		get
 		{
 			return languageDefs;
