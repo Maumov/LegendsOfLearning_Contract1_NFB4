@@ -10,6 +10,8 @@
 
 	  "enterTheCode": 20,
 	  "of": 10,
+	  "next": 20,
+	  "ok": 20,
 
 	  "intro_1": 30,
 	  "intro_2": 30,
@@ -84,7 +86,9 @@
     "onePlusOne": "Uno + Uno = Dos",
 
 	"enterTheCode": "Valor",
-	"of": "of",
+	"of": "de",
+	"next": "Siguiente",
+	"ok": "Ok",
 
 	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
 	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",

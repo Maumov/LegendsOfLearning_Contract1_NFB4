@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class TextLanguageHandler : MonoBehaviour
 {
@@ -9,15 +11,24 @@ public class TextLanguageHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        Debug.Log(SharedState.LanguageDefs[key]);
-        
-    }
+        Text textObject = GetComponent<Text>();
+        if(textObject != null)
+        {
+            //textObject.text = SharedState.LanguageDefs[key];
+        }
+        else
+        {
+            TextMeshProUGUI textMesh = GetComponent<TextMeshProUGUI>();
+            if(textMesh != null)
+            {
+               //textMesh.text = SharedState.LanguageDefs[key];
+            }
+            else
+            {
+                Debug.Log("Unable to continue");
+            }
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //Debug.Log(SharedState.LanguageDefs[key]);
     }
-
 }
