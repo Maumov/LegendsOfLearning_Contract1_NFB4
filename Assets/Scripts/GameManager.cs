@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviour
     public static GemCounter counter;
     public GameObject GameOverCanvas;
     public GameObject treasure;
-    public PlayableDirector director;
     public ObjectPanning shipPanning;
     public GameObject canvasPointer;
 
@@ -46,14 +45,6 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = status;
         canvasPointer.SetActive(!status);
-    }
-
-    public void GameOver()
-    {
-        director.gameObject.SetActive(true);
-        treasure.SetActive(true);
-        shipPanning.EndingTween();
-        director.Play();
     }
 
     public void LoadCanvas()

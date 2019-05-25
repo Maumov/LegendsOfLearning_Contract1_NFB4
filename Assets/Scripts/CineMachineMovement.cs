@@ -1,37 +1,71 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 public class CineMachineMovement : MonoBehaviour
 {
     public GameObject ship;
+    public Transform refencePoint;
     public Vector3[] firstPart;
     public Vector3[] secondPart;
-    public Vector3 initialRotation;
     public Vector3 finalRotation;
+    CinemachineVirtualCamera virtualCamera;
+    public float delay;
+
+    private void Start()
+    {
+        virtualCamera = GetComponent<CinemachineVirtualCamera>();
+    }
 
     public void StartPanning()
     {
-
-        LeanTween.moveSplineLocal(gameObject, firstPart, 4f).setOnStart(SetInitialRotation).setOnComplete(SecondPanning);
+        LeanTween.cancel(gameObject, true);
+        Debug.Log("Completo");
+        LeanTween.moveSplineLocal(gameObject, firstPart, 6f).setOnStart(SetShipRotation).setOnComplete(SecondPanning);
+        
     }
 
     void SecondPanning()
     {
-        LeanTween.moveSplineLocal(gameObject, secondPart, 6f).setDelay(2f).setOnStart(SetFinalRotation);
+        Debug.Log("Suposse to happen");
+        transform.rotation = Quaternion.Euler(32f, 85f, 0f);
+        DisableLookAt();
+        LeanTween.moveSplineLocal(gameObject, secondPart, 4f).setDelay(2f).setOnStart(SetFinal).setOnComplete(LookAtShip);
     }
 
-    void SetInitialRotation()
+    void LookAtTreasure()
     {
-        transform.localRotation = Quaternion.Euler(initialRotation);
+        virtualCamera.LookAt = refencePoint;
     }
-    void SetFinalRotation()
+
+    void DisableLookAt()
     {
-        transform.localRotation = Quaternion.Euler(finalRotation);
+        virtualCamera.LookAt = null;
+    }
+
+    void LookAtShip()
+    {
+        virtualCamera.LookAt = ship.transform;
+    }
+
+    void SetFinal()
+    {
+        transform.rotation = Quaternion.Euler(finalRotation);
+        ship.GetComponent<ObjectPanning>().EndingTween();
+        StartCoroutine(lookat());
     }
 
     public void SetShipRotation()
     {
-        ship.transform.rotation = Quaternion.Euler(ship.transform.rotation.x, 102.12f, ship.transform.rotation.z);
+        LookAtTreasure();
+        ship.transform.rotation = Quaternion.Euler(ship.transform.rotation.x, -5f, ship.transform.rotation.z);
+    }
+
+    IEnumerator lookat()
+    {
+        yield return new WaitForSeconds(delay);
+        LookAtShip();
+        yield break;
     }
 }

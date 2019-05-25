@@ -29,7 +29,6 @@ public class ObjectPanning : MonoBehaviour
     public UnityEvent OnStart;
     public UnityEvent OnComplete;
 
-
     void Start()
     {
         Vector3[] points = new Vector3[waypoints.Length];
@@ -75,7 +74,7 @@ public class ObjectPanning : MonoBehaviour
 
     public void EndingTween()
     {
-        LeanTween.cancelAll(true);
         LeanTween.moveSpline(gameObject, pathEnding, 20f).setOrientToPath(true).setOnStart(OnStart.Invoke).setOnComplete(OnEndingCompleted.Invoke);
     }
+
 }
