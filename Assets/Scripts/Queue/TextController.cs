@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TextController : MonoBehaviour
 {
-    public Queue<string> message;
+    public Queue<Frases> message;
     public TextMeshProUGUI text;
     public TextMeshProUGUI buttonText;
     bool completed;
     public float delay = 1;
     private float delayCounter;
-    
+
+    UnityEvent eventoActual;
+
     private void Start()
     {
         delayCounter = delay;
@@ -39,18 +42,22 @@ public class TextController : MonoBehaviour
         {
             if (!completed)
             {
-                text.text = message.Dequeue();
+                eventoActual = message.Peek().evento;
+                string word = message.Dequeue().key;
+                text.text = SharedState.LanguageDefs[word];
                 if (message.Count == 0)
                 {
                     completed = true;
-                    buttonText.text = "OK";
+                    buttonText.text = SharedState.LanguageDefs["ok"];
                 }
+                eventoActual.Invoke();
             }
             else
             {
                 CameraMovement.StaticSetInputs(true);
                 GameManager.StaticSetCursorStatus(false);
                 MapManager.StaticSetMapStatus(true);
+                
                 DestroyThisObject();
             }
 
@@ -58,13 +65,15 @@ public class TextController : MonoBehaviour
         }
     }
 
-    public void SetText(List<string> data)
+    public void SetText(List<Frases> data)
     {
-        message = new Queue<string>(data);
-        text.text = message.Dequeue();
+        buttonText.text = SharedState.LanguageDefs["next"];
+        message = new Queue<Frases>(data);
+        string word = message.Dequeue().key;
+        text.text = SharedState.LanguageDefs[word];
     }
 
-    public void AddText(string data) {
+    public void AddText(Frases data) {
         message.Enqueue(data);
     }
 
