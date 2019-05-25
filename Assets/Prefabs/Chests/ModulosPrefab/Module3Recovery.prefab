@@ -7511,6 +7511,7 @@ GameObject:
   - component: {fileID: 5735717685771589716}
   - component: {fileID: 5735717685770459796}
   - component: {fileID: 5735717685772485362}
+  - component: {fileID: 3218968553736037192}
   m_Layer: 14
   m_Name: Module3Recovery
   m_TagString: Untagged
@@ -7647,6 +7648,20 @@ MonoBehaviour:
   currentDenominatorY: 2
   panel: {fileID: 6544612616140392985}
   botones: []
+--- !u!114 &3218968553736037192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5735717685772452904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186713517a177ad428c61359c6eef1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOrthographic: 1
+  OrthoSize: 0.01
 --- !u!1 &5735717685772452906
 GameObject:
   m_ObjectHideFlags: 0

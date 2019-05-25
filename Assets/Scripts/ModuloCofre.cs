@@ -34,12 +34,10 @@ public class ModuloCofre : MonoBehaviour {
     public GameObject panel;
     public List<GameObject> botones;
     bool isBusy;
+
     private void Start() {
         cofre = GetComponentInParent<Cofre>();
         SetQuestion();
-
-        cam.m_Lens.OrthographicSize = 0.1f;
-        cam.m_Lens.Orthographic = false;
     }
 
     void SetQuestion() {
@@ -248,7 +246,6 @@ public class ModuloCofre : MonoBehaviour {
             i += Time.deltaTime;
             if(modulo == 0) {
                 rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 360f) * (Time.deltaTime / animDuration));
-                Debug.Log(Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f);
                 
                 image2.fillAmount = Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f; 
             } else {
