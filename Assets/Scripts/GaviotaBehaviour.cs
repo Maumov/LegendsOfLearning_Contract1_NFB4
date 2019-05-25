@@ -7,22 +7,24 @@ public class GaviotaBehaviour : MonoBehaviour
     RectTransform rect;
     public float ySpeed;
     public float xSpeed;
-    int offset;
+    public float amplitud = 1.0f;
+    public int resetPaloma;
+    float offset;
     bool trigger; 
 
     private void Start()
     {
-        offset = Random.Range(0, 50);
+        offset = Random.Range(0f, 360f);
         rect = GetComponent<RectTransform>();
     }
 
     private void Update()
     {
-        rect.anchoredPosition += new Vector2(Time.deltaTime * -xSpeed, Mathf.Sin(offset + Time.time * ySpeed));
+        rect.anchoredPosition += new Vector2(Time.deltaTime * -xSpeed, Mathf.Sin(Mathf.Deg2Rad * (offset + Time.time * ySpeed)) * amplitud);
 
-        if(rect.anchoredPosition.x <= -600)
+        if(rect.anchoredPosition.x <= -resetPaloma)
         {
-            rect.anchoredPosition = new Vector2(600, rect.anchoredPosition.y);
+            rect.anchoredPosition = new Vector2(resetPaloma, rect.anchoredPosition.y);
         }
     }
 }
