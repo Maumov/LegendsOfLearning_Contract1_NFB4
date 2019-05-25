@@ -76,5 +76,4 @@ public class ObjectPanning : MonoBehaviour
     {
         LeanTween.moveSpline(gameObject, pathEnding, 20f).setOrientToPath(true).setOnStart(OnStart.Invoke).setOnComplete(OnEndingCompleted.Invoke);
     }
-
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class ModuloCofre : MonoBehaviour {
     Cofre cofre;
     public int modulo;
     public Question question, question2;
-    public GameObject cam;
+    public CinemachineVirtualCamera cam;
     public int valor = 0;
     [Header("Modulo 1 y 2")]
     public Text preguntaNumerador1;
@@ -36,6 +37,9 @@ public class ModuloCofre : MonoBehaviour {
     private void Start() {
         cofre = GetComponentInParent<Cofre>();
         SetQuestion();
+
+        cam.m_Lens.OrthographicSize = 0.1f;
+        cam.m_Lens.Orthographic = false;
     }
 
     void SetQuestion() {
@@ -276,12 +280,12 @@ public class ModuloCofre : MonoBehaviour {
 
     public void StartInteraction() {
         canvasTransform.gameObject.SetActive(true);
-        cam.SetActive(true);
+        cam.gameObject.SetActive(true);
     }
 
     public void EndInteraction() {
         canvasTransform.gameObject.SetActive(false);
         GetComponentInParent<Cofre>().ModuloFinished();
-        cam.SetActive(false);
+        cam.gameObject.SetActive(false);
     }
 }

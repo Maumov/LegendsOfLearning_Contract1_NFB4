@@ -21,6 +21,7 @@ public class ColisionConTesoro : MonoBehaviour
             ending.gameObject.SetActive(true);
             ending.Play();
             movement.StartPanning();
+            gameObject.SetActive(false);
         }
     }
 }

@@ -21,14 +21,11 @@ public class CineMachineMovement : MonoBehaviour
     public void StartPanning()
     {
         LeanTween.cancel(gameObject, true);
-        Debug.Log("Completo");
         LeanTween.moveSplineLocal(gameObject, firstPart, 6f).setOnStart(SetShipRotation).setOnComplete(SecondPanning);
-        
     }
 
     void SecondPanning()
     {
-        Debug.Log("Suposse to happen");
         transform.rotation = Quaternion.Euler(32f, 85f, 0f);
         DisableLookAt();
         LeanTween.moveSplineLocal(gameObject, secondPart, 4f).setDelay(2f).setOnStart(SetFinal).setOnComplete(LookAtShip);
