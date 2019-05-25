@@ -28,7 +28,7 @@ public class CineMachineMovement : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(32f, 85f, 0f);
         DisableLookAt();
-        LeanTween.moveSplineLocal(gameObject, secondPart, 4f).setDelay(2f).setOnStart(SetFinal).setOnComplete(LookAtShip);
+        LeanTween.moveSplineLocal(gameObject, secondPart, 8f).setOnStart(SetFinal).setOnComplete(LookAtShip);
     }
 
     void LookAtTreasure()
@@ -56,7 +56,8 @@ public class CineMachineMovement : MonoBehaviour
     public void SetShipRotation()
     {
         LookAtTreasure();
-        ship.transform.rotation = Quaternion.Euler(ship.transform.rotation.x, -5f, ship.transform.rotation.z);
+        ship.transform.rotation = Quaternion.Euler(0f, -5f, 0f);
+        LeanTween.cancel(ship);
     }
 
     IEnumerator lookat()
