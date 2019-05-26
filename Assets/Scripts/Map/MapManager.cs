@@ -47,10 +47,17 @@ public class MapManager : MonoBehaviour
         */
     }
 
+    bool tutorialMap;
+
     private void Update()
     {
         if (Input.GetKeyUp(KeyCode.M))
         {
+            if(tutorialMap == false)
+            {
+                FindObjectOfType<Guion>().StartMinimapa();
+                tutorialMap = true;
+            }
             SpawnMap();
         }
     }
