@@ -55,7 +55,6 @@ public class TextController : MonoBehaviour
             else
             {
                 CameraMovement.StaticSetInputs(true);
-                GameManager.StaticSetCursorStatus(false);
                 MapManager.StaticSetMapStatus(true);
                 
                 DestroyThisObject();

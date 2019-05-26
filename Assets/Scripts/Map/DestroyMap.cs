@@ -24,6 +24,8 @@ public class DestroyMap : MonoBehaviour
         MapManager.isMapOpen = false;
         CameraMovement.StaticSetInputs(true);
         GameManager.StaticSetCursorStatus(false);
-        Destroy(transform.parent.gameObject);
+        transform.parent.gameObject.SetActive(false);
+        MapManager.isMapOpen = false;
+        MapManager.StaticSetMapStatus(true);
     }
 }

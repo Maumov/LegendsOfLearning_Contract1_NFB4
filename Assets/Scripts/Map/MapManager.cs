@@ -12,7 +12,7 @@ public class MapManager : MonoBehaviour
     [Header("Canvas & Map")]
     public Transform canvas;
     public GameObject MapUI;
-    [HideInInspector] public static bool isMapOpen = false;
+    [HideInInspector] public static bool isMapOpen;
     static bool AbletoOpenMap = true;
 
     [Header("Grid & current icons")]
@@ -106,7 +106,8 @@ public class MapManager : MonoBehaviour
             {
                 isMapOpen = true;
                 GameManager.StaticSetCursorStatus(true);
-                Instantiate(MapUI, canvas);
+                MapUI.SetActive(true);
+//                Instantiate(MapUI, canvas);
             }
         }
     }
