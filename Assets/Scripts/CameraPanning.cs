@@ -58,7 +58,7 @@ public class CameraPanning : MonoBehaviour
         LeanTween.moveSpline(objectCamera, spline, duration).setOnStart(OnStart.Invoke).setOnUpdate(LookAtObjectDoor).setOnComplete(TweenModulo1).setEase(LeanTweenType.animationCurve);
     }
 
-    public void LookAtObjectDoor()
+    public void LookAtObjectDoor(float x)
     {
         objectCamera.transform.LookAt(transform.position);
     }

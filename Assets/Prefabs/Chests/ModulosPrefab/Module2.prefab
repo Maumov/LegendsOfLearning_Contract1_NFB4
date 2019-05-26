@@ -813,6 +813,49 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: '?'
+--- !u!1 &1364436085616779537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1113260067543790729}
+  - component: {fileID: 9011158788206216885}
+  m_Layer: 0
+  m_Name: cm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1113260067543790729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364436085616779537}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.36138114, y: -0.3210521, z: 0.6482526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 399251950784602817}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9011158788206216885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364436085616779537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716473397591197430
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,6 +868,7 @@ GameObject:
   - component: {fileID: 743761893823007281}
   - component: {fileID: 7673649497800143365}
   - component: {fileID: 5886897707143036090}
+  - component: {fileID: 6393683572062672392}
   m_Layer: 0
   m_Name: Module2
   m_TagString: Untagged
@@ -916,7 +960,7 @@ MonoBehaviour:
     numerador: 0
     denominador: 0
     cociente: 0
-  cam: {fileID: 8551556873561961816}
+  cam: {fileID: 8862637805347252834}
   valor: 0
   preguntaNumerador1: {fileID: 492360876050769399}
   preguntaDenominador1: {fileID: 4989930568845552800}
@@ -942,6 +986,20 @@ MonoBehaviour:
   currentDenominatorY: 0
   panel: {fileID: 0}
   botones: []
+--- !u!114 &6393683572062672392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716473397591197430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 186713517a177ad428c61359c6eef1fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOrthographic: 1
+  OrthoSize: 0.01
 --- !u!1 &1847409581891400001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +2095,8 @@ Transform:
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: -0.4698, y: -0.0001, z: 0.0005}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1113260067543790729}
   m_Father: {fileID: 4725349466660875792}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 90}
@@ -2077,7 +2136,7 @@ MonoBehaviour:
       m_TypeName: Cinemachine.CinemachineBrain+VcamActivatedEvent, Cinemachine, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
   m_LegacyBlendHint: 0
-  m_ComponentOwner: {fileID: 0}
+  m_ComponentOwner: {fileID: 1113260067543790729}
 --- !u!1 &8815823130315580021
 GameObject:
   m_ObjectHideFlags: 0

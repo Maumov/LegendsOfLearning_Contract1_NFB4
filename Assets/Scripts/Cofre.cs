@@ -35,6 +35,7 @@ public class Cofre : MonoBehaviour {
     public void ModuloFinished() {
         currentModulo++;
         NextModulo();
+        //Camera.main.orthographic = false;
     }
 
     void NextModulo() {
@@ -52,6 +53,7 @@ public class Cofre : MonoBehaviour {
         }
         animaciones.AnimacionTapa();
         endInteraction.Invoke();
+        //Camera.main.orthographic = true;
     }
 
 

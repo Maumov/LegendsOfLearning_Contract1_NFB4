@@ -24,6 +24,4 @@ public class MessagesController : MonoBehaviour
         textPrefab.AddText(keyName);
         //textPrefab.AddText(SharedState.LanguageDefs[keyName]);
     }
-
-
 }
