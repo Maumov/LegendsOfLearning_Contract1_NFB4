@@ -63,7 +63,12 @@ public class Puerta : MonoBehaviour
 
 
     public void UpdateRespuestaUI(string v) {
-       
+        if(v == "") {
+            v = "0";
+        }
+        if(v == ".") {
+            v = "0.";
+        }
         valor = float.Parse(textRespuesta.text.Replace("." , ","));
     }
     
