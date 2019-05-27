@@ -42,6 +42,7 @@ public class Puerta : MonoBehaviour
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
+            FindObjectOfType<Guion>().StartPuertafinal();
         }
     }
 
@@ -78,10 +79,9 @@ public class Puerta : MonoBehaviour
         virtualCamera.SetActive(true);
     }
     
-    public TextController textDisplayCanvas;
     public void Tutorial(bool rightAnswer)
     {
-      textDisplayCanvas.DoorTutorial(rightAnswer);
+      FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
     }
 }
 

@@ -23,23 +23,9 @@ public class TextController : MonoBehaviour
         MapManager.StaticSetMapStatus(false);
     }
 
-    private void Update()
-    {
-        if(delayCounter > 0)
-        {
-            delayCounter -= Time.deltaTime;
-        }
-
-        if(Input.GetAxisRaw("Interact") == 1)
-        {
-            UpdateMessage();
-        }
-    }
-
     public void UpdateMessage()
     {
-        
-        if(delayCounter <= 0)
+        if(delayCounter <= Time.time)
         {
             if(eventoActual != null) {
                 eventoActual.Invoke();
@@ -61,9 +47,10 @@ public class TextController : MonoBehaviour
                 MapManager.StaticSetMapStatus(true);
                 
                 TurnOffThisObject();
+                Debug.Log("entroelse");
             }
 
-            delayCounter = delay;
+            delayCounter = Time.time + delay;
         }
 
     }
@@ -93,37 +80,5 @@ public class TextController : MonoBehaviour
     public void MakeUncompleted()
     {
         completed = false;
-    }
-
-    bool doorCompleted;
-    public void DoorTutorial(bool rightAnswer)
-    {
-        if(doorCompleted == false)
-        {
-            if(rightAnswer == true)
-            {
-                FindObjectOfType<Guion>().StartPuertaFeedBackPos();
-            }
-            else if(rightAnswer == false)
-            {
-                FindObjectOfType<Guion>().StartPuertaFeedBackNeg();
-            }
-
-        }
-    }
-
-    public void Modulo1Tutorial()
-    {
-
-    }
-
-    public void Modulo2Tutorial()
-    {
-
-    }
-
-    public void Modulo3Tutorial()
-    {
-
     }
 }
