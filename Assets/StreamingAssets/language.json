@@ -39,7 +39,7 @@
 	  "puertaTutorialGood_2": 50,
 	  "puertaTutorialBad": 50,
 
-	  "puertaTutorial_4": 50,
+	  "puertaTutorial_Final": 50,
 	  
 	  "cofre_1": 50,
 	  "modulo1Tutorial_1": 50,
@@ -117,9 +117,9 @@
 	"puertaTutorialGood_1": "Esa era la respuesta correcta... Parece que las respuestas estan relacionadas, probare la misma respuesta para las demas partes de la puerta.",
 	"puertaTutorialGood_2": "Probare presionando los botones con circulo rojo de la parte derecha y la parte de abajo",
 
-	"puertaTutorialBad": "Mmmm... Parece que esta no es la respuesta correcta de la operacion",
+	"puertaTutorialBad": "Mmmm... Parece que esta no es la respuesta correcta de la operacion, lo intentare de nuevo",
 
-	"puertaTutorial_4": "Las respuestas si estaban relacionadas, la division tambien la puedo ver como una multiplicacion y como una fraccion",
+	"puertaTutorial_Final": "Las respuestas si estaban relacionadas, la division tambien la puedo ver como una multiplicacion y como una fraccion",
 
 	"cofre_1": "He encontrado la primera gema, pero parece estar dentro del cofre, tendre que abrirlo",
 

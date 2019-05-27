@@ -9,7 +9,7 @@ public class TextController : MonoBehaviour
     public Queue<Frases> message;
     public TextMeshProUGUI text;
     public TextMeshProUGUI buttonText;
-    bool completed;
+    public bool completed;
     public float delay = 1;
     private float delayCounter;
 
@@ -57,7 +57,7 @@ public class TextController : MonoBehaviour
                 CameraMovement.StaticSetInputs(true);
                 MapManager.StaticSetMapStatus(true);
                 
-                DestroyThisObject();
+                TurnOffThisObject();
             }
 
             delayCounter = delay;
@@ -77,9 +77,45 @@ public class TextController : MonoBehaviour
     }
 
 
-    public void DestroyThisObject()
+    public void TurnOffThisObject()
     {
         transform.parent.gameObject.SetActive(false);
-        //stroy(transform.parent.gameObject);
+    }
+
+    public void MakeUncompleted()
+    {
+        completed = false;
+    }
+
+    bool doorCompleted;
+    public void DoorTutorial(bool rightAnswer)
+    {
+        if(doorCompleted == false)
+        {
+            if(rightAnswer == true)
+            {
+                FindObjectOfType<Guion>().StartPuertaFeedBackPos();
+            }
+            else if(rightAnswer == false)
+            {
+                FindObjectOfType<Guion>().StartPuertaFeedBackNeg();
+            }
+
+        }
+    }
+
+    public void Modulo1Tutorial()
+    {
+
+    }
+
+    public void Modulo2Tutorial()
+    {
+
+    }
+
+    public void Modulo3Tutorial()
+    {
+
     }
 }

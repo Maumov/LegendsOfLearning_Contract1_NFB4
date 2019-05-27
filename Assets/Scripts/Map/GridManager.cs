@@ -192,7 +192,6 @@ public class GridManager : MonoBehaviour
                 iconScript.ActivateIcon();
             }
         }
-        FinishedTutorial();
     }
 
     public bool CheckForIconIndex(Vector2 index)
@@ -242,7 +241,7 @@ public class GridManager : MonoBehaviour
     }
 
     bool tutorialFinished;
-    void FinishedTutorial()
+    public void FinishedTutorial()
     {
         if (tutorialFinished == false)
         {

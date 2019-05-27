@@ -16,6 +16,10 @@ public class Guion : MonoBehaviour
     public Capitulo CofreTerminado;
     //Tutorial puerta
     public Capitulo Puerta;
+    public Capitulo PuertaFinal;
+    //FeedBackPuerta
+    public Capitulo PuertaFeedbackPos;
+    public Capitulo PuertaFeedbackNeg;
     //Tutorial modulo1
     public Capitulo Modulo1;
     //Tutorial modulo2
@@ -39,45 +43,74 @@ public class Guion : MonoBehaviour
         StartCoroutine(TutorialStarted(Intro));
     }
 
-    public void StartCofre() {
-        StartCoroutine(TutorialStarted(CofreEncontrado));
-    }
-
-    public void StartCofreEnd() {
-        StartCoroutine(TutorialStarted(CofreTerminado));
-    }
-
-    public void StartUltimoCofre() {
-        StartCoroutine(TutorialStarted(UltimoCofre));
-    }
-
-    public void StartModulo12FeedbackPos() {
-        StartCoroutine(TutorialStarted(FeedbackPosModulo12));
-    }
-    public void StartModulo12FeedbackNeg() {
-        StartCoroutine(TutorialStarted(FeedbackNegModulo12));
-    }
-    public void StartModulo3FeedbackPos() {
-        StartCoroutine(TutorialStarted(FeedbackPosModulo3));
-    }
-    public void StartModulo3FeedbackNeg() {
-        StartCoroutine(TutorialStarted(FeedbackNegModulo3));
-    }
-
     public void StartMinimapa() {
         StartCoroutine(TutorialStarted(Minimapa));
     }
+
     public void StartPuerta() {
         StartCoroutine(TutorialStarted(Puerta));
     }
+
+    public void StartPuertaFeedBackPos()
+    {
+        StartCoroutine(TutorialStarted(PuertaFeedbackPos));
+    }
+
+    public void StartPuertaFeedBackNeg()
+    {
+        StartCoroutine(TutorialStarted(PuertaFeedbackNeg));
+    }
+
+    public void StartPuertafinal()
+    {
+        StartCoroutine(TutorialStarted(PuertaFinal));
+    }
+
+    public void StartCofre()
+    {
+        StartCoroutine(TutorialStarted(CofreEncontrado));
+    }
+
     public void StartModulo1() {
         StartCoroutine(TutorialStarted(Modulo1));
     }
+
     public void StartModulo2() {
         StartCoroutine(TutorialStarted(Modulo2));
     }
+
     public void StartModulo3() {
         StartCoroutine(TutorialStarted(Modulo3));
+    }
+
+    public void StartModulo12FeedbackPos()
+    {
+        StartCoroutine(TutorialStarted(FeedbackPosModulo12));
+    }
+
+    public void StartModulo12FeedbackNeg()
+    {
+        StartCoroutine(TutorialStarted(FeedbackNegModulo12));
+    }
+
+    public void StartModulo3FeedbackPos()
+    {
+        StartCoroutine(TutorialStarted(FeedbackPosModulo3));
+    }
+
+    public void StartModulo3FeedbackNeg()
+    {
+        StartCoroutine(TutorialStarted(FeedbackNegModulo3));
+    }
+
+    public void StartCofreEnd()
+    {
+        StartCoroutine(TutorialStarted(CofreTerminado));
+    }
+
+    public void StartUltimoCofre()
+    {
+        StartCoroutine(TutorialStarted(UltimoCofre));
     }
 
     public void StartEnd() {

@@ -12,6 +12,7 @@ public class MapIconPrefab : MonoBehaviour
     public Vector2 denimators;
     public Vector2 position;
     GridManager gridManager;
+    bool TutorialFinished;
 
     public void ActivateIcon()
     {
@@ -32,6 +33,10 @@ public class MapIconPrefab : MonoBehaviour
             imageOrigin.raycastTarget = false;
             imageOrigin.GetComponent<MapIconPrefab>().status = true;
             DoorsManager.SpawnDoor(id);
+            if (id == 1)
+            {
+                gridManager.FinishedTutorial();
+            }
         }
     }
 

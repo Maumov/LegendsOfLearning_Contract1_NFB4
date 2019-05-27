@@ -77,6 +77,12 @@ public class Puerta : MonoBehaviour
     public void StartInteraction() {
         virtualCamera.SetActive(true);
     }
+    
+    public TextController textDisplayCanvas;
+    public void Tutorial(bool rightAnswer)
+    {
+      textDisplayCanvas.DoorTutorial(rightAnswer);
+    }
 }
 
 [System.Serializable]
