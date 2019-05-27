@@ -432,11 +432,6 @@ PrefabInstance:
       propertyPath: tranca
       value: 
       objectReference: {fileID: 4520963542352865977}
-    - target: {fileID: 5735717685772485362, guid: 74b382d675e3e2c499c24cadc546be5e,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 5604260009330920882}
     - target: {fileID: 3346873089949306063, guid: 74b382d675e3e2c499c24cadc546be5e,
         type: 3}
       propertyPath: m_Camera
@@ -452,18 +447,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 6176339624079551072}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5604260009330920882 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1761066759814031314, guid: 74b382d675e3e2c499c24cadc546be5e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6176339624079551072}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7783988621757668812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9214803610736793838
 PrefabInstance:
   m_ObjectHideFlags: 0

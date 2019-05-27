@@ -10,7 +10,7 @@ public class ModuloCofre : MonoBehaviour {
     Cofre cofre;
     public int modulo;
     public Question question, question2;
-    public CinemachineVirtualCamera cam;
+    public GameObject cam;
     public int valor = 0;
     [Header("Modulo 1 y 2")]
     public Text preguntaNumerador1;

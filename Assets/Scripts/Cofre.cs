@@ -13,6 +13,7 @@ public class Cofre : MonoBehaviour {
     public ModuloCofre[] modulos;
     AnimacionesDeCofre animaciones;
     public UnityEvent endInteraction;
+    GameObject mainCamera;
 
     int currentModulo = 0;
     // Start is called before the first frame update
@@ -20,16 +21,12 @@ public class Cofre : MonoBehaviour {
     {
         modulos = GetComponentsInChildren<ModuloCofre>();
         animaciones = GetComponent<AnimacionesDeCofre>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     public void InteractionStart() {
         modulos[currentModulo].StartInteraction();
+        mainCamera.SetActive(false);
     }
 
     public void ModuloFinished() {
@@ -53,7 +50,7 @@ public class Cofre : MonoBehaviour {
         }
         animaciones.AnimacionTapa();
         endInteraction.Invoke();
-        //Camera.main.orthographic = true;
+        mainCamera.SetActive(true);
     }
 
 

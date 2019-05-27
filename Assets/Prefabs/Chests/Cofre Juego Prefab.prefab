@@ -838,6 +838,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 147406591117763298, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8753641616868041240, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
       propertyPath: m_RootOrder
@@ -913,20 +918,10 @@ PrefabInstance:
       propertyPath: tranca
       value: 
       objectReference: {fileID: 3872711660886887854}
-    - target: {fileID: 147406591117763298, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 581961860003419402, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8957376690404745307, guid: 79a9836a080d4eb4dbc3cdbec3f80611,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5075996627073060840, guid: 79a9836a080d4eb4dbc3cdbec3f80611, type: 3}
