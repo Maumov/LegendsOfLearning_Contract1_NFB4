@@ -27,6 +27,7 @@ public class Cofre : MonoBehaviour {
     public void InteractionStart() {
         modulos[currentModulo].StartInteraction();
         mainCamera.SetActive(false);
+        TutorialModulo();
     }
 
     public void ModuloFinished() {
@@ -40,6 +41,7 @@ public class Cofre : MonoBehaviour {
             InteractionFinished();
         } else {
             modulos[currentModulo].StartInteraction();
+            TutorialModulo();
         }
     }
 
@@ -70,4 +72,21 @@ public class Cofre : MonoBehaviour {
         gameObject.SetActive(false);
         yield return null;
     }
+
+    void TutorialModulo()
+    {
+        if(currentModulo == 0)
+        {
+            FindObjectOfType<Guion>().StartModulo1();
+        }
+        else if (currentModulo == 1)
+        {
+            FindObjectOfType<Guion>().StartModulo2();
+        }
+        else if (currentModulo == 2)
+        {
+            FindObjectOfType<Guion>().StartModulo3();
+        }
+    }
+
 }
