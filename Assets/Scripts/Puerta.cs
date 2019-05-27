@@ -83,11 +83,10 @@ public class Puerta : MonoBehaviour
     public void StartInteraction() {
         virtualCamera.SetActive(true);
     }
-    
-    public TextController textDisplayCanvas;
-    public void Tutorial(bool rightAnswer)
-    {
-      textDisplayCanvas.DoorTutorial(rightAnswer);
+
+    public void Tutorial(bool rightAnswer) {
+
+        FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
     }
 }
 
@@ -97,10 +96,4 @@ public class Question {
     public float denominador;
     public float cociente;
 }
-    public TextController textDisplayCanvas;
-    public void Tutorial(bool rightAnswer)
-    {
-      textDisplayCanvas.DoorTutorial(rightAnswer);
-    public void Tutorial(bool rightAnswer)
-    {
-      FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
+
