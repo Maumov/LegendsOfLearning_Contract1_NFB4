@@ -38,8 +38,10 @@ public class TextController : MonoBehaviour
 
     public void UpdateMessage()
     {
+        
         if(delayCounter <= 0)
         {
+            eventoActual.Invoke();
             if (!completed)
             {
                 eventoActual = message.Peek().evento;
@@ -50,7 +52,6 @@ public class TextController : MonoBehaviour
                     completed = true;
                     buttonText.text = SharedState.LanguageDefs["ok"];
                 }
-                eventoActual.Invoke();
             }
             else
             {
@@ -62,14 +63,18 @@ public class TextController : MonoBehaviour
 
             delayCounter = delay;
         }
+
     }
 
     public void SetText(List<Frases> data)
     {
-        buttonText.text = SharedState.LanguageDefs["next"];
+        completed = false;
         message = new Queue<Frases>(data);
-        string word = message.Dequeue().key;
-        text.text = SharedState.LanguageDefs[word];
+        buttonText.text = SharedState.LanguageDefs["next"];
+        UpdateMessage();
+        
+        //string word = message.Dequeue().key;
+        //text.text = SharedState.LanguageDefs[word];
     }
 
     public void AddText(Frases data) {

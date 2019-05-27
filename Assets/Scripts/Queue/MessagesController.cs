@@ -11,6 +11,7 @@ public class MessagesController : MonoBehaviour
     public void SpawnText(Frases keyName)
     {
         textPrefab.MakeUncompleted();
+        
         canvas.SetActive(true);
         List<Frases> list = new List<Frases>();
         //list.Add(SharedState.LanguageDefs[keyName]);
