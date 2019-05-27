@@ -29,6 +29,8 @@
 
 	  "mapaTutorial_8": 50,
 
+	  "mapaTutorial_9": 50,
+
 	  "puertaTutorial_1": 50,
 	  "puertaTutorial_2": 50,
 	  "puertaTutorial_3": 50,
@@ -105,6 +107,8 @@
 	"mapaTutorial_7": "Ok, ahora colocare 10 lineas azules con los botones de abajo",
 
 	"mapaTutorial_8": "¡Genial! ya tengo las lineas adecuadas ahora debo dar click donde se cruzan la primera linea roja y la tercera linea azul",
+
+	"mapaTutorial_9": "He encontrado la localizacion de la gema amarilla, ire a revisarla.",
 
 	"puertaTutorial_1": "Esta puerta esta bloqueando mi acceso hacia la gema, intentare abrirla.",
 	"puertaTutorial_2": "Segun veo, el mecanismo se abre al colocar el valor adecuado en el centro de la puerta",

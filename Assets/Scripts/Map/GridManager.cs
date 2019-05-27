@@ -192,6 +192,7 @@ public class GridManager : MonoBehaviour
                 iconScript.ActivateIcon();
             }
         }
+        FinishedTutorial();
     }
 
     public bool CheckForIconIndex(Vector2 index)
@@ -223,7 +224,6 @@ public class GridManager : MonoBehaviour
             {
                 textDisplay.SetActive(true);
                 tutorialAzul = true;
-                Debug.Log("active la wea azul");
             }
         }
     }
@@ -237,8 +237,17 @@ public class GridManager : MonoBehaviour
             {
                 textDisplay.SetActive(true);
                 tutorialRojo = true;
-                Debug.Log("active la wea roja");
             }
+        }
+    }
+
+    bool tutorialFinished;
+    void FinishedTutorial()
+    {
+        if (tutorialFinished == false)
+        {
+            textDisplay.SetActive(true);
+            tutorialFinished = true;
         }
     }
 }
