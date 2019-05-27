@@ -41,7 +41,9 @@ public class TextController : MonoBehaviour
         
         if(delayCounter <= 0)
         {
-            eventoActual.Invoke();
+            if(eventoActual != null) {
+                eventoActual.Invoke();
+            }
             if (!completed)
             {
                 eventoActual = message.Peek().evento;
@@ -68,6 +70,7 @@ public class TextController : MonoBehaviour
 
     public void SetText(List<Frases> data)
     {
+        eventoActual = null;
         completed = false;
         message = new Queue<Frases>(data);
         buttonText.text = SharedState.LanguageDefs["next"];

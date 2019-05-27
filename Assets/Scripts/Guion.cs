@@ -118,11 +118,11 @@ public class Guion : MonoBehaviour
     }
 
     IEnumerator TutorialStarted(Capitulo cap) {
-        messageController.SpawnText(cap.GetFrase());
-        for(int i = 0; i < cap.frases.Count -1; i++) {
-            messageController.AddText(cap.GetSiguienteFrase());
-            yield return null;
-        }
+        messageController.SpawnText(cap.frases);
+        //for(int i = 0; i < cap.frases.Count -1; i++) {
+        //    messageController.AddText(cap.GetSiguienteFrase());
+        //    yield return null;
+        //}
         yield return null;
     }
 }
