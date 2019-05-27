@@ -142,8 +142,7 @@ public class ModuloPuerta : MonoBehaviour
     }
 
 
-
-
+    bool goodAnswerShowed;
     void Bad() {
         Debug.Log("Bad");
         Reset();
@@ -157,3 +156,10 @@ public class ModuloPuerta : MonoBehaviour
         puerta.Tutorial(true);
     }
 }
+
+        Debug.Log("Good");
+        if (goodAnswerShowed == false)
+        {
+            puerta.Tutorial(true);
+            goodAnswerShowed = true;
+        }

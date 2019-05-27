@@ -39,12 +39,6 @@ public class MapManager : MonoBehaviour
         SetIcon(2, 9, 7, 10, "Treasure", 2);
         SetIcon(4, 9, 5, 6, "Treasure", 3);
         SetIcon(5, 8, 3, 9, "Treasure", 4);
-        /*
-        for (int i = 0; i < doors.Count; i++)
-        {
-            doors[i].door.SetActive(false);
-        }
-        */
     }
 
     bool tutorialMap;
@@ -108,7 +102,6 @@ public class MapManager : MonoBehaviour
                 isMapOpen = true;
                 GameManager.StaticSetCursorStatus(true);
                 MapUI.SetActive(true);
-//                Instantiate(MapUI, canvas);
             }
         }
     }

@@ -125,6 +125,50 @@ public class Guion : MonoBehaviour
         //}
         yield return null;
     }
+
+
+    bool doorCompleted;
+    public void DoorTutorial(bool rightAnswer)
+    {
+        if (doorCompleted == false)
+        {
+            if (rightAnswer == true)
+            {StartPuertaFeedBackPos();
+            }
+            else if (rightAnswer == false)
+            {
+                StartPuertaFeedBackNeg();
+            }
+
+        }
+    }
+
+    bool tutorial1Finished;
+    public void Modulo1Tutorial()
+    {
+        if (tutorial1Finished == false)
+        {
+
+        }
+    }
+
+    bool tutorial2Finished;
+    public void Modulo2Tutorial()
+    {
+        if (tutorial2Finished == false)
+        {
+
+        }
+    }
+
+    bool tutorial3Finished;
+    public void Modulo3Tutorial()
+    {
+        if (tutorial3Finished == false)
+        {
+
+        }
+    }
 }
 [System.Serializable]
 public class Capitulo {

@@ -42,6 +42,7 @@ public class Puerta : MonoBehaviour
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
+            FindObjectOfType<Guion>().StartPuertafinal();
         }
     }
 
@@ -96,3 +97,10 @@ public class Question {
     public float denominador;
     public float cociente;
 }
+    public TextController textDisplayCanvas;
+    public void Tutorial(bool rightAnswer)
+    {
+      textDisplayCanvas.DoorTutorial(rightAnswer);
+    public void Tutorial(bool rightAnswer)
+    {
+      FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
