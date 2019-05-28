@@ -142,16 +142,23 @@ public class ModuloPuerta : MonoBehaviour
     }
 
 
-
-
+    bool goodAnswerShowed;
     void Bad() {
         Debug.Log("Bad");
         Reset();
+        puerta.Tutorial(false);
     }
 
     void Good() {
         StartCoroutine(AnimateTranca());
         boton.color = Color.green;
         Debug.Log("Good");
+       // puerta.Tutorial(true);
+        if(goodAnswerShowed == false) {
+            puerta.Tutorial(true);
+            goodAnswerShowed = true;
+        }
     }
 }
+
+        

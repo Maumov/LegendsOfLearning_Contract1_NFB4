@@ -8,13 +8,12 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Text gemsCounter;
-    int gems;
+    internal int gems;
     public GameObject finalPlaceHolder;
     public delegate void GemCounter();
     public static GemCounter counter;
     public GameObject GameOverCanvas;
     public GameObject treasure;
-    public PlayableDirector director;
     public ObjectPanning shipPanning;
     public GameObject canvasPointer;
 
@@ -26,7 +25,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGemsCounter()
     {
-        if(gems <= 5)
+        if (gems == 1)
+        {
+            FindObjectOfType<Guion>().StartCofreEnd();
+        }
+        if (gems <= 5)
         {
             gems++;
             gemsCounter.text = gems.ToString() + "/4";
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour
         if(gems == 4)
         {
             finalPlaceHolder.SetActive(false);
+            FindObjectOfType<Guion>().StartUltimoCofre();
         }
     }
 
@@ -46,14 +50,6 @@ public class GameManager : MonoBehaviour
     {
         Cursor.visible = status;
         canvasPointer.SetActive(!status);
-    }
-
-    public void GameOver()
-    {
-        director.gameObject.SetActive(true);
-        treasure.SetActive(true);
-        shipPanning.EndingTween();
-        director.Play();
     }
 
     public void LoadCanvas()

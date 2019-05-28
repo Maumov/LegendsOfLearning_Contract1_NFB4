@@ -828,7 +828,7 @@ Animator:
   m_GameObject: {fileID: 8972356610577237833}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ec4d27289f7605e418a6bf69b1ec1963, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -908,16 +908,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5886897707143036090, guid: 5a05cf46af97913489017a522b7c60db,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8772613465556499307, guid: 5a05cf46af97913489017a522b7c60db,
-        type: 3}
-      propertyPath: m_Camera
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6167560155717501137, guid: 5a05cf46af97913489017a522b7c60db, type: 3}

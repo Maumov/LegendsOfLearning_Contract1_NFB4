@@ -42,11 +42,13 @@ public class Puerta : MonoBehaviour
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
+            FindObjectOfType<Guion>().StartPuertafinal();
         }
     }
 
     IEnumerator AnimatePuerta() {
         virtualCamera.SetActive(false);
+        virtualCamera.GetComponent<Camera>().enabled = false;
         InteractionFinished.Invoke();
         float j = 0f;
         canvasDoor.SetActive(false);
@@ -63,8 +65,22 @@ public class Puerta : MonoBehaviour
 
 
     public void UpdateRespuestaUI(string v) {
-       
-        valor = float.Parse(textRespuesta.text.Replace("." , ","));
+
+        Debug.Log(v);
+        if(v == null) {
+            v = "";
+        }
+        if(v == "") {
+            v = "0";
+        }
+        if(v == ".") {
+            v = "0.";
+        }
+        try {
+            valor = float.Parse(textRespuesta.text.Replace(".", ","));
+        } catch {
+            Debug.Log("meh!");
+        }
     }
     
 
@@ -75,7 +91,14 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
+        GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
+        virtualCamera.GetComponent<Camera>().enabled = true;
         virtualCamera.SetActive(true);
+    }
+
+    public void Tutorial(bool rightAnswer) {
+
+        FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
     }
 }
 

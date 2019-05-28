@@ -9,7 +9,7 @@ public class TextController : MonoBehaviour
     public Queue<Frases> message;
     public TextMeshProUGUI text;
     public TextMeshProUGUI buttonText;
-    bool completed;
+    public bool completed;
     public float delay = 1;
     private float delayCounter;
 
@@ -23,23 +23,13 @@ public class TextController : MonoBehaviour
         MapManager.StaticSetMapStatus(false);
     }
 
-    private void Update()
-    {
-        if(delayCounter > 0)
-        {
-            delayCounter -= Time.deltaTime;
-        }
-
-        if(Input.GetAxisRaw("Interact") == 1)
-        {
-            UpdateMessage();
-        }
-    }
-
     public void UpdateMessage()
     {
-        if(delayCounter <= 0)
+        if(delayCounter <= Time.time)
         {
+            if(eventoActual != null) {
+                eventoActual.Invoke();
+            }
             if (!completed)
             {
                 eventoActual = message.Peek().evento;
@@ -50,27 +40,31 @@ public class TextController : MonoBehaviour
                     completed = true;
                     buttonText.text = SharedState.LanguageDefs["ok"];
                 }
-                eventoActual.Invoke();
             }
             else
             {
                 CameraMovement.StaticSetInputs(true);
-                GameManager.StaticSetCursorStatus(false);
                 MapManager.StaticSetMapStatus(true);
                 
-                DestroyThisObject();
+                TurnOffThisObject();
+                Debug.Log("entroelse");
             }
 
-            delayCounter = delay;
+            delayCounter = Time.time + delay;
         }
+
     }
 
     public void SetText(List<Frases> data)
     {
-        buttonText.text = SharedState.LanguageDefs["next"];
+        eventoActual = null;
+        completed = false;
         message = new Queue<Frases>(data);
-        string word = message.Dequeue().key;
-        text.text = SharedState.LanguageDefs[word];
+        buttonText.text = SharedState.LanguageDefs["next"];
+        UpdateMessage();
+        
+        //string word = message.Dequeue().key;
+        //text.text = SharedState.LanguageDefs[word];
     }
 
     public void AddText(Frases data) {
@@ -78,9 +72,13 @@ public class TextController : MonoBehaviour
     }
 
 
-    public void DestroyThisObject()
+    public void TurnOffThisObject()
     {
         transform.parent.gameObject.SetActive(false);
-        //stroy(transform.parent.gameObject);
+    }
+
+    public void MakeUncompleted()
+    {
+        completed = false;
     }
 }

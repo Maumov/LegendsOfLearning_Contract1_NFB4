@@ -432,11 +432,6 @@ PrefabInstance:
       propertyPath: tranca
       value: 
       objectReference: {fileID: 4520963542352865977}
-    - target: {fileID: 5735717685772485362, guid: 74b382d675e3e2c499c24cadc546be5e,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 3346873089949306063, guid: 74b382d675e3e2c499c24cadc546be5e,
         type: 3}
       propertyPath: m_Camera

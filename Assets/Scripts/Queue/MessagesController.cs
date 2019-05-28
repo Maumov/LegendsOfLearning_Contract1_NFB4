@@ -8,20 +8,14 @@ public class MessagesController : MonoBehaviour
     public GameObject canvas;
 
 
-    public void SpawnText(Frases keyName)
+    public void SpawnText(List<Frases> keyNames)
     {
         canvas.SetActive(true);
         List<Frases> list = new List<Frases>();
-        //list.Add(SharedState.LanguageDefs[keyName]);
-        list.Add(keyName);
+        list.AddRange(keyNames);
         if(list != null)
         {
             textPrefab.SetText(list);
         }
-    }
-
-    public void AddText(Frases keyName) {
-        textPrefab.AddText(keyName);
-        //textPrefab.AddText(SharedState.LanguageDefs[keyName]);
     }
 }

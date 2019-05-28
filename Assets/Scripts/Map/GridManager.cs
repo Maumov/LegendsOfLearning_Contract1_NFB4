@@ -34,7 +34,9 @@ public class GridManager : MonoBehaviour
     private int indexMaxValue;
     private float xOffset;
     private float yOffset;
-    
+
+    public GameObject textDisplay;
+
 
     private void Start()
     {
@@ -103,7 +105,9 @@ public class GridManager : MonoBehaviour
             fraction.SetDenominator(fractions[xIndex]);
             fraction.SetPosition((rectT.rect.width / fractions[xIndex]) * i, xOffsetFraction);
         }
+        TutorialRojo();
     }
+
 
     public void SetVertical(string result)
     {
@@ -153,8 +157,8 @@ public class GridManager : MonoBehaviour
             fraction.SetDenominator(fractions[yIndex]);
             fraction.SetPosition(rectT.rect.width + xOffset, -(rectT.rect.height / fractions[yIndex]) * i + yOffset);
         }
-
-
+        TutorialAzul();
+    
     }
 
     // Optional
@@ -205,5 +209,44 @@ public class GridManager : MonoBehaviour
     public void SaveIndex()
     {
         MapManager.index = new Vector2Int(xIndex, yIndex);
+    }
+
+
+    bool tutorialStarted;
+    bool tutorialAzul;
+
+    void TutorialAzul()
+    {
+        if (tutorialAzul == false)
+        {
+            if (fractions[yIndex] == 10)
+            {
+                textDisplay.SetActive(true);
+                tutorialAzul = true;
+            }
+        }
+    }
+
+    bool tutorialRojo;
+    void TutorialRojo()
+    {
+        if (tutorialRojo == false)
+        {
+            if (fractions[xIndex] == 8)
+            {
+                textDisplay.SetActive(true);
+                tutorialRojo = true;
+            }
+        }
+    }
+
+    bool tutorialFinished;
+    public void FinishedTutorial()
+    {
+        if (tutorialFinished == false)
+        {
+            textDisplay.SetActive(true);
+            tutorialFinished = true;
+        }
     }
 }
