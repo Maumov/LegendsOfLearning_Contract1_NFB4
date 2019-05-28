@@ -15,13 +15,13 @@ public class ColisionConTesoro : MonoBehaviour
         if (other.name.Contains("Player"))
         {
             MapManager.instance.SetMapStatus(false);
-            CameraMovement.StaticSetInputs(false);
             UI.SetActive(false);
             player.SetActive(false);
             ending.gameObject.SetActive(true);
             ending.Play();
             movement.StartPanning();
             gameObject.SetActive(false);
+            FindObjectOfType<Guion>().StartEnd();
         }
     }
 }

@@ -12,8 +12,8 @@ public class MapManager : MonoBehaviour
     [Header("Canvas & Map")]
     public Transform canvas;
     public GameObject MapUI;
-    [HideInInspector] public static bool isMapOpen;
-    static bool AbletoOpenMap = true;
+    public bool isMapOpen;
+    public bool AbletoOpenMap = true;
 
     [Header("Grid & current icons")]
     public GameObject Iconprefab;
@@ -25,6 +25,9 @@ public class MapManager : MonoBehaviour
 
     public static MapManager instance;
 
+    public GameManager gameManager;
+
+
     private void Awake()
     {
         if(instance == null)
@@ -35,6 +38,7 @@ public class MapManager : MonoBehaviour
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         SetIcon(1, 8, 3, 10, "Treasure", 1);
         SetIcon(2, 9, 7, 10, "Treasure", 2);
         SetIcon(4, 9, 5, 6, "Treasure", 3);
@@ -47,12 +51,13 @@ public class MapManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.M))
         {
-            if(tutorialMap == false)
-            {
-                FindObjectOfType<Guion>().StartMinimapa();
-                tutorialMap = true;
+            if(AbletoOpenMap) {
+                if(isMapOpen) {
+                    HideMap();
+                } else {
+                    SpawnMap();
+                }
             }
-            SpawnMap();
         }
     }
 
@@ -88,21 +93,20 @@ public class MapManager : MonoBehaviour
         AbletoOpenMap = status;
     }
 
-    public static void StaticSetMapStatus(bool status)
-    {
-        AbletoOpenMap = status;
-    }
-
     public void SpawnMap()
     {
-        if (AbletoOpenMap)
-        {
-            if (isMapOpen == false)
-            {
-                isMapOpen = true;
-                GameManager.StaticSetCursorStatus(true);
-                MapUI.SetActive(true);
-            }
+        if(tutorialMap == false) {
+            FindObjectOfType<Guion>().StartMinimapa();
+            tutorialMap = true;
         }
+        isMapOpen = true;
+        MapUI.SetActive(true);
+        gameManager.MapShow();
+    }
+
+    public void HideMap() {
+        MapUI.SetActive(false);
+        gameManager.MapHide();
+        isMapOpen = false;
     }
 }
