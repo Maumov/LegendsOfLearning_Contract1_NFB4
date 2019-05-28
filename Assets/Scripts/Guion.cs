@@ -7,7 +7,7 @@ public class Guion : MonoBehaviour
 {
     public MessagesController messageController;
     public GameObject textDisplay;
-    public MapManager uimap;
+    public GameManager gameManager;
     //Intro
     public Capitulo Intro;
     //Tutorial minimapa
@@ -127,7 +127,7 @@ public class Guion : MonoBehaviour
     IEnumerator TutorialStarted(Capitulo cap)
     {
         messageController.SpawnText(cap.frases);
-        uimap.SetMapStatus(false);
+        gameManager.TutorialStart();
         //for(int i = 0; i < cap.frases.Count -1; i++) {
         //    messageController.AddText(cap.GetSiguienteFrase());
         //    yield return null;

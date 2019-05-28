@@ -50,6 +50,7 @@ public class Puerta : MonoBehaviour
         virtualCamera.SetActive(false);
         virtualCamera.GetComponent<Camera>().enabled = false;
         InteractionFinished.Invoke();
+        GetComponent<InteractableObject>().InteractionEnd();
         float j = 0f;
         canvasDoor.SetActive(false);
         while(j < animDuration) {
