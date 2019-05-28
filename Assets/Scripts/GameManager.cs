@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     public GameObject keyCanvas;
     public InteractableObject interactable;
 
+    public Camera virtualCamera;
     private void Start()
     {
         CursorStatus(false);
@@ -114,32 +115,54 @@ public class GameManager : MonoBehaviour
 
     public void InteractionFinish() {
         cameraPivot.SetActive(true);
-        playerMovement.gameObject.SetActive(true);
+        playerMovement.enabled = true;
         mapManager.SetMapStatus(true);
     }
 
     public void PuertaStart() {
-        playerMovement.gameObject.SetActive(false);
+        playerMovement.enabled = false;
+        cameraPivot.SetActive(false);
         miniMapCanvas.SetActive(false);
         pointerCanvas.SetActive(false);
         keyCanvas.SetActive(false);
         mapManager.SetMapStatus(false);
+        guion.StartPuerta();
+        
     }
 
     public void PuertaFinish() {
-        playerMovement.gameObject.SetActive(true);
+
+        playerMovement.enabled = true;
         cameraPivot.SetActive(true);
         mapManager.SetMapStatus(true);
         miniMapCanvas.SetActive(true);
         pointerCanvas.SetActive(true);
         keyCanvas.SetActive(true);
+                
     }
     public void CofreStart() {
-        playerMovement.gameObject.SetActive(false);
+        playerMovement.enabled = false;
+        cameraPivot.SetActive(false);
+        miniMapCanvas.SetActive(false);
+        pointerCanvas.SetActive(false);
+        keyCanvas.SetActive(false);
+        mapManager.SetMapStatus(false);
+        guion.StartCofre();
     }
 
     public void CofreFinish() {
-        playerMovement.gameObject.SetActive(true);
+        playerMovement.enabled = true;
+        cameraPivot.SetActive(true);
+        mapManager.SetMapStatus(true);
+        miniMapCanvas.SetActive(true);
+        pointerCanvas.SetActive(true);
+        keyCanvas.SetActive(true);
+        guion.StartCofreEnd();
     }
+
+    public void CofreUltimo() {
+        guion.StartUltimoCofre();
+    }
+
 
 }

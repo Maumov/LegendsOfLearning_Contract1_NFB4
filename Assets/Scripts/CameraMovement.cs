@@ -60,13 +60,4 @@ public class CameraMovement : MonoBehaviour
             movement.SetInputStatus(status);
         }
     }
-
-    public static void StaticSetInputs(bool status)
-    {
-        inputStatus = status;
-        if (movement != null)
-        {
-            movement.SetInputStatus(status);
-        }
-    }
 }

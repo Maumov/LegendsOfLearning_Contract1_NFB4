@@ -40,7 +40,7 @@ public class InteractWithChest : InteractableObject
     public void ChestCompleted()
     {
         ExitModule();
-        Destroy(this);
+        //Destroy(this);
         //completed = true;
         //interacted = true;
     }

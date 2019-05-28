@@ -23,6 +23,8 @@ public class Puerta : MonoBehaviour
 
     public UnityEvent InteractionFinished;
 
+    public GameObject fondoNoText;
+
     private void Start() {
         
         SetQuestion();
@@ -92,15 +94,19 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
-        GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
-        virtualCamera.GetComponent<Camera>().enabled = true;
+        ////GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
+        //virtualCamera.GetComponent<Camera>().enabled = true;
+        //virtualCamera.SetActive(true);
+        //virtualCamera.GetComponent<Camera>().orthographic = true;
         virtualCamera.SetActive(true);
+        canvasDoor.SetActive(true);
     }
 
     public void Tutorial(bool rightAnswer) {
-
         FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
     }
+
+    
 }
 
 [System.Serializable]

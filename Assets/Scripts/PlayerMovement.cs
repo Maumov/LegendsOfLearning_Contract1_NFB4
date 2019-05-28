@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed = 45f;
     float vertical;
     float horizontal;
-    private bool inputStatus = true;
+    public bool inputStatus = true;
 
     CharacterController characterController;
     // Start is called before the first frame update
