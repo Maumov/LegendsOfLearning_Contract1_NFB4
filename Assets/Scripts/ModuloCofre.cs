@@ -355,7 +355,7 @@ public class ModuloCofre : MonoBehaviour
 
     public void CheckAnswerMod3Left()
     {
-        if (!guion.tutorial3Finished)
+        if (!guion.tutorialModulo3FinishedFeedback)
         {
             if (currentDenominatorX == question2.denominador)
             {
@@ -366,7 +366,7 @@ public class ModuloCofre : MonoBehaviour
 
     public void CheckAnswerMod3Top()
     {
-        if (!guion.tutorial3Finished)
+        if (!guion.tutorialModulo3FinishedFeedback)
         {
             if (currentDenominatorX == question.denominador)
             {

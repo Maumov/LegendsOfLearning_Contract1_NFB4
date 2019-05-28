@@ -147,7 +147,7 @@ public class ModuloPuerta : MonoBehaviour
     void Bad() {
         Debug.Log("Bad");
         Reset();
-        puerta.Tutorial(false);
+        puerta.TutorialPuertaFeedback(false);
         puerta.fondoNoText.SetActive(false);
     }
 
@@ -157,7 +157,7 @@ public class ModuloPuerta : MonoBehaviour
         Debug.Log("Good");
        // puerta.Tutorial(true);
         if(goodAnswerShowed == false) {
-            puerta.Tutorial(true);
+            puerta.TutorialPuertaFeedback(true);
             goodAnswerShowed = true;
         }
         puerta.fondoNoText.SetActive(false);
