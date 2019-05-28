@@ -48,6 +48,7 @@ public class Puerta : MonoBehaviour
 
     IEnumerator AnimatePuerta() {
         virtualCamera.SetActive(false);
+        virtualCamera.GetComponent<Camera>().enabled = false;
         InteractionFinished.Invoke();
         float j = 0f;
         canvasDoor.SetActive(false);
@@ -90,6 +91,8 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
+        GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
+        virtualCamera.GetComponent<Camera>().enabled = true;
         virtualCamera.SetActive(true);
     }
 
@@ -105,4 +108,3 @@ public class Question {
     public float denominador;
     public float cociente;
 }
-

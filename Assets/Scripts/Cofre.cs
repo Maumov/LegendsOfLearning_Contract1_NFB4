@@ -14,8 +14,7 @@ public class Cofre : MonoBehaviour {
     AnimacionesDeCofre animaciones;
     public UnityEvent endInteraction;
     GameObject mainCamera;
-
-    int currentModulo = 0;
+    internal int currentModulo = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +26,7 @@ public class Cofre : MonoBehaviour {
     public void InteractionStart() {
         modulos[currentModulo].StartInteraction();
         mainCamera.SetActive(false);
+        TutorialModulo();
     }
 
     public void ModuloFinished() {
@@ -40,6 +40,7 @@ public class Cofre : MonoBehaviour {
             InteractionFinished();
         } else {
             modulos[currentModulo].StartInteraction();
+            TutorialModulo();
         }
     }
 
@@ -70,4 +71,21 @@ public class Cofre : MonoBehaviour {
         gameObject.SetActive(false);
         yield return null;
     }
+
+    public void TutorialModulo()
+    {
+        if (currentModulo == 0)
+        {
+            FindObjectOfType<Guion>().StartModulo1();
+        }
+        else if (currentModulo == 1)
+        {
+            FindObjectOfType<Guion>().StartModulo2();
+        }
+        else if (currentModulo == 2)
+        {
+            FindObjectOfType<Guion>().StartModulo3();
+        }
+    }
+
 }
