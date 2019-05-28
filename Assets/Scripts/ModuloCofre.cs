@@ -357,7 +357,7 @@ public class ModuloCofre : MonoBehaviour
     {
         if (!guion.tutorialModulo3FinishedFeedback)
         {
-            if (currentDenominatorX == question2.denominador)
+            if (currentDenominatorY == question2.denominador)
             {
                 guion.textDisplay.SetActive(true);
             }

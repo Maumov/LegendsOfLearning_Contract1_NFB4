@@ -135,17 +135,13 @@ public class Guion : MonoBehaviour
     bool doorFeedbackCompleted;
     public void DoorTutorialFeedback(bool rightAnswer)
     {
-        if (doorFeedbackCompleted == false)
-        {
-            if (rightAnswer)
-            {
+        if (!doorFeedbackCompleted){
+            if(rightAnswer){
                 doorFeedbackCompleted = true;
                 StartPuertaFeedBackPos();
-            }
-            else {
+            }else {
                 StartPuertaFeedBackNeg();
             }
-
         }
     }
 

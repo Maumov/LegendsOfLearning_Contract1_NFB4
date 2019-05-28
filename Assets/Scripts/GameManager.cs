@@ -38,11 +38,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void UpdateGemsCounter()
-    {
-        if (gems == 1)
-        {
-            FindObjectOfType<Guion>().StartCofreEnd();
-        }
+    {  
         if (gems <= 5)
         {
             gems++;
@@ -165,7 +161,4 @@ public class GameManager : MonoBehaviour
     public void CofreUltimo() {
         guion.StartUltimoCofre();
     }
-
-    
-
 }
