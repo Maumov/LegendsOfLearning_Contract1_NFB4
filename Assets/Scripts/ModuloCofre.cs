@@ -168,7 +168,12 @@ public class ModuloCofre : MonoBehaviour
         {
             val = "0.";
         }
-        valor = int.Parse(val);
+        try {
+            valor = int.Parse(val);
+        }catch{
+            Debug.Log("meh!");
+        }
+        
     }
 
     public void TestAnswer()

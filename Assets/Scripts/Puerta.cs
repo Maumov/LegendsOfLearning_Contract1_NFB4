@@ -65,13 +65,22 @@ public class Puerta : MonoBehaviour
 
 
     public void UpdateRespuestaUI(string v) {
+
+        Debug.Log(v);
+        if(v == null) {
+            v = "";
+        }
         if(v == "") {
             v = "0";
         }
         if(v == ".") {
             v = "0.";
         }
-        valor = float.Parse(textRespuesta.text.Replace("." , ","));
+        try {
+            valor = float.Parse(textRespuesta.text.Replace(".", ","));
+        } catch {
+            Debug.Log("meh!");
+        }
     }
     
 
