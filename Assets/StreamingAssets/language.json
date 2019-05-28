@@ -51,7 +51,6 @@
 	  "modulo1Tutorial_6": 50,
 
 	  "modulo2Tutorial_1": 50,
-	  "modulo2Tutorial_2": 50,
 
 	  "modulo12Tutorial_Bad": 50,
 	  "modulo12Tutorial_Good": 50,
@@ -60,6 +59,7 @@
 	  "modulo3Tutorial_2": 50,
 	  "modulo3Tutorial_3": 50,
 	  "modulo3Tutorial_4": 50,
+	  "modulo3Tutorial_5": 50,
 
 	  "modulo3Tutorial_Bad": 50,
 	  "modulo3Tutorial_Good": 50,
@@ -126,23 +126,24 @@
 	"cofre_1": "He encontrado la primera gema, pero parece estar dentro del cofre, tendre que abrirlo",
 
 	"modulo1Tutorial_1": "Esta parte del cofre debo resolverla colocando un valor en el numerador de la fraccion morada. Para resolver esto observare la cerradura",
-	"modulo1Tutorial_2": "Esta seccionada en la misma cantidad de veces que el denominador de la fraccion roja.",
-	"modulo1Tutorial_3": "Dentro de cada pedazo en rojo hay la misma cantidad de secciones azules que el denominador de la fraccion azul",
-	"modulo1Tutorial_4": "Esto quiere decir que si cortamos un pedazo de cerradura segun la fraccion roja, y luego esta la seccionamos la cantidad de veces que dice la fraccion azul.",
-	"modulo1Tutorial_5": "Encontraremos cuanto es coger una fraccion de otra fraccion. Si observo la la fraccion morada el denominador es el resultado de multiplicar los denominadores rojo y azul",
-	"modulo1Tutorial_6": "Quizas halle la respuesta multiplicando los numeradores rojo y azul para encontrar la respuesta. Cuando coloque el numero probare presionando el boton con el circulo rojo",
+	"modulo1Tutorial_2": "Tiene la misma cantidad de marcas que el denominador de la fraccion roja.",
+	"modulo1Tutorial_3": "Dentro de cada pedazo rojo hay la misma cantidad de marcas azules que el denominador de la fraccion azul",
+	"modulo1Tutorial_4": "Esto quiere decir que si cortamos un pedazo de cerradura segun la fraccion roja, y luego esta la marcamos la mimsa cantidad de veces que dice la fraccion azul.",
+	"modulo1Tutorial_5": "Encontraremos cuanto es tomar una fraccion de otra fraccion. Si observo la la fraccion morada el denominador es el resultado de multiplicar los denominadores de la fraccion roja y azul",
+	"modulo1Tutorial_6": "Quizas halle la respuesta multiplicando los numeradores de la fraccion roja y azul para encontrar la respuesta. Cuando coloque el numero probare presionando el boton con el circulo rojo",
 
-	"modulo2Tutorial_1": "Vaya este modulo es bastante similar al anterior, tratare de usar la misma logica",
-	"modulo2Tutorial_2": "Con esta respuesta presionare el boton",
+	"modulo2Tutorial_1": "Vaya este modulo es bastante similar al anterior, tratare de usar la misma logica, colocare un valor y presionare el boton con el circulo rojo",
 
 	"modulo12Tutorial_Good": "Esta era la respuesta correcta, ¡Genial!",
 	"modulo12Tutorial_Bad": "Parece que esta no es la respuesta de multiplicar los numeradores, lo intentare de nuevo",
 
 	"modulo3Tutorial_1": "Este acertijo se ve sencillo, cuadros azules arriba en columnas, rojos a la izquierda como filas y en el centro cuadros morados.",
-	"modulo3Tutorial_2": "Eso me indica que debo colocar la misma cantidad de filas y columnas en los cubos morados, probare con los botones rojos y azules en la parte de abajo.",
+	"modulo3Tutorial_2": "Eso me indica que debo colocar la misma cantidad de filas y columnas en los cubos morados, probare con los botones rojos para colocar la cantidad de filas adecuadas.",
 
-	"modulo3Tutorial_3": "Ahora que tengo la cantidad de cuadros morados necesarios, intentare encender algunos cuadros dando click sobre ellos",
-	"modulo3Tutorial_4": "Tratare de encender los cuadros morados que estan debajo de las columnas azules encendidos y que estan al lado de las filas rojas encendidas",
+	"modulo3Tutorial_3": "Ok, ahora probare con los botones azules para colocar la cantidad de columnas azules.",
+
+	"modulo3Tutorial_4": "Ahora que tengo la cantidad de cuadros morados necesarios, intentare encender algunos cuadros dando click sobre ellos",
+	"modulo3Tutorial_5": "Tratare de encender los cuadros morados que estan debajo de las columnas azules encendidos y que estan al lado de las filas rojas encendidas",
 
 	"modulo3Tutorial_Good": "Eso es la cantidad de cuadros que debia encender son los mismos que si multiplicara la cantidad de cuadros rojos y azules encendidos",
 	"modulo3Tutorial_Bad": "Parece que no era la cantidad correcta, quizas la respuesta es la multiplicacion de la cantidad de cuadros rojos y azules encendidos",

@@ -14,8 +14,7 @@ public class Cofre : MonoBehaviour {
     AnimacionesDeCofre animaciones;
     public UnityEvent endInteraction;
     GameObject mainCamera;
-
-    int currentModulo = 0;
+    internal int currentModulo = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,9 +72,9 @@ public class Cofre : MonoBehaviour {
         yield return null;
     }
 
-    void TutorialModulo()
+    public void TutorialModulo()
     {
-        if(currentModulo == 0)
+        if (currentModulo == 0)
         {
             FindObjectOfType<Guion>().StartModulo1();
         }

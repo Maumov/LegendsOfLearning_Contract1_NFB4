@@ -8,7 +8,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public Text gemsCounter;
-    int gems;
+    internal int gems;
     public GameObject finalPlaceHolder;
     public delegate void GemCounter();
     public static GemCounter counter;
@@ -25,7 +25,11 @@ public class GameManager : MonoBehaviour
 
     public void UpdateGemsCounter()
     {
-        if(gems <= 5)
+        if (gems == 1)
+        {
+            FindObjectOfType<Guion>().StartCofreEnd();
+        }
+        if (gems <= 5)
         {
             gems++;
             gemsCounter.text = gems.ToString() + "/4";
@@ -33,6 +37,7 @@ public class GameManager : MonoBehaviour
         if(gems == 4)
         {
             finalPlaceHolder.SetActive(false);
+            FindObjectOfType<Guion>().StartUltimoCofre();
         }
     }
 

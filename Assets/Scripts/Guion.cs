@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Guion : MonoBehaviour
 {
     public MessagesController messageController;
+    public GameObject textDisplay;
+    public MapManager uimap;
     //Intro
     public Capitulo Intro;
     //Tutorial minimapa
@@ -36,18 +38,19 @@ public class Guion : MonoBehaviour
     public Capitulo UltimoCofre;
     //Final de juego
     public Capitulo End;
-    
 
-
-    public void StartIntro() {
+    public void StartIntro()
+    {
         StartCoroutine(TutorialStarted(Intro));
     }
 
-    public void StartMinimapa() {
+    public void StartMinimapa()
+    {
         StartCoroutine(TutorialStarted(Minimapa));
     }
 
-    public void StartPuerta() {
+    public void StartPuerta()
+    {
         StartCoroutine(TutorialStarted(Puerta));
     }
 
@@ -71,15 +74,18 @@ public class Guion : MonoBehaviour
         StartCoroutine(TutorialStarted(CofreEncontrado));
     }
 
-    public void StartModulo1() {
+    public void StartModulo1()
+    {
         StartCoroutine(TutorialStarted(Modulo1));
     }
 
-    public void StartModulo2() {
+    public void StartModulo2()
+    {
         StartCoroutine(TutorialStarted(Modulo2));
     }
 
-    public void StartModulo3() {
+    public void StartModulo3()
+    {
         StartCoroutine(TutorialStarted(Modulo3));
     }
 
@@ -113,12 +119,15 @@ public class Guion : MonoBehaviour
         StartCoroutine(TutorialStarted(UltimoCofre));
     }
 
-    public void StartEnd() {
+    public void StartEnd()
+    {
         StartCoroutine(TutorialStarted(End));
     }
 
-    IEnumerator TutorialStarted(Capitulo cap) {
+    IEnumerator TutorialStarted(Capitulo cap)
+    {
         messageController.SpawnText(cap.frases);
+        uimap.SetMapStatus(false);
         //for(int i = 0; i < cap.frases.Count -1; i++) {
         //    messageController.AddText(cap.GetSiguienteFrase());
         //    yield return null;
@@ -132,8 +141,9 @@ public class Guion : MonoBehaviour
     {
         if (doorCompleted == false)
         {
-            if (rightAnswer == true)
-            {StartPuertaFeedBackPos();
+            if (rightAnswer)
+            {
+                StartPuertaFeedBackPos();
             }
             else if (rightAnswer == false)
             {
@@ -143,33 +153,48 @@ public class Guion : MonoBehaviour
         }
     }
 
-    bool tutorial1Finished;
-    public void Modulo1Tutorial()
+    internal bool tutorial1Finished;
+    internal bool tutorial2Finished;
+    internal bool tutorial3Finished;
+    public void ModuloTutorialFeedBack(bool rightAnswer, int modulo)
     {
-        if (tutorial1Finished == false)
+        switch (modulo)
         {
-
-        }
-    }
-
-    bool tutorial2Finished;
-    public void Modulo2Tutorial()
-    {
-        if (tutorial2Finished == false)
-        {
-
-        }
-    }
-
-    bool tutorial3Finished;
-    public void Modulo3Tutorial()
-    {
-        if (tutorial3Finished == false)
-        {
-
+            case 0:
+                if (!tutorial1Finished || !tutorial2Finished)
+                {
+                    if (rightAnswer)
+                    {
+                        StartModulo12FeedbackPos();
+                        tutorial1Finished = true;
+                    }
+                    else
+                    {
+                        StartModulo12FeedbackNeg();
+                    }
+                }
+                break;
+            case 1:
+                if (tutorial3Finished)
+                {
+                    if (rightAnswer)
+                    {
+                        StartModulo3FeedbackPos();
+                        tutorial3Finished = true;
+                    }
+                    else
+                    {
+                        StartModulo3FeedbackNeg();
+                    }
+                }
+                break;
+            default:
+                Debug.Log("error de caso");
+                break;
         }
     }
 }
+
 [System.Serializable]
 public class Capitulo {
     public List<Frases> frases;
@@ -182,9 +207,8 @@ public class Capitulo {
     public Frases GetFrase() {
         return frases[currentFrase];
     }
-
-
 }
+
 [System.Serializable]
 public class Frases {
     public string key;
