@@ -22,11 +22,9 @@ public class Puerta : MonoBehaviour
     public GameObject canvasDoor;
 
     public UnityEvent InteractionFinished;
-
     public GameObject fondoNoText;
 
     private void Start() {
-        
         SetQuestion();
     }
     
@@ -44,7 +42,7 @@ public class Puerta : MonoBehaviour
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
-            FindObjectOfType<Guion>().StartPuertafinal();
+            FindObjectOfType<Guion>().DoorEndTutorial();
         }
     }
 
@@ -102,11 +100,9 @@ public class Puerta : MonoBehaviour
         canvasDoor.SetActive(true);
     }
 
-    public void Tutorial(bool rightAnswer) {
-        FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
+    public void TutorialPuertaFeedback(bool rightAnswer) {
+        FindObjectOfType<Guion>().DoorTutorialFeedback(rightAnswer);
     }
-
-    
 }
 
 [System.Serializable]

@@ -75,18 +75,7 @@ public class Cofre : MonoBehaviour {
 
     public void TutorialModulo()
     {
-        if (currentModulo == 0)
-        {
-            FindObjectOfType<Guion>().StartModulo1();
-        }
-        else if (currentModulo == 1)
-        {
-            FindObjectOfType<Guion>().StartModulo2();
-        }
-        else if (currentModulo == 2)
-        {
-            FindObjectOfType<Guion>().StartModulo3();
-        }
+        FindObjectOfType<Guion>().ModuloTutorial(currentModulo);
     }
 
 }

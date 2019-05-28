@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     public GameObject pointerCanvas;
     public GameObject keyCanvas;
     public InteractableObject interactable;
+    public ColisionConTesoro tesoroFinal;
 
     public Camera virtualCamera;
     private void Start()
@@ -37,11 +38,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void UpdateGemsCounter()
-    {
-        if (gems == 1)
-        {
-            FindObjectOfType<Guion>().StartCofreEnd();
-        }
+    {  
         if (gems <= 5)
         {
             gems++;
@@ -51,6 +48,8 @@ public class GameManager : MonoBehaviour
         {
             finalPlaceHolder.SetActive(false);
             FindObjectOfType<Guion>().StartUltimoCofre();
+            FindObjectOfType<CameraShake>().Shake();
+            tesoroFinal.gameObject.SetActive(true);
         }
     }
 
@@ -126,8 +125,7 @@ public class GameManager : MonoBehaviour
         pointerCanvas.SetActive(false);
         keyCanvas.SetActive(false);
         mapManager.SetMapStatus(false);
-        guion.StartPuerta();
-        
+        guion.DoorTutorial();
     }
 
     public void PuertaFinish() {
@@ -147,7 +145,7 @@ public class GameManager : MonoBehaviour
         pointerCanvas.SetActive(false);
         keyCanvas.SetActive(false);
         mapManager.SetMapStatus(false);
-        guion.StartCofre();
+        guion.cofreTutorial();
     }
 
     public void CofreFinish() {
@@ -157,12 +155,10 @@ public class GameManager : MonoBehaviour
         miniMapCanvas.SetActive(true);
         pointerCanvas.SetActive(true);
         keyCanvas.SetActive(true);
-        guion.StartCofreEnd();
+        guion.cofreEndTutorial();
     }
 
     public void CofreUltimo() {
         guion.StartUltimoCofre();
     }
-
-
 }

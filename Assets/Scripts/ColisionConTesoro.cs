@@ -21,6 +21,7 @@ public class ColisionConTesoro : MonoBehaviour
             ending.Play();
             movement.StartPanning();
             gameObject.SetActive(false);
+            FindObjectOfType<Guion>().StartEnd();
         }
     }
 }

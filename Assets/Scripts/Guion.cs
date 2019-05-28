@@ -128,45 +128,101 @@ public class Guion : MonoBehaviour
     {
         messageController.SpawnText(cap.frases);
         gameManager.TutorialStart();
-        //for(int i = 0; i < cap.frases.Count -1; i++) {
-        //    messageController.AddText(cap.GetSiguienteFrase());
-        //    yield return null;
-        //}
         yield return null;
     }
 
 
-    bool doorCompleted;
-    public void DoorTutorial(bool rightAnswer)
+    bool doorFeedbackCompleted;
+    public void DoorTutorialFeedback(bool rightAnswer)
     {
-        if (doorCompleted == false)
-        {
-            if (rightAnswer)
-            {
+        if (!doorFeedbackCompleted){
+            if(rightAnswer){
+                doorFeedbackCompleted = true;
                 StartPuertaFeedBackPos();
-            }
-            else if (rightAnswer == false)
-            {
+            }else {
                 StartPuertaFeedBackNeg();
             }
-
         }
     }
 
-    internal bool tutorial1Finished;
-    internal bool tutorial2Finished;
-    internal bool tutorial3Finished;
+    bool doorCompleted;
+    public void DoorTutorial() {
+        if(doorCompleted == false) {
+            doorCompleted = true;
+            StartPuerta();
+        }
+    }
+
+    bool doorEndCompleted;
+    public void DoorEndTutorial() {
+        if(doorEndCompleted == false) {
+            doorEndCompleted = true;
+            StartPuertafinal();
+        }
+    }
+
+    bool cofreCompleted;
+    public void cofreTutorial() {
+        if(cofreCompleted == false) {
+            cofreCompleted = true;
+            StartCofre();
+        }
+    }
+
+    bool cofreEndCompleted;
+    public void cofreEndTutorial() {
+        if(cofreEndCompleted == false) {
+            cofreEndCompleted = true;
+            StartCofreEnd();
+        }
+    }
+
+
+    //COFRE MODULO
+    internal bool tutorialModulo1Finished;
+    internal bool tutorialModulo2Finished;
+    internal bool tutorialModulo3Finished;
+    public void ModuloTutorial( int modulo) {
+        switch(modulo) {
+            case 0:
+            if(!tutorialModulo1Finished) {
+                StartModulo1();
+                tutorialModulo1Finished = true;
+            }
+            break;
+            case 1:
+            if(!tutorialModulo2Finished) {
+                StartModulo2();
+                tutorialModulo2Finished = true;
+            }
+            break;
+            case 2:
+            if(!tutorialModulo3Finished) {
+                StartModulo3();
+                tutorialModulo3Finished = true;
+            }
+            break;
+            default:
+            Debug.Log("error de caso");
+            break;
+        }
+    }
+
+    //COFRE MODULO FEEDBACK
+    internal bool tutorialModulo1FinishedFeedback;
+    internal bool tutorialModulo2FinishedFeedback;
+    internal bool tutorialModulo3FinishedFeedback;
     public void ModuloTutorialFeedBack(bool rightAnswer, int modulo)
     {
         switch (modulo)
         {
             case 0:
-                if (!tutorial1Finished || !tutorial2Finished)
+                if (!tutorialModulo1FinishedFeedback )
                 {
                     if (rightAnswer)
                     {
                         StartModulo12FeedbackPos();
-                        tutorial1Finished = true;
+                        tutorialModulo1FinishedFeedback = true;
                     }
                     else
                     {
@@ -175,15 +231,25 @@ public class Guion : MonoBehaviour
                 }
                 break;
             case 1:
-                if (tutorial3Finished)
+                if (!tutorialModulo2FinishedFeedback)
                 {
                     if (rightAnswer)
                     {
-                        StartModulo3FeedbackPos();
-                        tutorial3Finished = true;
+                        StartModulo12FeedbackPos();
+                        tutorialModulo2FinishedFeedback = true;
                     }
                     else
                     {
+                        StartModulo12FeedbackNeg();
+                    }
+                }
+                break;
+            case 2:
+                if(!tutorialModulo3FinishedFeedback) {
+                    if(rightAnswer) {
+                        StartModulo3FeedbackPos();
+                        tutorialModulo3FinishedFeedback = true;
+                    } else {
                         StartModulo3FeedbackNeg();
                     }
                 }
