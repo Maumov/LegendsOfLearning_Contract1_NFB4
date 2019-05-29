@@ -12,6 +12,7 @@ public class MapIconPrefab : MonoBehaviour
     public Vector2 denimators;
     public Vector2 position;
     GridManager gridManager;
+    AudioSource spawnSound;
     bool TutorialFinished;
 
     public void ActivateIcon()
@@ -22,12 +23,7 @@ public class MapIconPrefab : MonoBehaviour
             RawImage image = GetComponent<RawImage>();
             image.color = new Color(1, 1, 1, 1);
             image.raycastTarget = false;
-
-            if (MapManager.instance.audioSource != null)
-            {
-                MapManager.instance.audioSource.Play();
-            }
-
+            spawnSound.Play();
             RawImage imageOrigin = MapManager.instance.icons[arrayIndex].GetComponent<RawImage>();
             imageOrigin.color = new Color(1, 1, 1, 1);
             imageOrigin.raycastTarget = false;

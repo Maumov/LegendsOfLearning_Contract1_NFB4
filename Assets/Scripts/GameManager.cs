@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     public GameObject keyCanvas;
     public InteractableObject interactable;
     public ColisionConTesoro tesoroFinal;
+    public GameObject UISounds;
 
     public Camera virtualCamera;
     private void Start()
@@ -45,13 +46,11 @@ public class GameManager : MonoBehaviour
     {  
         if (gems <= 5)
         {
-            audioSource.Play();
             gems++;
             gemsCounter.text = gems.ToString() + "/4";
         }
         if(gems == 4)
         {
-            audioSource.clip = earthquake;
             audioSource.time = 5f;
             audioSource.Play();
             finalPlaceHolder.SetActive(false);
