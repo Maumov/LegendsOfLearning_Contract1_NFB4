@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: SandstormStudios
   productName: LegendsOfLearning_Contract1_NFB4
-  defaultCursor: {fileID: 2800000, guid: 0a4da9e99e89a054eaa6a4575fdf1ef5, type: 3}
+  defaultCursor: {fileID: 2800000, guid: fc223977e0396d942b5f686f89fbdba3, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1

@@ -12,6 +12,7 @@
 	  "of": 10,
 	  "next": 20,
 	  "ok": 20,
+	  "loading": 50,
 
 	  "intro_1": 30,
 	  "intro_2": 30,
@@ -92,6 +93,7 @@
 	"of": "de",
 	"next": "Siguiente",
 	"ok": "Ok",
+	"loading": "Cargando",
 
 	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
 	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
@@ -125,7 +127,7 @@
 
 	"cofre_1": "He encontrado la primera gema, pero parece estar dentro del cofre, tendre que abrirlo",
 
-	"modulo1Tutorial_1": "Esta parte del cofre debo resolverla colocando un valor en el numerador de la fraccion morada. Para resolver esto observare la cerradura",
+	"modulo1Tutorial_1": "Esta parte del cofre debo resolverla colocando un valor en el numerador de la fraccion morada.",
 	"modulo1Tutorial_2": "Tiene la misma cantidad de marcas que el denominador de la fraccion roja.",
 	"modulo1Tutorial_3": "Dentro de cada pedazo rojo hay la misma cantidad de marcas azules que el denominador de la fraccion azul",
 	"modulo1Tutorial_4": "Esto quiere decir que si cortamos un pedazo de cerradura segun la fraccion roja, y luego esta la marcamos la mimsa cantidad de veces que dice la fraccion azul.",

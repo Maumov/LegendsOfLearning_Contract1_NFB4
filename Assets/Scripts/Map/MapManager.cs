@@ -6,7 +6,6 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
     [Header("Extra")]
-    public AudioSource audioSource;
     public List<Door> doors = DoorsManager.doors;
 
     [Header("Canvas & Map")]
