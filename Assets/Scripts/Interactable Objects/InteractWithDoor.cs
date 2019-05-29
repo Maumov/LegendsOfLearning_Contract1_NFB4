@@ -10,6 +10,7 @@ public class InteractWithDoor : InteractableObject
 
     public override void Interaction()
     {
+        base.Interaction();
         if (!completed && !isModuleOpen)
         {
             isModuleOpen = true;
@@ -19,6 +20,7 @@ public class InteractWithDoor : InteractableObject
                 panning.ActivateCinematic();
             }
         }
+       
     }
 
     // Cerrar module sin terminarse

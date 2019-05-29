@@ -30,15 +30,17 @@ public class InteractWithChest : InteractableObject
     // Cerrar module sin terminarse
     public void ExitModule()
     {
+        
         isModuleOpen = false;
         interacted = false;
+        InteractionEnd();
     }
 
     // Llamar al completar el cofre
     public void ChestCompleted()
     {
         ExitModule();
-        Destroy(this);
+        //Destroy(this);
         //completed = true;
         //interacted = true;
     }

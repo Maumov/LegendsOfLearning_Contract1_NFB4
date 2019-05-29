@@ -53,8 +53,6 @@ public class CameraPanning : MonoBehaviour
     {
         isActive = true;
         objectCamera.SetActive(true);
-        CameraMovement.StaticSetInputs(false);
-
         LeanTween.moveSpline(objectCamera, spline, duration).setOnStart(OnStart.Invoke).setOnUpdate(LookAtObjectDoor).setOnComplete(TweenModulo1).setEase(LeanTweenType.animationCurve);
     }
 
@@ -131,7 +129,7 @@ public class CameraPanning : MonoBehaviour
     {
         isActive = false;
         objectCamera.SetActive(false);
-        CameraMovement.StaticSetInputs(true);
+       
         objectCamera.transform.position = cameraInitPosition;
     }
 

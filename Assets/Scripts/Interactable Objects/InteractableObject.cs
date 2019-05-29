@@ -18,6 +18,7 @@ public class InteractableObject : MonoBehaviour
 
     private void Awake()
     {
+        
         BoxCollider collider = gameObject.AddComponent<BoxCollider>();
         collider.center = interactionOffset;
         collider.size = colliderSize;
@@ -26,7 +27,14 @@ public class InteractableObject : MonoBehaviour
 
     public virtual void Interaction()
     {
+        isFocus = true;
         interacted = true;
+        FindObjectOfType<GameManager>().interactable = this;
+    }
+
+    public virtual void InteractionEnd() {
+        isFocus = false;
+        FindObjectOfType<GameManager>().InteractionFinish();
     }
 
     private void OnTriggerEnter(Collider other)

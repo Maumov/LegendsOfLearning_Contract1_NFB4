@@ -15,12 +15,11 @@ public class TextController : MonoBehaviour
 
     UnityEvent eventoActual;
 
+    public GameManager gameManager;
+
     private void Start()
     {
         delayCounter = delay;
-        CameraMovement.StaticSetInputs(false);
-        GameManager.StaticSetCursorStatus(true);
-        MapManager.StaticSetMapStatus(false);
     }
 
     public void UpdateMessage()
@@ -43,11 +42,8 @@ public class TextController : MonoBehaviour
             }
             else
             {
-                CameraMovement.StaticSetInputs(true);
-                MapManager.StaticSetMapStatus(true);
-                
+                gameManager.TutorialFinish();
                 TurnOffThisObject();
-                Debug.Log("entroelse");
             }
 
             delayCounter = Time.time + delay;
@@ -63,8 +59,6 @@ public class TextController : MonoBehaviour
         buttonText.text = SharedState.LanguageDefs["next"];
         UpdateMessage();
         
-        //string word = message.Dequeue().key;
-        //text.text = SharedState.LanguageDefs[word];
     }
 
     public void AddText(Frases data) {

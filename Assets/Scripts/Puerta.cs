@@ -22,9 +22,9 @@ public class Puerta : MonoBehaviour
     public GameObject canvasDoor;
 
     public UnityEvent InteractionFinished;
+    public GameObject fondoNoText;
 
     private void Start() {
-        
         SetQuestion();
     }
     
@@ -42,7 +42,7 @@ public class Puerta : MonoBehaviour
     public void OpenGate() {
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
-            FindObjectOfType<Guion>().StartPuertafinal();
+            FindObjectOfType<Guion>().DoorEndTutorial();
         }
     }
 
@@ -50,6 +50,7 @@ public class Puerta : MonoBehaviour
         virtualCamera.SetActive(false);
         virtualCamera.GetComponent<Camera>().enabled = false;
         InteractionFinished.Invoke();
+        GetComponent<InteractableObject>().InteractionEnd();
         float j = 0f;
         canvasDoor.SetActive(false);
         while(j < animDuration) {
@@ -91,14 +92,16 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
-        GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
-        virtualCamera.GetComponent<Camera>().enabled = true;
+        ////GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
+        //virtualCamera.GetComponent<Camera>().enabled = true;
+        //virtualCamera.SetActive(true);
+        //virtualCamera.GetComponent<Camera>().orthographic = true;
         virtualCamera.SetActive(true);
+        canvasDoor.SetActive(true);
     }
 
-    public void Tutorial(bool rightAnswer) {
-
-        FindObjectOfType<Guion>().DoorTutorial(rightAnswer);
+    public void TutorialPuertaFeedback(bool rightAnswer) {
+        FindObjectOfType<Guion>().DoorTutorialFeedback(rightAnswer);
     }
 }
 

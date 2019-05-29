@@ -29,6 +29,7 @@ public class ModuloPuerta : MonoBehaviour
     }
 
     public void CheckRespuesta() {
+        puerta.fondoNoText.SetActive(true);
         if(modulo == 1) {
             StartCoroutine(Animate1());
         }
@@ -146,7 +147,8 @@ public class ModuloPuerta : MonoBehaviour
     void Bad() {
         Debug.Log("Bad");
         Reset();
-        puerta.Tutorial(false);
+        puerta.TutorialPuertaFeedback(false);
+        puerta.fondoNoText.SetActive(false);
     }
 
     void Good() {
@@ -155,9 +157,10 @@ public class ModuloPuerta : MonoBehaviour
         Debug.Log("Good");
        // puerta.Tutorial(true);
         if(goodAnswerShowed == false) {
-            puerta.Tutorial(true);
+            puerta.TutorialPuertaFeedback(true);
             goodAnswerShowed = true;
         }
+        puerta.fondoNoText.SetActive(false);
     }
 }
 
