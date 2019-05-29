@@ -7,7 +7,6 @@ public class EnviromentController : MonoBehaviour
     public AudioSource enviroment;
     [Header("Sounds")]
     public AudioClip grassSound;
-    public AudioClip logSound;
     public ParticleSystem grassParticle;
 
     public static EnviromentController instance;
@@ -20,16 +19,8 @@ public class EnviromentController : MonoBehaviour
         }
     }
 
-    public AudioClip DestroyEnviromentSound(string name)
+    public AudioClip DestroyEnviromentSound()
     {
-        switch (name)
-        {
-            case "Grass":
-                return grassSound;
-            case "Log":
-                return logSound;
-            default:
-                return grassSound;
-        }
+        return grassSound;
     }
 }
