@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class Puerta : MonoBehaviour
 {
-    public AudioSource closedDoor;
     public Question[] posibleQuestions;
     public Question question;
     public float valor = 0f;
@@ -48,7 +47,6 @@ public class Puerta : MonoBehaviour
     }
 
     IEnumerator AnimatePuerta() {
-        closedDoor.Play();
         virtualCamera.SetActive(false);
         virtualCamera.GetComponent<Camera>().enabled = false;
         InteractionFinished.Invoke();
@@ -94,11 +92,6 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
-        ////GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
-        //virtualCamera.GetComponent<Camera>().enabled = true;
-        //virtualCamera.SetActive(true);
-        //virtualCamera.GetComponent<Camera>().orthographic = true;
-        virtualCamera.SetActive(true);
         canvasDoor.SetActive(true);
     }
 

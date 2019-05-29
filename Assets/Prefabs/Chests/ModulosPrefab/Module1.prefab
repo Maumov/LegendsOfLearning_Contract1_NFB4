@@ -432,6 +432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde6ff334c7d10342a1d0d91a65c2230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wrongSound: {fileID: 8300000, guid: c8db31fb7c1863c409ffb0be82271042, type: 3}
+  rightSound: {fileID: 8300000, guid: 3b92aa602e038e542be40d34e3b03100, type: 3}
   modulo: 0
   question:
     numerador: 0

@@ -11,6 +11,8 @@ public class ModuloCofre : MonoBehaviour
     Cofre cofre;
     Guion guion;
     AudioSource sonidos;
+    public AudioClip wrongSound;
+    public AudioClip rightSound;
     public int modulo;
     public Question question, question2;
     public GameObject cam;
@@ -249,7 +251,7 @@ public class ModuloCofre : MonoBehaviour
     {
         isBusy = false;
         guion.ModuloTutorialFeedBack(false, modulo);
-        sonidos.clip = "";
+        sonidos.clip = wrongSound;
         sonidos.Play();
         Debug.Log("Bad");
     }
@@ -259,6 +261,7 @@ public class ModuloCofre : MonoBehaviour
         guion.ModuloTutorialFeedBack(true, modulo);
         StartCoroutine(AnimateTranca());
         checkButton.color = Color.green;
+        sonidos.clip = rightSound;
         sonidos.Play();
         Debug.Log("Good");
     }
