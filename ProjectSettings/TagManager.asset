@@ -8,6 +8,7 @@ TagManager:
   - Map
   - Icon
   - Ship
+  - UISound
   layers:
   - Default
   - TransparentFX
