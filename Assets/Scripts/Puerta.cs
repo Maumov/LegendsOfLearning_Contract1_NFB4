@@ -58,8 +58,8 @@ public class Puerta : MonoBehaviour
         sonido.Play();
         while(j < animDuration) {
             j += (Time.deltaTime);
-            transform.Translate(0f, -1f * Time.deltaTime, 0f);
-            placeHolder.transform.Translate(-1f * Time.deltaTime, 0f, 0f);
+            transform.Translate(0f, -5f * Time.deltaTime, 0f);
+            placeHolder.transform.Translate(-5f * Time.deltaTime, 0f, 0f);
             yield return null;
         }
         gameObject.SetActive(false);

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     public Camera virtualCamera;
     private void Start()
     {
-        CursorStatus(false);
+        //CursorStatus(false);
         counter += UpdateGemsCounter;
     }
 
@@ -61,16 +61,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static void StaticSetCursorStatus(bool status)
-    {
-        Cursor.visible = status;
-    }
+    //public static void StaticSetCursorStatus(bool status)
+    //{
+    //    Cursor.visible = status;
+    //}
 
-    public void CursorStatus(bool status)
-    {
-        Cursor.visible = status;
-        canvasPointer.SetActive(!status);
-    }
+    //public void CursorStatus(bool status)
+    //{
+    //    Cursor.visible = status;
+    //    canvasPointer.SetActive(!status);
+    //}
 
     public void LoadCanvas()
     {
