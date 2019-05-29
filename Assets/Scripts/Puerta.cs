@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+using LoLSDK;
+
 public class Puerta : MonoBehaviour
 {
     public Question[] posibleQuestions;
@@ -45,7 +47,10 @@ public class Puerta : MonoBehaviour
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
             FindObjectOfType<Guion>().DoorEndTutorial();
+            GameManager.progress++;
+            LOLSDK.Instance.SubmitProgress(GameManager.score, GameManager.progress, GameManager.maxProgress);
         }
+
     }
 
     IEnumerator AnimatePuerta() {

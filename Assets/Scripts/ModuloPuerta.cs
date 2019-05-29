@@ -162,6 +162,8 @@ public class ModuloPuerta : MonoBehaviour
         sound.clip = rightAnswer;
         sound.Play();
         Debug.Log("Good");
+        
+        
        // puerta.Tutorial(true);
         if(goodAnswerShowed == false) {
             puerta.TutorialPuertaFeedback(true);

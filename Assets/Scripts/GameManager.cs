@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEngine.UI;
 using UnityEngine.Playables;
 using UnityEngine;
+using LoLSDK;
 
 public class GameManager : MonoBehaviour
 {
@@ -33,9 +34,12 @@ public class GameManager : MonoBehaviour
     public GameObject keyCanvas;
     public InteractableObject interactable;
     public ColisionConTesoro tesoroFinal;
-    public GameObject UISounds;
 
     public Camera virtualCamera;
+
+    public static int score;
+    public static int progress;
+    public static int maxProgress = 22;
     private void Start()
     {
         //CursorStatus(false);
@@ -46,11 +50,15 @@ public class GameManager : MonoBehaviour
     {  
         if (gems <= 5)
         {
+            audioSource.Play();
             gems++;
+            score++;
             gemsCounter.text = gems.ToString() + "/4";
+            LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
         }
         if(gems == 4)
         {
+            audioSource.clip = earthquake;
             audioSource.time = 5f;
             audioSource.Play();
             finalPlaceHolder.SetActive(false);
@@ -169,4 +177,7 @@ public class GameManager : MonoBehaviour
     public void CofreUltimo() {
         guion.StartUltimoCofre();
     }
+
+
+
 }

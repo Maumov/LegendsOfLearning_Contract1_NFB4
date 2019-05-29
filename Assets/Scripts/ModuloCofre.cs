@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using LoLSDK;
 using UnityEngine;
 
 using UnityEngine.UI;
@@ -259,6 +260,8 @@ public class ModuloCofre : MonoBehaviour
 
     void Good()
     {
+        GameManager.progress++;
+        LOLSDK.Instance.SubmitProgress(GameManager.score, GameManager.progress, GameManager.maxProgress);
         guion.ModuloTutorialFeedBack(true, modulo);
         StartCoroutine(AnimateTranca());
         checkButton.color = Color.green;
