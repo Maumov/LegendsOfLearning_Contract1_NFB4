@@ -9,7 +9,7 @@ public class MapManager : MonoBehaviour
     public List<Door> doors = DoorsManager.doors;
 
     [Header("Canvas & Map")]
-    public Transform canvas;
+    public GameObject canvas;
     public GameObject MapUI;
     public bool isMapOpen;
     public bool AbletoOpenMap = true;
@@ -99,6 +99,7 @@ public class MapManager : MonoBehaviour
             tutorialMap = true;
         }
         isMapOpen = true;
+        canvas.GetComponent<AudioSource>().Play();
         MapUI.SetActive(true);
         gameManager.MapShow();
     }
