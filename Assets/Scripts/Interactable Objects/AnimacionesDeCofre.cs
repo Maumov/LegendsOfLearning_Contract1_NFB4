@@ -8,6 +8,12 @@ public class AnimacionesDeCofre : MonoBehaviour
     public Animator tapa;
     public GameObject reward;
     public PlayableDirector director;
+    AudioSource gemSound;
+
+    private void Start()
+    {
+        gemSound = GetComponent<AudioSource>();
+    }
 
     public void AnimacionTapa()
     {
@@ -20,6 +26,7 @@ public class AnimacionesDeCofre : MonoBehaviour
     {
 
         yield return new WaitForSeconds(1.5f);
+        gemSound.Play();
         reward.SetActive(true);
         yield return null;
     }
