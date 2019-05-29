@@ -10,6 +10,10 @@ public class ModuloCofre : MonoBehaviour
     [Header("Base")]
     Cofre cofre;
     Guion guion;
+    AudioSource sonidos;
+    public AudioClip wrongSound;
+    public AudioClip rightSound;
+    public AudioClip wheelSound;
     public int modulo;
     public Question question, question2;
     public GameObject cam;
@@ -41,6 +45,7 @@ public class ModuloCofre : MonoBehaviour
     {
         cofre = GetComponentInParent<Cofre>();
         guion = FindObjectOfType<Guion>();
+        sonidos = GetComponent<AudioSource>();
         SetQuestion();
 
     }
@@ -247,6 +252,8 @@ public class ModuloCofre : MonoBehaviour
     {
         isBusy = false;
         guion.ModuloTutorialFeedBack(false, modulo);
+        sonidos.clip = wrongSound;
+        sonidos.Play();
         Debug.Log("Bad");
     }
 
@@ -255,6 +262,8 @@ public class ModuloCofre : MonoBehaviour
         guion.ModuloTutorialFeedBack(true, modulo);
         StartCoroutine(AnimateTranca());
         checkButton.color = Color.green;
+        sonidos.clip = rightSound;
+        sonidos.Play();
         Debug.Log("Good");
     }
 
@@ -297,6 +306,8 @@ public class ModuloCofre : MonoBehaviour
         float i = 0f;
         float den = (float)(question.denominador * question2.denominador);
 
+        sonidos.clip = wheelSound;
+        sonidos.Play();
 
         while (i <= animDuration)
         {
@@ -357,7 +368,7 @@ public class ModuloCofre : MonoBehaviour
     {
         if (!guion.tutorialModulo3FinishedFeedback)
         {
-            if (currentDenominatorX == question2.denominador)
+            if (currentDenominatorY == question2.denominador)
             {
                 guion.textDisplay.SetActive(true);
             }

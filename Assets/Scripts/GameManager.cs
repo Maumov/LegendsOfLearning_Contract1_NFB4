@@ -7,6 +7,10 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public AudioClip earthquake;
+    public AudioSource audioSource;
+    public AudioSource birdsSound;
+
     public Text gemsCounter;
     internal int gems;
     public GameObject finalPlaceHolder;
@@ -38,18 +42,18 @@ public class GameManager : MonoBehaviour
     }
 
     public void UpdateGemsCounter()
-    {
-        if (gems == 1)
-        {
-            FindObjectOfType<Guion>().StartCofreEnd();
-        }
+    {  
         if (gems <= 5)
         {
+            audioSource.Play();
             gems++;
             gemsCounter.text = gems.ToString() + "/4";
         }
         if(gems == 4)
         {
+            audioSource.clip = earthquake;
+            audioSource.time = 5f;
+            audioSource.Play();
             finalPlaceHolder.SetActive(false);
             FindObjectOfType<Guion>().StartUltimoCofre();
             FindObjectOfType<CameraShake>().Shake();
@@ -95,6 +99,7 @@ public class GameManager : MonoBehaviour
         multiCanvas.SetActive(true);
         mapManager.SetMapStatus(true);
         guion.StartIntro();
+        birdsSound.Play();
     }
 
     public void TutorialStart() {
@@ -165,7 +170,4 @@ public class GameManager : MonoBehaviour
     public void CofreUltimo() {
         guion.StartUltimoCofre();
     }
-
-    
-
 }

@@ -13,6 +13,7 @@ public class Puerta : MonoBehaviour
     public float minValor = 0f;
     public float maxValor = 10f;
     public UnityEvent giroDerecha, giroIzquierda, boton1, boton2, boton3;
+    AudioSource sonido;
 
     public InputField textRespuesta;
     public float animDuration = 10f;
@@ -25,6 +26,7 @@ public class Puerta : MonoBehaviour
     public GameObject fondoNoText;
 
     private void Start() {
+        sonido = GetComponent<AudioSource>();
         SetQuestion();
     }
     
@@ -53,6 +55,7 @@ public class Puerta : MonoBehaviour
         GetComponent<InteractableObject>().InteractionEnd();
         float j = 0f;
         canvasDoor.SetActive(false);
+        sonido.Play();
         while(j < animDuration) {
             j += (Time.deltaTime);
             transform.Translate(0f, -1f * Time.deltaTime, 0f);
@@ -92,11 +95,6 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
-        ////GameObject.FindGameObjectWithTag("MainCamera").SetActive(false);
-        //virtualCamera.GetComponent<Camera>().enabled = true;
-        //virtualCamera.SetActive(true);
-        //virtualCamera.GetComponent<Camera>().orthographic = true;
-        virtualCamera.SetActive(true);
         canvasDoor.SetActive(true);
     }
 
