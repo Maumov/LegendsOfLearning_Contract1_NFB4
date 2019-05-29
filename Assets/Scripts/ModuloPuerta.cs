@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class ModuloPuerta : MonoBehaviour
 {
     public int modulo;
+    AudioSource sound;
+    public AudioClip wrongAnswer;
+    public AudioClip rightAnswer;
     public Puerta puerta;
     public GameObject[] gameObjectsToFill;
     public GameObject[] gameObjectsToEmpty;
@@ -19,7 +22,7 @@ public class ModuloPuerta : MonoBehaviour
 
     void Start() {
         puerta = GetComponentInParent<Puerta>();
-       
+        sound = GetComponent<AudioSource>();
         
     }
 
@@ -147,6 +150,8 @@ public class ModuloPuerta : MonoBehaviour
     void Bad() {
         Debug.Log("Bad");
         Reset();
+        sound.clip = wrongAnswer;
+        sound.Play();
         puerta.TutorialPuertaFeedback(false);
         puerta.fondoNoText.SetActive(false);
     }
@@ -154,6 +159,8 @@ public class ModuloPuerta : MonoBehaviour
     void Good() {
         StartCoroutine(AnimateTranca());
         boton.color = Color.green;
+        sound.clip = rightAnswer;
+        sound.Play();
         Debug.Log("Good");
        // puerta.Tutorial(true);
         if(goodAnswerShowed == false) {

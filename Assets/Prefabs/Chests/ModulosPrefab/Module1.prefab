@@ -434,6 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wrongSound: {fileID: 8300000, guid: c8db31fb7c1863c409ffb0be82271042, type: 3}
   rightSound: {fileID: 8300000, guid: 3b92aa602e038e542be40d34e3b03100, type: 3}
+  wheelSound: {fileID: 8300000, guid: 8257f78512140fb4a9476ab18687d4ba, type: 3}
   modulo: 0
   question:
     numerador: 0
@@ -480,7 +481,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

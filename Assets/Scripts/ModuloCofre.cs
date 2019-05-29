@@ -13,6 +13,7 @@ public class ModuloCofre : MonoBehaviour
     AudioSource sonidos;
     public AudioClip wrongSound;
     public AudioClip rightSound;
+    public AudioClip wheelSound;
     public int modulo;
     public Question question, question2;
     public GameObject cam;
@@ -305,6 +306,8 @@ public class ModuloCofre : MonoBehaviour
         float i = 0f;
         float den = (float)(question.denominador * question2.denominador);
 
+        sonidos.clip = wheelSound;
+        sonidos.Play();
 
         while (i <= animDuration)
         {
