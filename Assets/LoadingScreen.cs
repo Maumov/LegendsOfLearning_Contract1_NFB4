@@ -6,14 +6,25 @@ using UnityEngine;
 
 public class LoadingScreen : MonoBehaviour
 {
-    public Slider slider;
+    public GameObject mainMenuCanvas;
 
-    IEnumerator LoadBackgroundScene()
+    public void ChangeLevel(string sceneName)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("Game");
+        if(SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            if(mainMenuCanvas != null)
+            {
+                gameObject.SetActive(true);
+            }
+        }
+        StartCoroutine(LoadBackgroundScene(sceneName));
+    }
+
+    IEnumerator LoadBackgroundScene(string sceneName)
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncLoad.isDone)
         {
-            slider.value = asyncLoad.progress;
             yield return null;
         }
     }
