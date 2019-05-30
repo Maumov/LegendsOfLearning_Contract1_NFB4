@@ -45,6 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messageController: {fileID: 0}
   textDisplay: {fileID: 0}
+  gameManager: {fileID: 0}
   Intro:
     frases:
     - key: intro_1
@@ -212,13 +213,7 @@ MonoBehaviour:
           Culture=neutral, PublicKeyToken=null
   PuertaFeedbackPos:
     frases:
-    - key: puertaTutorialGood_1
-      evento:
-        m_PersistentCalls:
-          m_Calls: []
-        m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-          Culture=neutral, PublicKeyToken=null
-    - key: puertaTutorialGood_2
+    - key: puertaTutorialGood
       evento:
         m_PersistentCalls:
           m_Calls: []
