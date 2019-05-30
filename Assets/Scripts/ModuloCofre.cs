@@ -260,8 +260,7 @@ public class ModuloCofre : MonoBehaviour
 
     void Good()
     {
-        GameManager.progress++;
-        LOLSDK.Instance.SubmitProgress(GameManager.score, GameManager.progress, GameManager.maxProgress);
+        GameManager.UpdateProgress();
         guion.ModuloTutorialFeedBack(true, modulo);
         StartCoroutine(AnimateTranca());
         checkButton.color = Color.green;

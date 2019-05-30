@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             gems++;
             score++;
             gemsCounter.text = gems.ToString() + "/4";
-            LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
+            UpdateProgress();
         }
         if(gems == 4)
         {
@@ -66,6 +66,11 @@ public class GameManager : MonoBehaviour
             FindObjectOfType<CameraShake>().Shake();
             tesoroFinal.gameObject.SetActive(true);
         }
+    }
+
+    public static void UpdateProgress() {
+        progress++;
+        LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
     }
 
     //public static void StaticSetCursorStatus(bool status)

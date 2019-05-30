@@ -47,8 +47,7 @@ public class Puerta : MonoBehaviour
         if(m1 == true && m2 == true && m3 == true) {
             StartCoroutine(AnimatePuerta());
             FindObjectOfType<Guion>().DoorEndTutorial();
-            GameManager.progress++;
-            LOLSDK.Instance.SubmitProgress(GameManager.score, GameManager.progress, GameManager.maxProgress);
+            GameManager.UpdateProgress();
         }
 
     }
