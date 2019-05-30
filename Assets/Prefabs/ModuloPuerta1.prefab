@@ -2187,6 +2187,7 @@ GameObject:
   - component: {fileID: 8021551204597824090}
   - component: {fileID: 8021551204597824088}
   - component: {fileID: 8021551204597824089}
+  - component: {fileID: 1963968916765224251}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -2255,6 +2256,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Enter the code
+--- !u!114 &1963968916765224251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8021551204597824091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb1a1cf6c31954897724c0c5b6b541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: enterTheCode
 --- !u!1 &8021551204798409651
 GameObject:
   m_ObjectHideFlags: 0
@@ -7328,6 +7342,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8021551206213236978}
     m_Modifications:
+    - target: {fileID: 182560, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
+      propertyPath: m_Name
+      value: SM_Bld_Fort_Base_Circle_02
+      objectReference: {fileID: 0}
     - target: {fileID: 491736, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.0072543
@@ -7383,10 +7401,6 @@ PrefabInstance:
     - target: {fileID: 491736, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.012
-      objectReference: {fileID: 0}
-    - target: {fileID: 182560, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
-      propertyPath: m_Name
-      value: SM_Bld_Fort_Base_Circle_02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13660f99fcad8047a78a78d1dc1d46a, type: 3}
