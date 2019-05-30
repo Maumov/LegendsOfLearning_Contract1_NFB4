@@ -14,14 +14,14 @@ public class TextLanguageHandler : MonoBehaviour
         Text textObject = GetComponent<Text>();
         if(textObject != null)
         {
-            textObject.text = SharedState.LanguageDefs[key] +" . . .";
+            textObject.text = SharedState.LanguageDefs[key];
         }
         else
         {
             TextMeshProUGUI textMesh = GetComponent<TextMeshProUGUI>();
             if(textMesh != null)
             {
-               textMesh.text = SharedState.LanguageDefs[key] + " . . .";
+               textMesh.text = SharedState.LanguageDefs[key];
             }
             else
             {
