@@ -66,20 +66,11 @@ public class GameManager : MonoBehaviour
         LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
         Debug.Log(string.Format("Score : {0}, Progress : {1}, maxProgress : {2}", score, progress, maxProgress));
     }
-
-    //public static void StaticSetCursorStatus(bool status)
-    //{
-    //    Cursor.visible = status;
-    //}
-
-    //public void CursorStatus(bool status)
-    //{
-    //    Cursor.visible = status;
-    //    canvasPointer.SetActive(!status);
-    //}
-
-    public void LoadCanvas()
-    {
+    public static void EndGame() {
+        LOLSDK.Instance.CompleteGame();
+    }
+    
+    public void LoadCanvas()    {
         Instantiate(GameOverCanvas);
     }
 
@@ -182,6 +173,6 @@ public class GameManager : MonoBehaviour
         tesoroFinal.gameObject.SetActive(true);
     }
 
-
+    
 
 }
