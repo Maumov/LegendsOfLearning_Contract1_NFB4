@@ -49,7 +49,6 @@ public class Puerta : MonoBehaviour
             FindObjectOfType<Guion>().DoorEndTutorial();
             GameManager.UpdateProgress();
         }
-
     }
 
     IEnumerator AnimatePuerta() {

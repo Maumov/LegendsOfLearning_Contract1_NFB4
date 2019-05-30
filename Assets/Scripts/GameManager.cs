@@ -8,7 +8,7 @@ using LoLSDK;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioSource earthquake;
+    AudioSource earthquake;
     public AudioSource birdsSound;
 
     public Text gemsCounter;
@@ -38,9 +38,10 @@ public class GameManager : MonoBehaviour
 
     public static int score;
     public static int progress;
-    public static int maxProgress = 22;
+    public static int maxProgress = 30;
     private void Start()
     {
+        earthquake = GetComponent<AudioSource>();
         //CursorStatus(false);
         counter += UpdateGemsCounter;
     }
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
     public static void UpdateProgress() {
         progress++;
         LOLSDK.Instance.SubmitProgress(score, progress, maxProgress);
+        Debug.Log(string.Format("Score : {0}, Progress : {1}, maxProgress : {2}", score, progress, maxProgress));
     }
 
     //public static void StaticSetCursorStatus(bool status)

@@ -25,6 +25,7 @@ public class MapIconPrefab : MonoBehaviour
         gridManager = transform.parent.GetComponent<GridManager>();
         if (gridManager.CheckForIconIndex(denimators))
         {
+            GameManager.UpdateProgress();
             RawImage image = GetComponent<RawImage>();
             image.color = new Color(1, 1, 1, 1);
             image.raycastTarget = false;

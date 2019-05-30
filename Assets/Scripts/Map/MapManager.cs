@@ -72,7 +72,6 @@ public class MapManager : MonoBehaviour
         imageScript.denimators = new Vector2(xDem, yDem);
         imageScript.position = new Vector2((float)xNum / xDem, (float)yNum / yDem);
         imageTexture.texture = textures;
-
     }
 
     public void DestroyIcon(int id)
