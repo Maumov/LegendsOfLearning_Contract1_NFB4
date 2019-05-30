@@ -13,6 +13,7 @@
 	  "next": 20,
 	  "ok": 20,
 	  "loading": 50,
+	  "play": 10,
 
 	  "intro_1": 30,
 	  "intro_2": 30,
@@ -84,6 +85,7 @@
 	"next": "Next",
 	"ok": "Ok",
 	"loading": "Loading...",
+	"play": "Play",
 
 	"intro_1": "I am finally on the fraction island, here I will find the fraction treasure.",
 	"intro_2": "The legend says that I have to find 4 gems to open the treasure door.",
@@ -159,6 +161,7 @@
 	"next": "Siguiente",
 	"ok": "Ok",
 	"loading": "Cargando...",
+	"play": "Jugar",
 
 	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
 	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
