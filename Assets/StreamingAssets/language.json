@@ -97,8 +97,9 @@
 
 	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
 	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
-	"intro_3": "Abrire el mapa para encontrar la ubicacion de las gemas",
-	"intro_4": "Presiona la letra 'M'",
+	"intro_3": "Me puedo abrir paso a traves de los arbustos de la isla destruyendolos con 'Espacio'",
+	"intro_4": "Abrire el mapa para encontrar la ubicacion de las gemas",
+	"intro_5": "Presiona la letra 'M'",
 
 	"mapaTutorial_1": "¡Ok! Tengo la ubicacion de las gemas a la izquierda, probare con la gema amarilla",
 	"mapaTutorial_2": "Parece que tengo una ubicacion roja y una azul, probare con la ubicacion roja",
