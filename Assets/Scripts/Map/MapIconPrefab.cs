@@ -15,6 +15,11 @@ public class MapIconPrefab : MonoBehaviour
     AudioSource spawnSound;
     bool TutorialFinished;
 
+    private void Start()
+    {
+        spawnSound = GetComponent<AudioSource>();
+    }
+
     public void ActivateIcon()
     {
         gridManager = transform.parent.GetComponent<GridManager>();

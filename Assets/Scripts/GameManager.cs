@@ -8,8 +8,7 @@ using LoLSDK;
 
 public class GameManager : MonoBehaviour
 {
-    public AudioClip earthquake;
-    public AudioSource audioSource;
+    public AudioSource earthquake;
     public AudioSource birdsSound;
 
     public Text gemsCounter;
@@ -50,7 +49,6 @@ public class GameManager : MonoBehaviour
     {  
         if (gems <= 5)
         {
-            audioSource.Play();
             gems++;
             score++;
             gemsCounter.text = gems.ToString() + "/4";
@@ -58,13 +56,7 @@ public class GameManager : MonoBehaviour
         }
         if(gems == 4)
         {
-            audioSource.clip = earthquake;
-            audioSource.time = 5f;
-            audioSource.Play();
-            finalPlaceHolder.SetActive(false);
-            FindObjectOfType<Guion>().StartUltimoCofre();
-            FindObjectOfType<CameraShake>().Shake();
-            tesoroFinal.gameObject.SetActive(true);
+            CofreUltimo();
         }
     }
 
@@ -175,7 +167,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void CofreUltimo() {
+        earthquake.time = 5f;
+        earthquake.Play();
         guion.StartUltimoCofre();
+        finalPlaceHolder.SetActive(false);
+        FindObjectOfType<CameraShake>().Shake();
+        tesoroFinal.gameObject.SetActive(true);
     }
 
 
