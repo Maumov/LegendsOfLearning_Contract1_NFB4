@@ -79,21 +79,21 @@ public class ModuloCofre : MonoBehaviour
             float den = (float)(question.denominador * question2.denominador);
             for (int i = 0; i < den + 1; i++)
             {
-                Image im = Instantiate(smallDenominator, image1.rectTransform);
+                Image im = Instantiate(smallDenominator, image2.rectTransform);
                 float angle = (i * 360f / den) - 90f;
                 float x = Mathf.Cos(-angle * Mathf.Deg2Rad);
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
-                Vector3 dir = new Vector3(x, y, 0f) * 280f;
+                Vector3 dir = new Vector3(x, y, 0f) * 305f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
                 im.rectTransform.Rotate(0f, 0f, -angle + 90f);
             }
             for (int i = 0; i < question2.denominador + 1; i++)
             {
-                Image im = Instantiate(bigDenominator, image1.rectTransform);
+                Image im = Instantiate(bigDenominator, image2.rectTransform);
                 float angle = (i * 360f / ((float)question2.denominador)) - 90f;
                 float x = Mathf.Cos(-angle * Mathf.Deg2Rad);
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
-                Vector3 dir = new Vector3(x, y, 0f) * 280f;
+                Vector3 dir = new Vector3(x, y, 0f) * 310f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
                 im.rectTransform.Rotate(0f, 0f, -angle + 90f);
             }
@@ -105,23 +105,23 @@ public class ModuloCofre : MonoBehaviour
             float den = (float)(question.denominador * question2.denominador);
             for (int i = 0; i < den + 1; i++)
             {
-                Image im = Instantiate(smallDenominator, image1.rectTransform);
+                Image im = Instantiate(smallDenominator, image2.rectTransform);
                 float angle = (i * 180f / den) - 90f;
 
                 float x = Mathf.Cos(-angle * Mathf.Deg2Rad);
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
-                Vector3 dir = new Vector3(x, y, 0f) * 330f;
+                Vector3 dir = new Vector3(x, y, 0f) * 390f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
                 im.rectTransform.Rotate(0f, 0f, -angle + 90f);
 
             }
             for (int i = 0; i < question2.denominador + 1; i++)
             {
-                Image im = Instantiate(bigDenominator, image1.rectTransform);
+                Image im = Instantiate(bigDenominator, image2.rectTransform);
                 float angle = (i * 180f / ((float)question2.denominador)) - 90f;
                 float x = Mathf.Cos(-angle * Mathf.Deg2Rad);
                 float y = Mathf.Sin(-angle * Mathf.Deg2Rad);
-                Vector3 dir = new Vector3(x, y, 0f) * 330f;
+                Vector3 dir = new Vector3(x, y, 0f) * 390f;
                 im.rectTransform.localPosition = Vector3.zero + dir;
                 im.rectTransform.Rotate(0f, 0f, -angle + 90f);
             }
