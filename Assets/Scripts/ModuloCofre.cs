@@ -310,25 +310,29 @@ public class ModuloCofre : MonoBehaviour
 
         sonidos.clip = wheelSound;
         sonidos.Play();
-
+        image2.fillAmount = 0f;
         while (i <= animDuration)
         {
             i += Time.deltaTime;
             if (modulo == 0)
             {
                 rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 360f) * (Time.deltaTime / animDuration));
-                Debug.Log(Vector3.SignedAngle(rotator.transform.forward, Vector3.up, rotator.transform.up) / 360f);
-                image2.fillAmount = Vector3.SignedAngle(rotator.transform.forward,Vector3.up, rotator.transform.up) / 360f;
+                Debug.Log(((valor / den) * (Time.deltaTime / animDuration)));
+                //image2.fillAmount = Mathf.Abs(Vector3.SignedAngle(rotator.transform.forward,Vector3.up, rotator.transform.up) / 360f);
+                image2.fillAmount += ((valor / den)  * (Time.deltaTime / animDuration));
             }
             else
             {
                 rotator.transform.RotateAround(rotator.transform.position, rotator.transform.right, ((-valor / den) * 180f) * (Time.deltaTime / animDuration));
                 //image2.fillAmount = Vector3.SignedAngle(rotator.transform.forward, Vector3.up, rotator.transform.up) / 360f;
-                image2.fillAmount = Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f;
+                //image2.fillAmount = Vector3.Angle(rotator.transform.forward, Vector3.up) / 360f;
+                image2.fillAmount += (((valor / den) * (Time.deltaTime / animDuration)) * 0.5f);
             }
             yield return null;
         }
-
+        //Debug.Log(Vector3.Angle(rotator.transform.forward, Vector3.up));
+        //Vector3.an
+        //Debug.Log(Vector3.SignedAngle(rotator.transform.forward, Vector3.up, rotator.transform.up));
         if (valor == question.numerador * question2.numerador)
         {
             Good();
