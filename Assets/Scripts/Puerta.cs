@@ -98,6 +98,7 @@ public class Puerta : MonoBehaviour
         return false;
     }
     public void StartInteraction() {
+        virtualCamera.GetComponent<Camera>().orthographic = true;
         canvasDoor.SetActive(true);
     }
 

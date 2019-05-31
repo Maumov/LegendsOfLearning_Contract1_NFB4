@@ -840,7 +840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   miniMapCam: {fileID: 7252270485841924043}
-  offset: 70
+  offset: 550
   isStatic: 1
   cardinal: {fileID: 1681408521333618421}
   cardinalColor: {r: 0, g: 0, b: 0, a: 1}

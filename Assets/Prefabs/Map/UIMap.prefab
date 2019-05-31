@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 3903245268267730613}
   - component: {fileID: 6458245273387683228}
   - component: {fileID: 1061901010347878683}
+  - component: {fileID: 4652096926878875164}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -574,6 +575,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Door Opened
+--- !u!114 &4652096926878875164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661682114476135017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb1a1cf6c31954897724c0c5b6b541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: door
 --- !u!1 &987792070982325851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1627,6 +1641,7 @@ GameObject:
   - component: {fileID: 8570207994198745527}
   - component: {fileID: 8933539422761879331}
   - component: {fileID: 7331831137959526602}
+  - component: {fileID: 2046080323325230026}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1695,6 +1710,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Door Opened
+--- !u!114 &2046080323325230026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818745081715424269}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb1a1cf6c31954897724c0c5b6b541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: door
 --- !u!1 &1902353841530622205
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,6 +2050,7 @@ GameObject:
   - component: {fileID: 5661894653392929526}
   - component: {fileID: 9148891074097512125}
   - component: {fileID: 6246021063537039297}
+  - component: {fileID: 1839990258222990743}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2090,6 +2119,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Door Opened
+--- !u!114 &1839990258222990743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2604556784069849439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb1a1cf6c31954897724c0c5b6b541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: door
 --- !u!1 &2999242287285384943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,6 +2289,7 @@ GameObject:
   - component: {fileID: 3008060495319171805}
   - component: {fileID: 2228128062676545200}
   - component: {fileID: 2788811151596962454}
+  - component: {fileID: 1605091553530953322}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -2315,6 +2358,19 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Door Opened
+--- !u!114 &1605091553530953322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475949356778876282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1fb1a1cf6c31954897724c0c5b6b541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: door
 --- !u!1 &3527528959518214796
 GameObject:
   m_ObjectHideFlags: 0
@@ -2736,7 +2792,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 0eea6cd65ccbb454f83e10af411aeb90, type: 3}
+  m_Texture: {fileID: 2800000, guid: 32169e661db1ff341a520fcf5cbc4072, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -6033,7 +6089,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1690731775729437953}
   m_HandleRect: {fileID: 8754148866298082942}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7115,7 +7171,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.00010767092}
+  m_AnchoredPosition: {x: 0, y: -0.00008649012}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &3556987687601605452

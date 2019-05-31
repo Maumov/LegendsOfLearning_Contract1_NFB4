@@ -14,6 +14,8 @@
 	  "ok": 20,
 	  "loading": 50,
 	  "play": 10,
+	  "end": 30,
+	  "door": 30,
 
 	  "intro_1": 30,
 	  "intro_2": 30,
@@ -86,13 +88,15 @@
 	"ok": "Ok",
 	"loading": "Loading...",
 	"play": "Play",
+	"end": "Thank you for playing!",
+	"door": "Door Opened",
 
 	"intro_1": "I am finally on the fraction island, here I will find the fraction treasure.",
 	"intro_2": "The legend says that I have to find 4 gems to open the treasure door.",
 	"intro_3": "I can go through the island destroying bushes pressing 'Space' key.",
 	"intro_4": "To find the gems location I will open the map clicking on the 'M' or with the 'M' key.",
 
-	"mapaTutorial_1": "¡Ok! The gems coordinates are on the left side of the screen, I will try the yellow one.",
+	"mapaTutorial_1": "Ok! The gems coordinates are on the left side of the screen, I will try the yellow one.",
 	"mapaTutorial_2": "It shows me a red and a blue location, let's try with the red one.",
 	"mapaTutorial_3": "In this one I have to multiply 1/2 x 1/4, the answer is 1/8.",
 	"mapaTutorial_4": "The blue multiplication is 3/5 x 1/2, the answer is 3/10.",
@@ -101,7 +105,7 @@
 
 	"mapaTutorial_7": "Ok, now the 10 blue lines with the other buttons.",
 
-	"mapaTutorial_8": "¡Great! I have the right amount of lineas, now I just have to click in the intersection between the 1st red line and the 3rd blue line.",
+	"mapaTutorial_8": "Great! I have the right amount of lineas, now I just have to click in the intersection between the 1st red line and the 3rd blue line.",
 
 	"mapaTutorial_9": "The yellow gem location it is revealed, I will go check it.",
 	"mapaTutorial_10": "To close the map I can press the 'M' key again or click on the X on the top right corner.",
@@ -162,6 +166,8 @@
 	"ok": "Ok",
 	"loading": "Cargando...",
 	"play": "Jugar",
+	"end": "¡Gracias por jugar!",
+	"door": "Puerta Abierta",
 
 	"intro_1": "He llegado al fin a la isla adecuada. Aqui encontrare el gran tesoro de la fraccion",
 	"intro_2": "La leyenda decia que debia encontrar 4 gemas para abrir la puerta del tesoro",
