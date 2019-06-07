@@ -75,7 +75,7 @@ public class Puerta : MonoBehaviour
 
         Debug.Log(v);
         if(v == null) {
-            v = "";
+            v = "0";
         }
         if(v == "") {
             v = "0";
@@ -84,7 +84,7 @@ public class Puerta : MonoBehaviour
             v = "0.";
         }
         try {
-            valor = float.Parse(textRespuesta.text.Replace(".", ","));
+            valor = float.Parse(textRespuesta.text);
         } catch {
             Debug.Log("meh!");
         }

@@ -21,7 +21,7 @@ public class LOLAPI : MonoBehaviour
 #endif
 
         // Initialize the object, passing in the WebGL
-        LOLSDK.Init(webGL, "com.legends-of-learning.unity.sdk.v2.example-game");
+        LOLSDK.Init(webGL, "com.SandstormStudios.LegendsOfLearning_Contract1_NFB4");
 
         // Register event handlers
         LOLSDK.Instance.StartGameReceived += new StartGameReceivedHandler(this.HandleStartGame);
