@@ -29,15 +29,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 1ac9746896f645147940fcb7acfd97b7, type: 3}
-        m_Scale: {x: 4, y: 4}
+        m_Scale: {x: 32, y: 32}
         m_Offset: {x: 0, y: 0}
     - _WiggleTex:
         m_Texture: {fileID: 2800000, guid: bf671e1679062d34eadd5164cf813edf, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 8, y: 8}
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - _Shininess: 1
-    - _WiggleStrength: 0.027462685
+    - _WiggleStrength: 0.035
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
