@@ -2212,7 +2212,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 34.7}
-  m_SizeDelta: {x: 144.44, y: 34.12}
+  m_SizeDelta: {x: 135, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8021551204597824088
 CanvasRenderer:
@@ -2255,7 +2255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter the code
+  m_Text: find an equivalent value in decimal form.
 --- !u!114 &1963968916765224251
 MonoBehaviour:
   m_ObjectHideFlags: 0
