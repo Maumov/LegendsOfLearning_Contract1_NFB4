@@ -84,7 +84,11 @@ public class Puerta : MonoBehaviour
             v = "0.";
         }
         try {
-            valor = float.Parse(textRespuesta.text);
+            valor = float.Parse(v);
+            if(valor >= 1f) {
+                valor *= 0.1f;
+            }
+            
         } catch {
             Debug.Log("meh!");
         }
