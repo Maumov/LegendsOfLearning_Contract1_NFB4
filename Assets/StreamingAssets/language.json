@@ -52,7 +52,7 @@
     }
   },
   "en": {
-    "enterTheCode": "find an equivalent value in decimal form.",
+    "enterTheCode": "Find an equivalent value in decimal form.",
     "of": "of",
     "next": "Next",
     "ok": "Ok",
@@ -83,9 +83,9 @@
     "cofre_1": "Finally the first gem, but it is inside the chest. Let's open it.",
     "modulo1Tutorial_1": "I can solve this writing a value on the purple fraction's numerator.",
     "modulo1Tutorial_2": "This vault has the same amount of mark as the red fraction's denominator.",
-    "modulo1Tutorial_3": "Inside of every red piece there are blue mark and it is the same amount as the blue fraction's denominator.",
+    "modulo1Tutorial_3": "Inside of every red piece there are blue marks, and it is the same amount as the blue fraction's denominator.",
     "modulo1Tutorial_4": "This means that if I cut a piece of the lock according to the red fraction, and then mark it according to the blue fraction",
-    "modulo1Tutorial_5": "I will find how to express the fraction of a fraction as a fraction times a fraction. With a look on the purple fraction's denominators I can see is the result of multiply the red and blue fraction's denominator.",
+    "modulo1Tutorial_5": "I will find how to express the fraction of a fraction as a fraction times a fraction. With a look on the purple fraction's denominators I can see, is the result of multiply the red and blue fraction's denominator.",
     "modulo1Tutorial_6": "I will find the answer multiplying the red and blue fraction's numerators. Let's check the answer clicking the button with the red circle.",
     "modulo2Tutorial_1": "This part is very similar to the earlier one. I will use the same idea to answer it. Let's put a value and click the button with the red circle in it.",
     "modulo12Tutorial_Good": "That was the right answer. Great!",
@@ -97,7 +97,7 @@
     "modulo3Tutorial_5": "Let's turn on the purple squares that are under the turned on blue squares and beside of the turned on red squares",
     "modulo3Tutorial_Good": "The amount of squares that I should turn on is the same as the multiplication of the blue and red turned on squares.",
     "modulo3Tutorial_Bad": "It does not seem like the right amount of turned on squares, maybe it is the multiplication of the red and blue turned on squares.",
-    "cofreFinished": "I have opened the chest! The gem is free,.I just need 3 more and the treasure door will open.",
+    "cofreFinished": "I have opened the chest! The gem is free.I just need 3 more and the treasure door will open.",
     "lastChestOpen": "I have found the last gem and a sudden earthquake happened. I will go check the treasure door.",
     "treasureFinded": "Finally found the fraction treasure!"
   }
