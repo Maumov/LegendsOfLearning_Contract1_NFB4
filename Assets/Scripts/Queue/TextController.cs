@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
-
+using LoLSDK;
 public class TextController : MonoBehaviour
 {
     public Queue<Frases> message;
@@ -34,6 +34,9 @@ public class TextController : MonoBehaviour
                 eventoActual = message.Peek().evento;
                 string word = message.Dequeue().key;
                 text.text = SharedState.LanguageDefs[word];
+                //LOL TTS
+                LOLSDK.Instance.SpeakText(word);
+                //-------
                 if (message.Count == 0)
                 {
                     completed = true;
